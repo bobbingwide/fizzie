@@ -21,11 +21,23 @@ function fizzie_after_setup_theme() {
      * There's also 'dark-editor-style'.
      */
 
+    /** Add support for using link colour in certain blocks
+     * https://developer.wordpress.org/block-editor/developers/themes/theme-support/#experimental-%e2%80%94-link-color-control
+     */
+    add_theme_support('experimental-link-color');
+
+
 
 }
 
 function fizzie_enqueue_styles() {
 	$theme_version = wp_get_theme()->get( 'Version' );
+
+	if ( defined( 'SCRIPT_DEBUG') && SCRIPT_DEBUG ) {
+        $theme_version = filemtime( get_stylesheet_directory() . "/style.css" );
+	} else {
+        $theme_version = wp_get_theme()->get( 'Version' );
+    }
 	wp_enqueue_style( 'fizzie', get_stylesheet_uri(), array(), $theme_version );
 }
 
@@ -63,3 +75,18 @@ function fizzie_stanley_theme_support() {
     // Add support for full and wide align blocks.
     add_theme_support( 'align-wide' );
 }
+
+/**
+ * Use front-page.php when Front page displays is set to a static page.
+ *
+ * @since Twenty Seventeen 1.0
+ *
+ * @param string $template front-page.php.
+ * @return string The template to be used: blank if is_home() is true (defaults to index.php),
+ *                otherwise $template.
+ */
+function fizzie_front_page_template( $template ) {
+    echo $template;
+    return is_home() ? '' : $template;
+}
+add_filter( 'frontpage_template', 'fizzie_front_page_template' );
