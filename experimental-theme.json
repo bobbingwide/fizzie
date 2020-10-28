@@ -5,11 +5,23 @@
         "palette": [
           {
             "slug": "foreground",
+            "name": "Foreground",
             "color": "#1a1a2a"
           },
           {
             "slug": "background",
+            "name": "Background",
             "color": "#ffffff"
+          },
+          {
+            "slug": "greeny",
+            "name": "Greeny",
+            "color": "#6a6a2a"
+          },
+          {
+            "name": "Very dark gray",
+            "slug": "very-dark-gray",
+            "color": "#313131"
           }
         ]
       },
@@ -24,7 +36,7 @@
     "core/paragraph": {
       "styles": {
         "color": {
-          "link": "var( --wp--preset--color--primary )",
+          "link": "var( --wp--preset--color--greeny )",
           "text": "var( --wp--preset--color--foreground )"
         },
         "typography": {
