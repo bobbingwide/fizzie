@@ -4,15 +4,16 @@ Donate link: https://www.oik-plugins.com/oik/oik-donate/
 Tags: blocks, FSE, Gutenberg
 Requires at least: 5.5.1
 Tested up to: 5.5.1
-Version: 0.0.0
+Version: 0.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Fizzie theme - a Full Site Editing theme using Gutenberg block
+Fizzie theme - a Full Site Editing theme using Gutenberg blocks
 
 == Description ==
 This is an experimental theme attempting to implement Full Site Editing with Gutenberg blocks.
 
+It started as a completely empty theme and then I played with it while watching some tutorials.
 
 
 == Installation ==
@@ -20,6 +21,10 @@ tbc
 
 
 == Change Log ==
+= 0.0.1 =
+* Added: Start styling as genesis-a2z,[github bobbingwide fizzie issues 4]
+* Changed: Copy some stuff from the Stanley theme as per fullsitediting.com
+
 = 0.0.0 =
 * Added: Create the basic theme following instructions from https://developer.wordpress.org/block-editor/tutorials/block-based-themes/#creating-the-theme
 
