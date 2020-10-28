@@ -25,12 +25,12 @@ body {
 }
 
 a {
-    color: #06c;
+    color: var(--wp--preset--color--greeny, #6a6a2a );
 }
 
 a:hover,
 a:focus {
-    color: #147;
+    color: #333;
     text-decoration: none;
 }
 
@@ -72,12 +72,17 @@ h2, h2 a, h2 a:visited, h3, h3 a, h3 a:visited {
     margin-bottom: 0;
 }
 
+.header a {
+    color: #333;
+}
+
 
 .wp-block-group.header {
     /* border-bottom: 1px solid grey; */
     padding: 0;
     background-color: #ffffff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+
 }
 
 .wp-block-group.footer {
