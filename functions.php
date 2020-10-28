@@ -3,15 +3,16 @@
 /**
  *
  */
-function fizzie_after_setup_theme() {
-	add_action( 'wp_enqueue_scripts', 'fizzie_enqueue_styles' );
+function fizzie_after_setup_theme()
+{
+    add_action('wp_enqueue_scripts', 'fizzie_enqueue_styles');
 
-	add_theme_support( 'wp-block-styles' );
-	add_theme_support( 'align-wide' );
-	add_theme_support( 'custom-line-height' );
-	add_theme_support( 'responsive-embeds' );
+    add_theme_support('wp-block-styles');
+    add_theme_support('align-wide');
+    add_theme_support('custom-line-height');
+    add_theme_support('responsive-embeds');
 
-	/**
+    /**
      * If you use add_editor_style() it calls
      * add_theme_support( 'editor-style' );
      * ... which appears to be different from
@@ -26,8 +27,13 @@ function fizzie_after_setup_theme() {
      */
     add_theme_support('experimental-link-color');
 
+}
 
-
+/**
+ * Enables oik based shortcodes.
+ */
+function fizzie_init() {
+    do_action( "oik_add_shortcodes" );
 }
 
 function fizzie_enqueue_styles() {
@@ -43,6 +49,7 @@ function fizzie_enqueue_styles() {
 
 add_action( 'after_setup_theme', 'fizzie_after_setup_theme');
 add_action( 'after_setup_theme', 'fizzie_stanley_theme_support');
+add_action( 'init', 'fizzie_init', 20 );
 
 
 /**
