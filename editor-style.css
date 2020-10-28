@@ -5,3 +5,20 @@
 .wp-block-site-title {
     text-align: center;
 }
+
+
+p.has-dropcap:first-child:first-letter {
+    color: #903;
+    float: left;
+    font-family: Georgia;
+    font-size: 100px;
+    line-height: 80px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+}
+
+.wp-block-group.header {
+    border-bottom: 1px solid grey;
+}
+
