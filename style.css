@@ -119,7 +119,7 @@ h2, h2 a, h2 a:visited, h3, h3 a, h3 a:visited {
     color: #e9e9c8;
 }
 
-
+.wp-block-group.page-footer .wp-block-group__inner-container,
 .wp-block-group.page,
 .wp-block-group.post {
     max-width: 900px;
