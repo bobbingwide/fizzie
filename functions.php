@@ -27,6 +27,18 @@ function fizzie_after_setup_theme()
      */
     add_theme_support('experimental-link-color');
 
+    /**
+     * You need to register nav menus in order for admin to display Appearance > Menus
+     * and for Navigation (beta) to allow you to Manage locations.
+     * But it's not at all clear how you indicate these locations in the theme's templates
+     * and the core/navigation block doesn't refer to a menu name.
+     *
+     * Additionally, I can't see how the server side rendering adds the class names required
+     * to allow the menu to display the current selection.
+     */
+    register_nav_menu( 'header', 'Header menu');
+    register_nav_menu( 'footer', 'Footer menu');
+
 }
 
 /**
