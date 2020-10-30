@@ -119,9 +119,27 @@ h2, h2 a, h2 a:visited, h3, h3 a, h3 a:visited {
     color: #e9e9c8;
 }
 
+.posts .wp-block-spacer {
+    background-color: #f5f5f5;
+}
+
+.posts .wp-block-column {
+    background-color: #ffffff;
+}
+
+.posts .wp-block-group {
+    padding: 1em;
+}
+
+.wp-block-post-date {
+    line-height: var( --wp--preset--line-height--large );
+    margin: 1em 0;
+}
+
 .wp-block-group.page-footer .wp-block-group__inner-container,
 .wp-block-group.page,
-.wp-block-group.post {
+.wp-block-group.post,
+.wp-block-group.posts {
     max-width: 900px;
     margin: 0 auto;
 }
