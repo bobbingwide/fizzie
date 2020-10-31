@@ -135,13 +135,19 @@ h2, h2 a, h2 a:visited, h3, h3 a, h3 a:visited {
     line-height: var( --wp--preset--line-height--large );
     margin: 1em 0;
 }
-
+.wp-block-group,
 .wp-block-group.page-footer .wp-block-group__inner-container,
 .wp-block-group.page,
 .wp-block-group.post,
-.wp-block-group.posts {
-    max-width: 900px;
+.wp-block-group.posts,
+div.breadcrumbs,
+div.a2z {
+    max-width: 1140px;
     margin: 0 auto;
+}
+
+div.breadcrumbs {
+    margin-bottom: 1em;
 }
 
 img.custom-logo {
@@ -239,6 +245,63 @@ img {
     margin-right: auto;
 }
 
+.wp-block-group .alignwide,
 .alignwide {
-    max-width: 1100px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+/*
+.wp-block-group.col3 { columns: 3; column-width: 150px; column-rule: 2px solid #fff; column-gap: 3em; }
+*/
+.archive .wp-block-group.article {
+    width: 31.3333%;
+    float: left;
+    padding: 2px 0.5%;
+    margin: 2px 0.5% 15px 0.5%;
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box;
+
+}
+
+div.wp-site-blocks .content { max-width: 1100px; margin: 0 auto;}
+.content:after { clear:both; display: table; content: " ";}
+
+.alignfull {
+    max-width: 100%;
+}
+
+div.pagination {
+    width: 100%;
+    clear: both;
+}
+
+.archive-pagination li {
+    display: inline;
+}
+
+.archive-pagination li a {
+    background-color: #f5f5f5;
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    padding: 8px 12px;
+    text-decoration: none;
+}
+
+.archive-pagination li a:hover,
+.archive-pagination .active a {
+    background-color: #585823;
+}
+
+.archive-pagination li a:focus,
+.archive-pagination li a:hover,
+.archive-pagination li.active a {
+    background-color: #333;
+    color: #fff;
 }

@@ -1,0 +1,98 @@
+/** (C) Copyright Bobbing Wide 2016-2017
+ */
+ 
+.entry-title {
+	font-size: 18px;
+}
+ 
+
+/*
+.archive p {
+	margin: 0px;
+	padding: 0px;
+}
+*/
+.archive article {
+	width: 31.3333%; 
+	float: left;
+	padding: 2px 0.5%;
+	margin: 2px 0.5% 15px 0.5%;
+	position: relative; 
+}
+
+
+/* Enable images to appear to be the same height */
+.archive-oik-themes article:after {
+	padding-top: 85%;
+	background-color: white;
+}
+
+article.oik-themes {
+	height: auto;
+    overflow: hidden;
+	margin-bottom: 10px;
+	position: relative;
+ /* border: 1px solid #ffffff; */
+}
+
+article.oik-themes img {
+	position: absolute;
+	left: 0;
+	top: 40px;
+	width: 100%;
+	
+}
+.content .oik-themes.entry {
+	/* background-color: #cccccc; */
+}
+
+article.oik-themes:hover {
+	/* border: 1px  solid grey; */
+}
+
+h2.entry-title {
+	padding: 7px 5px 7px 10px;
+}
+
+article header:hover {
+	/* background-color: #eeeeee; */
+}
+
+
+/* // (C) Copyright Bobbing Wide 2017
+ * Default styling for the oik-a2z pagination list
+ *
+ */
+ 
+div.a2z { 
+	width: 100%;
+}
+ 
+ul.a2z {
+	display: block;
+	padding-left: 0px;
+}
+
+ul.a2z li a span.count { 
+	display: none;
+}
+
+@media screen and ( max-width: 768px ) {
+
+.archive article {
+	width: 48%;
+}
+
+}
+
+
+
+
+@media screen and ( max-width: 480px ) {
+
+.archive article {
+	width: 98%;
+}
+
+}
+

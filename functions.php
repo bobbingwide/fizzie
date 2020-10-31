@@ -6,6 +6,7 @@
 function fizzie_after_setup_theme()
 {
     add_action('wp_enqueue_scripts', 'fizzie_enqueue_styles');
+    add_action('wp_enqueue_scripts', 'fizzie_enqueue_a2z');
 
     add_theme_support('wp-block-styles');
     add_theme_support('align-wide');
@@ -58,6 +59,22 @@ function fizzie_enqueue_styles() {
     }
 	wp_enqueue_style( 'fizzie', get_stylesheet_uri(), array(), $theme_version );
 }
+
+/**
+ * Enqueue special styles for archives
+ */
+function fizzie_enqueue_a2z() {
+    //bw_trace2();
+    //bw_backtrace();
+
+    $timestamp = null;
+    if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
+        $timestamp = filemtime( get_stylesheet_directory() . "/category.css" );
+    }
+    wp_enqueue_style( "category-css", get_stylesheet_directory_uri() . '/category.css', array() );
+}
+
+
 
 add_action( 'after_setup_theme', 'fizzie_after_setup_theme');
 add_action( 'after_setup_theme', 'fizzie_stanley_theme_support');
