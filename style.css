@@ -127,6 +127,10 @@ h2, h2 a, h2 a:visited, h3, h3 a, h3 a:visited {
     background-color: #ffffff;
 }
 
+.page-footer .wp-block-column {
+    background-color: transparent;
+}
+
 .posts .wp-block-group {
     padding: 1em;
 }
@@ -170,7 +174,11 @@ p.wp-block-site-tagline {
 }
 
 .wp-block-navigation ul {
-    padding-top: 2em;
+    margin-top: 2em;
+}
+
+.wp-block-navigation ul ul {
+    margin-top: 0em;
 }
 
 .wp-block-navigation li {
