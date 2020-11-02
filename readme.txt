@@ -4,7 +4,7 @@ Donate link: https://www.oik-plugins.com/oik/oik-donate/
 Tags: blocks, FSE, Gutenberg
 Requires at least: 5.5.1
 Tested up to: 5.6-beta2
-Version: 0.0.2
+Version: 0.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,22 +33,23 @@ In the target site some of the templates and template parts need importing to be
 
 So far I’ve managed to create:
 
-- Six templates
+- Eight templates
 - Twelve template parts
-
 
 The templates are:
 
+- archive - generic template used for archives: author, taxonomy, date, tag 
 - category - used to display the Category archive
 - front-page - used for Page Shown On Front
 - home - used for Blog Posts index page or Posts Shown on Front
 - single - used for a single post / attachment / CPT
 - singular - used when single or page does not exist
 - index - used when no other template is found
+- 404 - Not found page
 
 Not yet done:
 
-- archive - to display post and other CPT archives
+- other CPT archives
 - page - used for a single page
 
 
@@ -68,6 +69,7 @@ The template parts are:
 - page-footer - full width footer with 3 columns
 - post-content - breaks site
 - posts - an attempt to display the posts using query blocks - incomplete- not used
+- search - using the Search block
 
 
 == Installation ==
@@ -81,6 +83,11 @@ Note: There is no need to Enable Full Site Editing Demo Templates
 
 
 == Change Log ==
+= 0.0.3 =
+* Changed: Improve styling of drop down menu and page footer column background,[github bobbingwide fizzie issues 4]
+* Added: Implement the 404.html template,[github bobbingwide fizzie issues 12]
+* Changed: remove wp:query to allow use of the main query in archive based templates,[github bobbingwide fizzie issues 11]
+
 = 0.0.2 = 
 * Added: Implement category.html template,[github bobbingwide fizzie issues 9]
 * Changed: Style the 'home' template - for blog posts,[github bobbingwide fizzie issues 4]
@@ -115,6 +122,9 @@ The CSS is minimal; just enough to make it look OK on my laptop and external mon
 
 It took two days to create the category template. 
 A fully working version of the theme is going to take some time.
+
+The archive related templates in the theme only work with a version of Gutenberg that has 
+a fix developed for [github WordPress gutenberg issue 25377].
 
 
 == References ==
