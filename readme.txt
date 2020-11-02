@@ -4,7 +4,7 @@ Donate link: https://www.oik-plugins.com/oik/oik-donate/
 Tags: blocks, FSE, Gutenberg
 Requires at least: 5.5.1
 Tested up to: 5.6-beta2
-Version: 0.0.3
+Version: 0.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,55 +34,61 @@ In the target site some of the templates and template parts need importing to be
 So far I’ve managed to create:
 
 - Eight templates
-- Twelve template parts
+- Thirteen template parts
 
 The templates are:
 
-- archive - generic template used for archives: author, taxonomy, date, tag 
-- category - used to display the Category archive
-- front-page - used for Page Shown On Front
-- home - used for Blog Posts index page or Posts Shown on Front
-- single - used for a single post / attachment / CPT
-- singular - used when single or page does not exist
-- index - used when no other template is found
-- 404 - Not found page
+* archive - generic template used for archives: author, taxonomy, date, tag 
+* category - used to display the Category archive
+* front-page - used for Page Shown On Front
+* home - used for Blog Posts index page or Posts Shown on Front
+* single - used for a single post / attachment / CPT
+* singular - used when single or page does not exist
+* index - used when no other template is found
+* 404 - Not found page
 
 Not yet done:
 
-- other CPT archives
-- page - used for a single page
+* other CPT archives
+* page - used for a single page
 
 
 See the template visualization: https://developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04.png
 
 The template parts are:
 
-- a2z-pagination - letter pagination for blog posts
-- breadcrumbs - Breadcrumb trail - using sb-breadcrumbs-block-based-widgets
-- category-description - incomplete 
-- category-query - to list posts in a chosen category term
-- footer - final full width footer
-- footer-part - alternative footer ( not used ? )
-- header - the original header - replaced by header-2-columns
-- header-2-columns - A badly named header template part which only has half of the functionality of the header that it’s going to replace.
-- page-content - primary content part for a page
-- page-footer - full width footer with 3 columns
-- post-content - breaks site
-- posts - an attempt to display the posts using query blocks - incomplete- not used
-- search - using the Search block
+* a2z-pagination - letter pagination for blog posts
+* breadcrumbs - Breadcrumb trail * using sb-breadcrumbs-block-based-widgets
+* category-description * incomplete 
+* category-query - to list posts in a chosen category term
+* footer - final full width footer
+* footer-part - alternative footer ( not used ? )
+* header - the original header -  replaced by header-2-columns
+* header-2-columns - A badly named header template part which only has half of the functionality of the header that it’s going to replace.
+* page-content - primary content part for a page
+* page-footer - full width footer with 3 columns
+* post-content - breaks site
+* posts - an attempt to display the posts using query blocks - incomplete- not used
+* search - using the Search block
 
 
 == Installation ==
 
-- Either install Gutenberg 9.2.2 or install and build the Gutenberg source.
-- Activate Gutenberg.
-- Install and activate the Fizzie theme, as you would install any other theme.
-- Enable Full site editing, in Gutenberg > Experiments.
+* Either install Gutenberg 9.2.2 or install and build the Gutenberg source.
+* Activate Gutenberg.
+* Install and activate the Fizzie theme, as you would install any other theme.
+* Enable Full site editing, in Gutenberg > Experiments.
 
 Note: There is no need to Enable Full Site Editing Demo Templates
 
 
 == Change Log ==
+= 0.0.4 =
+* Changed: Create [archive_description] shortcode for the category-description template part,[github bobbingwide fizzie issue 13]
+* Tested: With WordPress 5.6-beta2 
+* Tested: With Gutenberg 9.2.2 and development - with a local fix for #25377
+* Tested: With PHP 7.4
+
 = 0.0.3 =
 * Changed: Improve styling of drop down menu and page footer column background,[github bobbingwide fizzie issues 4]
 * Added: Implement the 404.html template,[github bobbingwide fizzie issues 12]
