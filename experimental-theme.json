@@ -172,5 +172,14 @@
           "text": "var( --wp--preset--color--foreground )"
         }
       }
-    }
+    },
+  "core/post-title": {
+    "styles": {
+    },
+      "typography": {
+        "fontSize": "calc( 1px * var( --wp--preset--font-size--normal ) )",
+        "lineHeight": 1.2
+      }
   }
+
+}
