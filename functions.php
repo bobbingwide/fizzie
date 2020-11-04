@@ -158,3 +158,171 @@ function fizzie_archive_description( $attrs, $content, $tag ) {
     return $html;
 }
 
+/**
+ * Hook into register_block_types_args before WP_Block_Supports
+ */
+add_filter( 'register_block_type_args', 'fizzie_register_block_type_args', 9 );
+
+function fizzie_register_block_type_args( $args ) {
+    if ( 'core/query-pagination' == $args['name']) {
+        if ( 'gutenberg_render_block_core_query_pagination' == $args['render_callback'] ) {
+            $args['render_callback'] = 'fizzie_render_block_core_query_pagination';
+        }
+    }
+    if ( 'core/query-loop' == $args['name'] ) {
+        if ( 'gutenberg_render_block_core_query_loop' == $args['render_callback'] ) {
+            $args['render_callback'] = 'fizzie_render_block_core_query_loop';
+        }
+    }
+
+    if ( 'core/post-excerpt' == $args['name'] ) {
+        if ( 'gutenberg_render_block_core_post_excerpt' == $args['render_callback'] ) {
+            $args['render_callback'] = 'fizzie_render_block_core_post_excerpt';
+        }
+    }
+
+    if ( 'core/post-content' == $args['name'] ) {
+        if ( 'gutenberg_render_block_core_post_content' == $args['render_callback'] ) {
+            $args['render_callback'] = 'fizzie_render_block_core_post_content';
+        }
+    }
+
+    if ( 'core/template-part' == $args['name'] ) {
+        if ( 'gutenberg_render_block_core_template_part' == $args['render_callback'] ) {
+            $args['render_callback'] = 'fizzie_render_block_core_template_part';
+        } else {
+            bw_trace2();
+            gob();
+        }
+    }
+    return $args;
+}
+
+/**
+ * Overrides core/query-pagination to implement main query pagination.
+ *
+ * Hack until a solution is delivered in Gutenberg.
+ *
+ * @param $attributes
+ * @param $content
+ * @param $block
+ * @return string
+ */
+function fizzie_render_block_core_query_pagination( $attributes, $content, $block ) {
+    if ( isset( $block->context['queryId'] ) ) {
+        $html = gutenberg_render_block_core_query_pagination( $attributes, $content, $block );
+    } else {
+        $html = fizzie_render_block_core_query_pagination_main_query( $attributes, $content, $block );
+    }
+    return $html;
+}
+
+/**
+ * Overrides core/query-loop to implement main query processing.
+ *
+ * Hack until a solution is delivered in Gutenberg.
+ *
+ * @param $attributes
+ * @param $content
+ * @param $block
+ * @return string
+ */
+function fizzie_render_block_core_query_loop( $attributes, $content, $block ) {
+    if ( isset( $block->context['queryId'] ) ) {
+        $html = gutenberg_render_block_core_query_loop( $attributes, $content, $block );
+    } else {
+        $html = fizzie_render_block_core_query_loop_main_query( $attributes, $content, $block );
+    }
+    return $html;
+}
+
+/**
+ * Renders the `core/query-pagination` block on the server for the main query.
+ *
+ * @param array    $attributes Block attributes.
+ * @param string   $content    Block default content.
+ * @param WP_Block $block      Block instance.
+ *
+ * @return string Returns the pagination for the query.
+ */
+function fizzie_render_block_core_query_pagination_main_query( $attributes, $content, $block ) {
+    $html = '<div class="wp-block-query-pagination">';
+    $html .= paginate_links( [ 'type' => 'list'] );
+    $html .= "</div>";
+    return $html;
+}
+
+/**
+* Renders the `core/query-loop` block for the main query on the server.
+ *
+ * @param array    $attributes Block attributes.
+ * @param string   $content    Block default content.
+ * @param WP_Block $block      Block instance.
+ *
+ * @return string Returns the output of the query, structured using the layout defined by the block's inner blocks.
+ */
+function fizzie_render_block_core_query_loop_main_query( $attributes, $content, $block ) {
+    if ( have_posts() ) {
+        $content = '';
+        while ( have_posts() ) {
+            the_post();
+            $post = get_post();
+            $content .= (
+            new WP_Block(
+                $block->parsed_block,
+                array(
+                    'postType' => $post->post_type,
+                    'postId' => $post->ID,
+                )
+            )
+            )->render(array('dynamic' => false));
+        }
+    } else {
+        $content = __( "No posts found." );
+    }
+    return $content;
+}
+
+/**
+ * Appends the missing </div> to the core/post-excerpt block.
+ *
+ * @param $attributes
+ * @param $content
+ * @param $block
+ * @return string
+ */
+function fizzie_render_block_core_post_excerpt( $attributes, $content, $block ) {
+    $html = gutenberg_render_block_core_post_excerpt( $attributes, $content, $block );
+    // Should really check that it's missing.
+    if ( 0 !== strrpos( $html, '</div>') ) {
+        $html .= '</div>';
+    }
+    return $html;
+}
+
+/**
+ * Overrides core/post-content to return early in certain circumstances.
+ *
+ * Hack until a solution is delivered in Gutenberg.
+ *
+ * @param $attributes
+ * @param $content
+ * @param $block
+ * @return string
+ */
+function fizzie_render_block_core_post_content( $attributes, $content, $block ) {
+    if ( ! isset( $block->context['postId'] ) ) {
+        return '';
+    }
+    if ( 'revision' === $block->context['postType'] ) {
+        return '';
+    }
+    $html = gutenberg_render_block_core_post_content( $attributes, $content, $block );
+    return $html;
+}
+
+
+function fizzie_render_block_core_template_part( $attributes, $content, $block ) {
+    $html = gutenberg_render_block_core_template_part( $attributes );
+    return $html;
+}
