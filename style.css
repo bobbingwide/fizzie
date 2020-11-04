@@ -100,7 +100,8 @@ h6 {
 
 }
 
-.wp-block-group.footer {
+.wp-block-group.footer,
+.wp-block-group.footer p {
     text-align: center;
     margin: 0 auto;
     background-color: #ffffff;
@@ -135,6 +136,7 @@ h6 {
 
 .page-footer .wp-block-columns p {
     color: #aaa;
+    font-size: 13px;
 }
 .page-footer .wp-block-columns a {
     color: #e9e9c8;
@@ -409,3 +411,41 @@ b, strong {
  pre {
      font-family: monospace;
  }
+
+
+ .wp-block-query-pagination {
+     clear: both;
+ }
+
+ul.page-numbers {
+    display: block;
+    padding-left: 0px;
+}
+
+.page-numbers li {
+    display: inline-block;
+}
+
+.page-numbers li a {
+    background-color: #f5f5f5;
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    text-decoration: none;
+    padding: 8px 12px;
+}
+
+.page-numbers li .current {
+    background-color: #333;
+    color: #fff;
+    padding: 8px 12px;
+}
+
+h2.term_heading,
+h2.wp-block-post-title {
+    font-size: calc( 1px * var( --wp--preset--font-size--normal ) );
+}
+
