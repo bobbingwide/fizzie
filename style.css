@@ -15,13 +15,14 @@ Text domain: fizzie
 
 * {
     font-family:  Lato, sans-serif;
+    font-weight: 400;
 }
 
 body {
     color: #1a1a2a;
     margin:0;
     background-color: #f5f5f5;
-    line-height: 1.2em;
+    line-height: 1.2;
 }
 
 a {
@@ -36,6 +37,18 @@ a:focus {
 
 h2, h2 a, h2 a:visited, h3, h3 a, h3 a:visited {
     color: #333;
+}
+
+/* Headings
+--------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 10px;
 }
 
 .wp-block-group.wrapper {
@@ -372,3 +385,27 @@ div.pagination {
     color: #333;
     outline: #ccc solid 1px;
 }
+
+.wp-block-separator.is-style-dots:before {
+    content: "\00b7 \00b7 \00b7";
+    color: currentColor;
+    font-size: 1.5em;
+    letter-spacing: 2em;
+    padding-left: 2em;
+    font-family: serif;
+}
+
+b, strong {
+    font-weight: 700;
+}
+ pre.wp-block-preformatted,
+ pre.wp-block-verse{
+     border: 1px solid #ededed;
+     line-height: 1.2;
+     padding: 10px;
+     overflow: auto;
+ }
+
+ pre {
+     font-family: monospace;
+ }
