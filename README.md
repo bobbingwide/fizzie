@@ -5,7 +5,7 @@
 * Tags: blocks, FSE, Gutenberg
 * Requires at least: 5.5.1
 * Tested up to: 5.6-beta2
-* Version: 0.0.4
+* Version: 0.0.5
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,8 +34,8 @@ In the target site some of the templates and template parts need importing to be
 
 So far I’ve managed to create:
 
-- Eight templates
-- Thirteen template parts
+- Nine templates
+- Sixteen template parts
 
 The templates are:
 
@@ -44,6 +44,7 @@ The templates are:
 * front-page - used for Page Shown On Front
 * home - used for Blog Posts index page or Posts Shown on Front
 * single - used for a single post / attachment / CPT
+* single-oik-plugins - used for a single oik-plugin
 * singular - used when single or page does not exist
 * index - used when no other template is found
 * 404 - Not found page
@@ -59,16 +60,19 @@ Not yet done:
 The template parts are:
 
 * a2z-pagination - letter pagination for blog posts
-* breadcrumbs - Breadcrumb trail * using sb-breadcrumbs-block-based-widgets
-* category-description * incomplete
+* archive-query - main query for archive pages
+* breadcrumbs - Breadcrumb trail - using sb-breadcrumbs-block-based-widgets
+* category-description - uses [archive_description] shortcode
 * category-query - to list posts in a chosen category term
+* download - uses [oikp_download] shortcode
+* footer-menu - displays the footer menu
 * footer - final full width footer
-* footer-part - alternative footer ( not used ? )
-* header - the original header -  replaced by header-2-columns
 * header-2-columns - A badly named header template part which only has half of the functionality of the header that it’s going to replace.
+* header-menu - displays the header menu
+* information - Displays post meta data using the oik-block/fields block
 * page-content - primary content part for a page
 * page-footer - full width footer with 3 columns
-* post-content - breaks site
+* post-content - primary content part for a post
 * posts - an attempt to display the posts using query blocks - incomplete- not used
 * search - using the Search block
 
@@ -84,6 +88,11 @@ The template parts are:
 
 
 ## Change Log 
+# 0.0.5 
+* Added: single-oik-plugins template,https://github.com/bobbingwide/fizzie/issues/14
+* Changed: archive template,https://github.com/bobbingwide/fizzie/issues/14
+* Changed: Extracted header and footer menus into separate template parts [https://github.com/bobbingwide/fizzie/issues/17
+
 # 0.0.4 
 * Changed: Create [archive_description] shortcode for the category-description template part,https://github.com/bobbingwide/fizzie/issues/13
 * Tested: With WordPress 5.6-beta2
@@ -148,6 +157,7 @@ During the development I have referred to the following articles, sites and repo
 - https://wptavern.com/q-first-fse-wordpress-theme-now-live
 - https://wptavern.com/wordpress-5-6-release-team-pulls-the-plug-on-block-based-widgets
 - https://wptavern.com/navigation-screen-sidelined-for-wordpress-5-6-full-site-editing-edges-closer-to-public-beta
+- https://make.wordpress.org/themes/2020/10/23/developing-the-full-site-editing-version-of-twenty-twenty-one/
 
 ## Copyright 
 (C) Copyright Bobbing Wide 2020
