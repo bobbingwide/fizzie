@@ -112,6 +112,14 @@ h2, h2 a, h2 a:visited, h3, h3 a, h3 a:visited {
     display: inline-block;
 }
 
+.wp-block-group.has-background {
+    margin-top: 1em;
+}
+
+.page-footer {
+    margin-top: 1em;
+}
+
 .page-footer .wp-block-columns p {
     color: #aaa;
 }
@@ -139,15 +147,61 @@ h2, h2 a, h2 a:visited, h3, h3 a, h3 a:visited {
     line-height: var( --wp--preset--line-height--large );
     margin: 1em 0;
 }
+
+/**
+  Should we consider adding .wp-block-template-part to the areas styled as div.className
+ */
 .wp-block-group,
 .wp-block-group.page-footer .wp-block-group__inner-container,
 .wp-block-group.page,
 .wp-block-group.post,
 .wp-block-group.posts,
 div.breadcrumbs,
-div.a2z {
+div.a2z,
+div.information,
+div.download,
+section.archive{
     max-width: 1140px;
     margin: 0 auto;
+}
+
+div.wp-block-template-part {
+    display: block;
+    box-sizing: border-box;
+    clear: both;
+}
+
+a.wordpress {
+    display: block;
+    text-align: center;
+    padding: 0;
+    color: #fff;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    text-shadow: rgba(0,0,0,0.5) 0 1px 0;
+    text-decoration: none;
+    padding: 3%;
+    background: #eb672b;
+    margin: 1% auto;
+}
+
+div.information,
+div.footer-menu{
+    background-color: #fff;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.footer p {
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 5px;
+}
+
+.bw_metadata {
+    padding: 0.1em 1em;
 }
 
 div.breadcrumbs {
@@ -312,4 +366,9 @@ div.pagination {
 .archive-pagination li.active a {
     background-color: #333;
     color: #fff;
+}
+
+:focus {
+    color: #333;
+    outline: #ccc solid 1px;
 }
