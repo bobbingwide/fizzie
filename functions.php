@@ -65,9 +65,6 @@ function fizzie_enqueue_styles() {
  * Enqueue special styles for archives
  */
 function fizzie_enqueue_a2z() {
-    //bw_trace2();
-    //bw_backtrace();
-
     $timestamp = null;
     if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
         $timestamp = filemtime( get_stylesheet_directory() . "/category.css" );
@@ -145,7 +142,6 @@ function fizzie_archive_description( $attrs, $content, $tag ) {
             $html .= $heading;
             $html .= '</h2>';
             $html .= $description;
-            bw_trace2($html, 'archive_description');
         }
     }
 
@@ -190,9 +186,6 @@ function fizzie_register_block_type_args( $args ) {
     if ( 'core/template-part' == $args['name'] ) {
         if ( 'gutenberg_render_block_core_template_part' == $args['render_callback'] ) {
             $args['render_callback'] = 'fizzie_render_block_core_template_part';
-        } else {
-            bw_trace2();
-            gob();
         }
     }
     return $args;
@@ -323,6 +316,8 @@ function fizzie_render_block_core_post_content( $attributes, $content, $block ) 
 
 
 function fizzie_render_block_core_template_part( $attributes, $content, $block ) {
-    $html = gutenberg_render_block_core_template_part( $attributes );
+    require_once __DIR__ . '/template-part.php';
+
+    $html = fizzie_lazy_render_block_core_template_part( $attributes, $content, $block );
     return $html;
 }
