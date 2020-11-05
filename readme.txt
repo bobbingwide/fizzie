@@ -3,8 +3,8 @@ Contributors: bobbingwide, vsgloik
 Donate link: https://www.oik-plugins.com/oik/oik-donate/
 Tags: blocks, FSE, Gutenberg
 Requires at least: 5.5.1
-Tested up to: 5.6-beta2
-Version: 0.0.5
+Tested up to: 5.6-beta3
+Version: 0.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,15 +21,14 @@ It started as a completely empty theme and then I played with it while following
 - https://developer.wordpress.org/block-editor/tutorials/block-based-themes/
 - https://fullsiteediting.com/
 
-The tutorials don't really cover the Site Editor (beta) user interface. 
- 
+The tutorials didn't really cover the Site Editor (beta) user interface. So I was on my own from there on. 
 It’s been quite a learning experience. 
-Rather than using the Site Editor ( beta ) user interface 
+Rather than using the Site Editor ( beta ) user interface,  
 I've found it easier to edit the Templates and Template parts directly.
 I've been using the block editor in Code editor mode, then copying and pasting the individual templates and template parts to the .html files that the theme needs to deliver.
 These have to be edited to remove the "postId" attributes. 
-In the target site some of the templates and template parts need importing to be customised for the target site.
-
+In the target site(s) some of the template parts need importing into the Site Editor to be customised for the target site.
+These are the ones that include the navigational blocks.
 
 So far I’ve managed to create:
 
@@ -58,35 +57,48 @@ See the template visualization: https://developer.wordpress.org/files/2014/10/Sc
 
 The template parts are:
 
-* a2z-pagination - letter pagination for blog posts
-* archive-query - main query for archive pages
+* a2z-pagination - Letter pagination for blog posts
+* archive-query - Main query for archive pages
 * breadcrumbs - Breadcrumb trail - using sb-breadcrumbs-block-based-widgets
-* category-description - uses [archive_description] shortcode
-* category-query - to list posts in a chosen category term
-* download - uses [oikp_download] shortcode
-* footer-menu - displays the footer menu 
-* footer - final full width footer
+* category-description - Uses [archive_description] shortcode
+* category-query - To list posts in a chosen category term
+* download - To download plugins - uses [oikp_download] shortcode
+* footer - Final full width footer
+* footer-menu - Displays the footer menu - after the final full width footer
 * header-2-columns - A badly named header template part which only has half of the functionality of the header that it’s going to replace.
-* header-menu - displays the header menu
+* header-menu - Displays the header menu - inner block to header-2-columns
 * information - Displays post meta data using the oik-block/fields block
-* page-content - primary content part for a page
-* page-footer - full width footer with 3 columns
-* post-content - primary content part for a post
-* posts - an attempt to display the posts using query blocks - incomplete- not used
-* search - using the Search block
+* page-content - Primary content part for a page
+* page-footer - Full width footer with 3 columns - representing widgets
+* post-content - Primary content part for a post
+* posts - An attempt to display the posts using query blocks - incomplete- not used
+* search - Using the Search block
 
 
 == Installation ==
 
-* Either install Gutenberg 9.2.2 or install and build the Gutenberg source.
+* Either install Gutenberg 9.2.2 or higher or install and build the latest Gutenberg source.
 * Activate Gutenberg.
 * Install and activate the Fizzie theme, as you would install any other theme.
-* Enable Full site editing, in Gutenberg > Experiments.
-
-Note: There is no need to Enable Full Site Editing Demo Templates
-
+* For Gutenberg 9.2.2 enable Full site editing, in Gutenberg > Experiments. Note: There is no need to Enable Full Site Editing Demo Templates
+* For Gutenberg 9.3.0 Full Site Editing will be enabled automatically.
+* For some of the templates and template parts to work properly you will need to install and activate the pre-requisite plugins.
+* For templates which include navigation blocks you will need to edit the supplied menus. 
 
 == Change Log ==
+= 0.0.6 = 
+* Added: Improve solution to fix some Gutenberg issues by replacing render_callback functions with our own.,[github bobbingwide fizzie issues 18]
+* Fixed: Correct badly formed template-part for footer-menu,[github bobbingwide fizzie issues 19]
+* Changed: Update templates and parts for better matching of functionality in genesis-a2z,[github bobbingwide fizzie issues 4]
+* Added: Add posts.html template part - not yet used
+* Changed: Fix up CSS messed up by experimental-theme.json changes.,[github bobbingwide fizzie issues 3]
+* Added: Implement main query pagination for the core/query-pagination block,[github bobbingwide fizzie issues 18]
+* Experiment: Attempt to define typography for core/post-title in experimental-theme.json
+* Changed: Improve styling for h1-h6, separator, preformatted and verse. Add some more colour presets and font sizes
+* Tested: With WordPress 5.6-beta3 and WordPress Multi Site
+* Tested: With Gutenberg 9.2.2, 9.3.0 and development
+* Tested: With PHP 7.4
+
 = 0.0.5 = 
 * Added: single-oik-plugins template,[github bobbingwide fizzie issues 14]
 * Changed: archive template,[github bobbingwide fizzie issues 14]
@@ -156,7 +168,18 @@ During the development I have referred to the following articles, sites and repo
 - https://wptavern.com/q-first-fse-wordpress-theme-now-live
 - https://wptavern.com/wordpress-5-6-release-team-pulls-the-plug-on-block-based-widgets
 - https://wptavern.com/navigation-screen-sidelined-for-wordpress-5-6-full-site-editing-edges-closer-to-public-beta
+- https://wptavern.com/gutenberg-9-3-provides-indicator-of-where-full-site-editing-is-going-a-future-without-widgets-and-customizer-screens
 - https://make.wordpress.org/themes/2020/10/23/developing-the-full-site-editing-version-of-twenty-twenty-one/
+- https://fullsiteediting.com/
+- https://wordpress.org/plugins/block-unit-test/
+
+
+Some other FSE themes
+
+- https://github.com/WordPress/theme-experiments
+- https://github.com/WordPress/theme-experiments/tree/master/twentytwentyone-blocks
+- https://github.com/Automattic/themes/tree/trunk/seedlet-blocks
+
 
 == Copyright ==
 (C) Copyright Bobbing Wide 2020
