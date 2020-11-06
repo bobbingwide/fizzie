@@ -262,13 +262,16 @@ p.wp-block-site-tagline {
     background-color: #a2ab3b;
 }
 
-.wp-block-navigation a:hover {
+.wp-block-navigation a:hover,
+.wp-block-navigation .current-menu-item > a {
 background: #ffffff;
 border: 1px solid #baba54;
 margin: 0 auto;
 color: #792B0C;
 text-decoration: none;
 }
+
+
 
 img {
     max-width: 100%;
