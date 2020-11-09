@@ -47,7 +47,8 @@ function fizzie_after_setup_theme()
  */
 function fizzie_init() {
     do_action( "oik_add_shortcodes" );
-    add_shortcode( 'archive_description', 'fizzie_archive_description');
+    add_shortcode( 'archive_description', 'fizzie_archive_description' );
+    add_shortcode( 'post-edit', 'fizzie_post_edit' );
 }
 
 function fizzie_enqueue_styles() {
@@ -152,6 +153,29 @@ function fizzie_archive_description( $attrs, $content, $tag ) {
     //		$description = get_the_author_meta( 'meta_description', (int) get_query_var( 'author' ) );
     //	}
     return $html;
+}
+
+/**
+ * Implements [post-edit] shortcode.
+ *
+ * If the user is authorised return a post edit link for the current post.
+ *
+ * @param $attrs
+ * @param $content
+ * @param $tag
+ *
+ * @return string
+ */
+
+function fizzie_post_edit( $attrs, $content, $tag ) {
+	$link = '';
+	$url = get_edit_post_link();
+	if ( $url ) {
+		$class = 'bw_edit';
+		$text= __( '[Edit]', 'fizzie' );
+		$link='<a class="' . esc_attr( $class ) . '" href="' . esc_url( $url ) . '">' . $text . '</a>';
+	}
+	return $link;
 }
 
 /**
