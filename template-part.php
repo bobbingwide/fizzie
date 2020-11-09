@@ -25,7 +25,7 @@ function fizzie_load_template_part( $attributes ) {
 
         // $content = fizzie_create_error_block( );
 
-        $html .= '<div>';
+        $html = '<div>';
         $html = 'Template Part Not Found: ' . $slug;
         foreach ( $attributes as $key => $value ) {
         	$html .= "<div><span>$key</span>: <span>$value</span>";
