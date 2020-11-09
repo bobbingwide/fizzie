@@ -24,13 +24,16 @@ function fizzie_load_template_part( $attributes ) {
     if ( is_null( $content ) ) {
 
         // $content = fizzie_create_error_block( );
-        $atts = implode( $attributes );
+
+        $html .= '<div>';
         $html = 'Template Part Not Found: ' . $slug;
-        $html .= 'PostId: ' . $postId;
-        $html .= "Theme:" . $theme;
-        $html .= $template_part_file_path;
-        $html .= $atts;
-        $content = $html;
+        foreach ( $attributes as $key => $value ) {
+        	$html .= "<div><span>$key</span>: <span>$value</span>";
+        }
+        $html .= "<div><span>File path</span>: <span>$template_part_file_path</span></div>";
+       	$html .= '</div>';
+	    $content = $html;
+
     }
     return $content;
 }
@@ -54,6 +57,10 @@ function fizzie_load_template_part_by_postId( $postId ) {
         if ( 'publish' === $post_status ) {
             $content = $post->post_content;
         }
+    }
+
+    if ( !$content ) {
+    	$content = "Template part cannot be loaded by postId: " . $postId;
     }
     return $content;
 }
