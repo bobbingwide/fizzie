@@ -4,7 +4,7 @@ Donate link: https://www.oik-plugins.com/oik/oik-donate/
 Tags: blocks, FSE, Gutenberg
 Requires at least: 5.5.1
 Tested up to: 5.6-beta3
-Version: 0.0.6
+Version: 0.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -86,6 +86,16 @@ The template parts are:
 * For templates which include navigation blocks you will need to edit the supplied menus. 
 
 == Change Log ==
+= 0.0.7 = 
+* Changed: Improve CSS styling for nav menus,[github bobbingwide fizzie issues 26]
+* Changed: Define CSS styling for metadates template part,[github bobbingwide fizzie issues 23]
+* Changed: Improve CSS styling for certain block types,[github bobbingwide fizzie issues 4] 
+* Added: Implement metadates template part,[github bobbingwide fizzie issues 23]
+* Changed: When Template Part Not Found is displayed show information for problem determination,[github bobbingwide fizzie issues 16]
+* Added: Add [post-edit] shortcode temporary solution,[github bobbingwide fizzie issues 24]
+* Changed: Update header menu links to match the header menu in blocks.wp-a2z.org,[github bobbingwide fizzie issues 17]
+* Changed: Start implementing menu improvements - by fiddling url and className attributes,[[github bobbingwide fizzie issues 22]
+
 = 0.0.6 = 
 * Added: Improve solution to fix some Gutenberg issues by replacing render_callback functions with our own.,[github bobbingwide fizzie issues 18]
 * Fixed: Correct badly formed template-part for footer-menu,[github bobbingwide fizzie issues 19]
