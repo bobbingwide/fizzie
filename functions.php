@@ -340,18 +340,54 @@ function fizzie_render_block_core_post_excerpt( $attributes, $content, $block ) 
  * @return string
  */
 function fizzie_render_block_core_post_content( $attributes, $content, $block ) {
-    if ( ! isset( $block->context['postId'] ) ) {
-        return '';
+	if ( ! isset( $block->context['postId'] ) ) {
+		return '';
+	}
+	if ( 'revision' === $block->context['postType'] ) {
+		return '';
+	}
+
+	if ( fizzie_process_this_post( get_the_ID() ) ) {
+		$html = gutenberg_render_block_core_post_content( $attributes, $content, $block );
+	} else {
+	    $html = "Invalid use of post-content block. postId:" . $block->context['postId'];
+	    $html .= $content;
     }
-    if ( 'revision' === $block->context['postType'] ) {
-        return '';
-    }
-    $html = gutenberg_render_block_core_post_content( $attributes, $content, $block );
+
     return $html;
 }
 
+/**
+ * Determine whether or not to process this post
+ *
+ * @param integer $id - the post ID
+ * @return bool - true if the post has not been processed. false otherwise
+ */
+function fizzie_process_this_post( $id  ) {
+	global $processed_posts;
+	$processed = bw_array_get( $processed_posts, $id, false );
+	if ( !$processed ) {
+		$processed_posts[$id] = $id ;
+	}
+	bw_trace2( $processed_posts, "processed posts", true, BW_TRACE_DEBUG );
+	return( !$processed );
+}
+
+/**
+ * Clear the array of processed posts
+ *
+ *
+ */
+function fizzie_clear_processed_posts() {
+	global $processed_posts;
+	$processed_posts = array();
+	bw_trace2( $processed_posts, "cleared", false, BW_TRACE_DEBUG );
+}
+
+
 
 function fizzie_render_block_core_template_part( $attributes, $content, $block ) {
+	fizzie_clear_processed_posts();
     require_once __DIR__ . '/template-part.php';
 
     $html = fizzie_lazy_render_block_core_template_part( $attributes, $content, $block );
