@@ -46,7 +46,9 @@ function fizzie_after_setup_theme()
  * Enables oik based shortcodes.
  */
 function fizzie_init() {
-    do_action( "oik_add_shortcodes" );
+    if (function_exists('bw_add_shortcode')) {
+        do_action("oik_add_shortcodes");
+    }
     add_shortcode( 'archive_description', 'fizzie_archive_description' );
     add_shortcode( 'post-edit', 'fizzie_post_edit' );
 }
@@ -349,53 +351,113 @@ function fizzie_render_block_core_post_content( $attributes, $content, $block ) 
 	if ( ! isset( $block->context['postId'] ) ) {
 		return '';
 	}
+	/*
 	if ( 'revision' === $block->context['postType'] ) {
 		return '';
 	}
+	*/
 
-	if ( fizzie_process_this_post( get_the_ID() ) ) {
+	if ( fizzie_process_this_content( get_the_ID() ) ) {
 		$html = gutenberg_render_block_core_post_content( $attributes, $content, $block );
 	} else {
-	    $html = "Invalid use of post-content block. postId:" . $block->context['postId'];
-	    $html .= $content;
+	    $html = fizzie_report_recursion_error( get_the_ID() );
+	    //$html .= $content;
     }
 
     return $html;
 }
 
 /**
- * Determine whether or not to process this post
+ * Determines whether or not to process this content.
  *
- * @param integer $id - the post ID
+ * @param string|integer Unique ID for the content
  * @return bool - true if the post has not been processed. false otherwise
  */
-function fizzie_process_this_post( $id  ) {
-	global $processed_posts;
-	$processed = bw_array_get( $processed_posts, $id, false );
+function fizzie_process_this_content( $id  ) {
+	global $processed_content;
+	$processed = bw_array_get( $processed_content, $id, false );
 	if ( !$processed ) {
-		$processed_posts[$id] = $id ;
+		$processed_content[$id] = $id ;
 	}
-	bw_trace2( $processed_posts, "processed posts", true, BW_TRACE_DEBUG );
+	bw_trace2( $processed_content, "processed posts", true, BW_TRACE_DEBUG );
 	return( !$processed );
 }
 
 /**
- * Clear the array of processed posts
+ * Pops or clears the array of processed content.
  *
+ * As we return to the previous level we can clear the processed content.
+ * Basically this is something we have to do while processing certain inner blocks:
  *
+ * - core/post-content
+ * - core/template-part
+ * - core/post-excerpt - possibly
+ * - core/block - possibly
+ *
+ * Note: The top level is within the template, which loads the template parts and/or queries.
  */
-function fizzie_clear_processed_posts() {
-	global $processed_posts;
-	$processed_posts = array();
-	bw_trace2( $processed_posts, "cleared", false, BW_TRACE_DEBUG );
+function fizzie_clear_processed_content( $id=null ) {
+    global $processed_content;
+    if ( $id ) {
+        array_pop( $processed_content );
+    } else {
+        $processed_content = array();
+    }
+    bw_trace2( $processed_content, "cleared", false, BW_TRACE_DEBUG );
+}
+
+/**
+ * Reports a recursion error to the user.
+ *
+ * If WP_DEBUG is true then additional information is displayed.
+ *
+ * @param $id string|integer recursive ID detected
+ * @param $type string content type
+ * @return string
+ */
+function fizzie_report_recursion_error( $id, $type='post-content') {
+    $content = array();
+    $content[] = '<div class="recursion-error">';
+    switch ( $type ) {
+        case 'post-content':
+            $content[] = __( 'Content not available; already processed.', 'fizzie' );
+            break;
+        case 'template-part':
+            $content[] = __( 'Template part not processed to avoid infinite recursion', 'fizzie');
+            break;
+        default: 
+            $content[] = __( 'Infinite recursion error prevented', 'fizzie');
+    }   
+    if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+        $content[] = "<span class=\"recursion-error-context $type\">";
+        $content[] = '<br />';
+        $content[] = $id;
+        $content[] = '<br />';
+        $content[] = $type;
+        $content[] = '<br />';
+        global $processed_content;
+        $content[] = implode( ',', $processed_content );
+        $content[] = '</span>';
+    }
+    $content[] = '</div>';
+    $content = implode( " \n", $content);
+    return $content;
 }
 
 
-
-function fizzie_render_block_core_template_part( $attributes, $content, $block ) {
-	fizzie_clear_processed_posts();
+/**
+ * /**
+ * Overrides core/template-part to return early in certain circumstances.
+ *
+ * Hack until a solution is delivered in Gutenberg.
+ *
+ * @param $attributes
+ * @param $content
+ * @param $block
+ * @return string
+ */
+ function fizzie_render_block_core_template_part( $attributes, $content, $block ) {
     require_once __DIR__ . '/template-part.php';
-
     $html = fizzie_lazy_render_block_core_template_part( $attributes, $content, $block );
     return $html;
 }
@@ -477,4 +539,12 @@ function fizzie_render_block_core_post_hierarchical_terms( $attributes, $content
 	$html=gutenberg_render_block_core_post_hierarchical_terms( $attributes, $content, $block );
 
 	return $html;
+}
+
+
+if ( !function_exists( "bw_trace2" ) ) {
+    function bw_trace2( $content, $args) {
+        return $content;
+    }
+
 }

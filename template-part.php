@@ -115,41 +115,76 @@ function fizzie_load_template_part_file_by_slug( $slug, $template_part_file_path
     return $content;
 }
 
+/**
+ * Returns the unique template ID.
+ *
+ * The template ID is a concatenation of strings with a separator. eg slug:theme:postID
+ * The separator should not be something that could be used in a slug or theme name.
+ * Colon's not valid in a Windows directory name.
+ *
+ * @param $attributes array Attributes passed to the template-part
+ * @return string Template ID
+ */
+function fizzie_get_template_id( $attributes ) {
+    $parts = [];
+    $parts[] = isset( $attributes['slug'] ) ? $attributes['slug'] : '';
+    $parts[] = isset( $attributes['theme'] ) ? $attributes['theme'] : '';
+    $parts[] = isset( $attributes['postId'] ) ? $attributes['postId'] : '0';
+    $template_id = implode( ':', $parts );
+    return $template_id;
+}
+
+/**
+ * Renders the template part if it's not recursive.
+ *
+ * @param $attributes
+ * @param $content
+ * @param $block
+ * @return string
+ */
+
 function fizzie_lazy_render_block_core_template_part( $attributes, $content, $block  ) {
     $content = null;
     $template_part_file_path = null;
     $postId = null;
-    //bw_trace2();
+    //bw_trace2( $attributes);
     //bw_backtrace();
+    $template_id = fizzie_get_template_id( $attributes );
 
-    $content = fizzie_load_template_part( $attributes );
-    //bw_trace2( $content, "raw content" );
+    if ( fizzie_process_this_content( $template_id  ) ) {
 
-    // Run through the actions that are typically taken on the_content.
-    $content = do_blocks( $content );
-    $content = wptexturize( $content );
-    $content = convert_smilies( $content );
-    // Should we run wpautop() here?
-    //$before = $content;
-    //$content = wpautop( $content );
-    /*
-    if ( 0 !== strcmp( $before,  $content ) ) {
+        $content = fizzie_load_template_part($attributes);
+        //bw_trace2( $content, "raw content" );
+
+        // Run through the actions that are typically taken on the_content.
+        $content = do_blocks($content);
+        $content = wptexturize($content);
+        $content = convert_smilies($content);
+        // Should we run wpautop() here?
+        //$before = $content;
+        //$content = wpautop( $content );
+        /*
+       if ( 0 !== strcmp( $before,  $content ) ) {
         bw_trace2( $before, "before", false );
         bw_trace2( $content, "after", false );
         bw_trace2(bw_trace_hexdump( $before ), "before wpautop", false);
         bw_trace2(bw_trace_hexdump( $content ), "after wpautop", false);
-    }
+        }
 
-    */
-    $content = shortcode_unautop( $content );
-    if ( function_exists( 'wp_filter_content_tags' ) ) {
-        $content = wp_filter_content_tags( $content );
+        */
+        $content = shortcode_unautop($content);
+        if (function_exists('wp_filter_content_tags')) {
+            $content = wp_filter_content_tags($content);
+        } else {
+            $content = wp_make_content_images_responsive($content);
+        }
+        $content = do_shortcode($content);
+        $html_tag = esc_attr($attributes['tagName']);
+        $wrapper_attributes = get_block_wrapper_attributes();
+        $html = "<$html_tag $wrapper_attributes>" . str_replace(']]>', ']]&gt;', $content) . "</$html_tag>";
+        fizzie_clear_processed_content( $template_id );
     } else {
-        $content = wp_make_content_images_responsive( $content );
+        $html = fizzie_report_recursion_error( $template_id, "template-part");
     }
-    $content            = do_shortcode( $content );
-    $html_tag           = esc_attr( $attributes['tagName'] );
-    $wrapper_attributes = get_block_wrapper_attributes();
-
-    return "<$html_tag $wrapper_attributes>" . str_replace( ']]>', ']]&gt;', $content ) . "</$html_tag>";
+    return $html;
 }

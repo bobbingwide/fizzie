@@ -369,6 +369,10 @@ img {
 
 }
 
+.archive .wp-block-group.article:nth-of-type(3n+1) {
+    clear: both;
+}
+
 div.wp-site-blocks .content { max-width: 1100px; margin: 0 auto;}
 .content:after { clear:both; display: table; content: " ";}
 
@@ -543,6 +547,14 @@ input, select, textarea {
     font-weight: 300;
     padding: 16px;
     width: 100%;
+}
+
+div.recursion-error {
+    display: block;
+    margin: 0 auto;
+    border: 1px solid grey;
+    max-width: 1140px;
+    padding: 5px;
 }
 
 
