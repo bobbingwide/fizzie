@@ -5,7 +5,7 @@
 * Tags: blocks, FSE, Gutenberg
 * Requires at least: 5.5.1
 * Tested up to: 5.6-beta3
-* Version: 0.0.7
+* Version: 0.0.8
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,7 +34,7 @@ These are the ones that include the navigational blocks.
 So far I’ve managed to create:
 
 - Nine templates
-- Sixteen template parts
+- Twenty template parts
 
 The templates are:
 
@@ -68,7 +68,11 @@ The template parts are:
 * footer-menu - Displays the footer menu - after the final full width footer
 * header-2-columns - A badly named header template part which only has half of the functionality of the header that it’s going to replace.
 * header-menu - Displays the header menu - inner block to header-2-columns
+* home-query - Displays the posts on the blog page
 * information - Displays post meta data using the oik-block/fields block
+* issue-27 - test case file for issue-27
+* issue-30 - test-case file for issue-30
+* metadates - Displays Date published, last updated and [Edit] link
 * page-content - Primary content part for a page
 * page-footer - Full width footer with 3 columns - representing widgets
 * post-content - Primary content part for a post
@@ -86,7 +90,25 @@ The template parts are:
 * For some of the templates and template parts to work properly you will need to install and activate the pre-requisite plugins.
 * For templates which include navigation blocks you will need to edit the supplied menus.
 
+* Pre-requisite plugins: see also Notes
+* oik
+* oik-fields
+* oik-a2z
+* sb-breadcrumbs-block
+* Yoast SEO - for breadcrumbs logic
+
+
 ## Change Log 
+# 0.0.8 
+* Added: Disable the logic that attempts to insert the global post ID into the $fizzie_processed_content array. Issue #31
+* Added: Attempt to allow recursive reusable block problems to be fixed using the editor. Issue #31
+* Changed: Start refactoring of overrides. Issue #25
+* Added: Improve solution to detect recursive post-content blocks. Issue #27
+* Added: Improve solution to detects recursive template-parts. Issue #30
+* Added: core/post-hierarchical terms - cater for unknown taxonomies. Issue  #29
+* Added: Attempt to avoid infinite recursion in the core/post-content block. Issue #27
+* Changed: Restructure home.html to use a simplified home-query.html that uses metadates.html, and metadates.html to use [bw_field]
+
 # 0.0.7 
 * Changed: Improve CSS styling for nav menus,https://github.com/bobbingwide/fizzie/issues/26
 * Changed: Define CSS styling for metadates template part,https://github.com/bobbingwide/fizzie/issues/23
@@ -161,8 +183,15 @@ The CSS is minimal; just enough to make it look OK on my laptop and external mon
 It took two days to create the category template.
 A fully working version of the theme is going to take some time.
 
-The archive related templates in the theme only work with a version of Gutenberg that has
-a fix developed for https://github.com/wordpress/gutenberg/issues/25377.
+Fizzie contains a number of overrides to Gutenberg server rendered blocks which don't behave the way I expected.
+The overrides should continue to work even when the PRs to fix the bugs have been implemented.
+
+Improvement areas include:
+- core/query-loop - uses main query when used outside of core/query
+- core/query-pagination - uses the main query when used outside of core/query
+-
+
+For more see issue #25 and/or the includes folder
 
 
 ## References 
@@ -193,7 +222,7 @@ Some other FSE themes
 
 
 ## Copyright 
-(C) Copyright Bobbing Wide 2020
+(C) Copyright Herb Miller, Bobbing Wide 2020
 
 * This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
