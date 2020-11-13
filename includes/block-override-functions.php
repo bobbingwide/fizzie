@@ -16,12 +16,14 @@ function fizzie_process_this_content( $id  ) {
     global $post;
     $fizzie_processed = bw_array_get( $fizzie_processed_content, $id, false );
 
+    /*
     if ( empty( $fizzie_processed_content ) ) {
         $global_id = isset( $post ) ? $post->ID : null;
         if ( $global_id ) {
             $fizzie_processed_content[ $global_id ] = $global_id;
         }
     }
+    */
 
 
     if ( !$fizzie_processed ) {
