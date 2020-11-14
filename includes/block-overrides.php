@@ -19,6 +19,7 @@ require_once __DIR__ . '/template-part.php';
 require_once __DIR__ . '/navigation.php';
 require_once __DIR__ . '/navigation-link.php';
 require_once __DIR__ . '/post-hierarchical-terms.php';
+require_once __DIR__ . '/block.php';
 
 
 /**
@@ -35,14 +36,7 @@ function fizzie_register_block_type_args( $args ) {
     $args = fizzie_maybe_override_block(  $args,'core/navigation', 'render_block_core_navigation' );
     $args = fizzie_maybe_override_block(  $args,'core/navigation-link', 'render_block_core_navigation_link' );
     $args = fizzie_maybe_override_block(  $args,'core/post-hierarchical-terms', 'render_block_core_post_hierarchical_terms' );
-
-
-    if ( 'core/block' == $args['name'] ) {
-        if ( 'gutenberg_render_block_core_block' == $args['render_callback'] ) {
-            $args['render_callback'] = 'fizzie_render_block_core_block';
-        }
-    }
-
+    $args = fizzie_maybe_override_block(  $args,'core/block', 'render_block_core_block' );
     return $args;
 }
 
@@ -52,24 +46,4 @@ function fizzie_register_block_type_args( $args ) {
 
 
 
-/**
- * Renders the `core/block` block on server.
- *
- * @param array $attributes The block attributes.
- *
- * @return string Rendered HTML of the referenced block.
- */
-function fizzie_render_block_core_block( $attributes, $content, $block ) {
-    bw_trace2();
-       if ( empty( $attributes['ref'] ) ) {
-        return '';
-    }
-    if ( fizzie_process_this_content( $attributes['ref'] ) ) {
-        $html = gutenberg_render_block_core_block( $attributes, $content, $block );
-        fizzie_clear_processed_content( $attributes['ref'] );
-    } else {
-        $html = fizzie_report_recursion_error( $attributes['ref'], 'core/block' );
-    }
-    bw_trace2( $html, "html", false);
-    return $html;
-}
+
