@@ -14,6 +14,7 @@ require_once __DIR__ . '/block-override-functions.php';
 require_once __DIR__ . '/query-pagination.php';
 require_once __DIR__ . '/query-loop.php';
 require_once __DIR__ . '/post-excerpt.php';
+require_once __DIR__ . '/post-content.php';
 
 
 
@@ -26,12 +27,8 @@ function fizzie_register_block_type_args( $args ) {
     $args = fizzie_maybe_override_block(  $args,'core/query-pagination', 'render_block_core_query_pagination');
     $args = fizzie_maybe_override_block(  $args,'core/query-loop', 'render_block_core_query_loop' );
     $args = fizzie_maybe_override_block(  $args,'core/post-excerpt', 'render_block_core_post_excerpt' );
+    $args = fizzie_maybe_override_block(  $args,'core/post-content', 'render_block_core_post_content' );
 
-    if ( 'core/post-content' == $args['name'] ) {
-        if ( 'gutenberg_render_block_core_post_content' == $args['render_callback'] ) {
-            $args['render_callback'] = 'fizzie_render_block_core_post_content';
-        }
-    }
 
     if ( 'core/template-part' == $args['name'] ) {
         if ( 'gutenberg_render_block_core_template_part' == $args['render_callback'] ) {
@@ -68,36 +65,7 @@ function fizzie_register_block_type_args( $args ) {
 
 
 
-/**
- * Overrides core/post-content to return early in certain circumstances.
- *
- * Hack until a solution is delivered in Gutenberg.
- *
- * @param $attributes
- * @param $content
- * @param $block
- * @return string
- */
-function fizzie_render_block_core_post_content( $attributes, $content, $block ) {
-    if ( ! isset( $block->context['postId'] ) ) {
-        return '';
-    }
-    /*
-    if ( 'revision' === $block->context['postType'] ) {
-        return '';
-    }
-    */
 
-    if ( fizzie_process_this_content( get_the_ID() ) ) {
-        $html = gutenberg_render_block_core_post_content( $attributes, $content, $block );
-        fizzie_clear_processed_content( get_the_ID() );
-    } else {
-        $html = fizzie_report_recursion_error( get_the_ID() );
-        //$html .= $content;
-    }
-
-    return $html;
-}
 
 
 
