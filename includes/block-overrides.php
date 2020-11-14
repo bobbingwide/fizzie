@@ -13,6 +13,7 @@ require_once __DIR__ . '/block-override-functions.php';
  */
 require_once __DIR__ . '/query-pagination.php';
 require_once __DIR__ . '/query-loop.php';
+require_once __DIR__ . '/post-excerpt.php';
 
 
 
@@ -24,13 +25,7 @@ add_filter( 'register_block_type_args', 'fizzie_register_block_type_args', 9 );
 function fizzie_register_block_type_args( $args ) {
     $args = fizzie_maybe_override_block(  $args,'core/query-pagination', 'render_block_core_query_pagination');
     $args = fizzie_maybe_override_block(  $args,'core/query-loop', 'render_block_core_query_loop' );
-
-
-    if ( 'core/post-excerpt' == $args['name'] ) {
-        if ( 'gutenberg_render_block_core_post_excerpt' == $args['render_callback'] ) {
-            $args['render_callback'] = 'fizzie_render_block_core_post_excerpt';
-        }
-    }
+    $args = fizzie_maybe_override_block(  $args,'core/post-excerpt', 'render_block_core_post_excerpt' );
 
     if ( 'core/post-content' == $args['name'] ) {
         if ( 'gutenberg_render_block_core_post_content' == $args['render_callback'] ) {
@@ -71,22 +66,7 @@ function fizzie_register_block_type_args( $args ) {
     return $args;
 }
 
-/**
- * Appends the missing </div> to the core/post-excerpt block.
- *
- * @param $attributes
- * @param $content
- * @param $block
- * @return string
- */
-function fizzie_render_block_core_post_excerpt( $attributes, $content, $block ) {
-    $html = gutenberg_render_block_core_post_excerpt( $attributes, $content, $block );
-    // Should really check that it's missing.
-    if ( 0 !== strrpos( $html, '</div>') ) {
-        $html .= '</div>';
-    }
-    return $html;
-}
+
 
 /**
  * Overrides core/post-content to return early in certain circumstances.
