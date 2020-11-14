@@ -4,13 +4,14 @@
  *
  */
 require_once __DIR__ . '/block-override-functions.php';
+require_once __DIR__ . '/class-block-recursion-control.php';
 
 /**
  * Here we include the blocks we want to override.
  *
  * Either comment out the ones that aren't needed any more - when Gutenberg/core's
  * satisfies the requirement
- * or find another way of automatically determining whether or not to include the file.
+ * or find another way to automatically determine whether or not to include the file.
  */
 require_once __DIR__ . '/query-pagination.php';
 require_once __DIR__ . '/query-loop.php';
@@ -26,7 +27,6 @@ require_once __DIR__ . '/block.php';
  * Hook into register_block_types_args before WP_Block_Supports
  */
 add_filter( 'register_block_type_args', 'fizzie_register_block_type_args', 9 );
-
 
 /**
  * Implements overrides for core blocks which we need to improve.
