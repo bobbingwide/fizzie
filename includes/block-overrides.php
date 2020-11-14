@@ -16,6 +16,7 @@ require_once __DIR__ . '/query-loop.php';
 require_once __DIR__ . '/post-excerpt.php';
 require_once __DIR__ . '/post-content.php';
 require_once __DIR__ . '/template-part.php';
+require_once __DIR__ . '/navigation.php';
 
 
 /**
@@ -29,14 +30,8 @@ function fizzie_register_block_type_args( $args ) {
     $args = fizzie_maybe_override_block(  $args,'core/post-excerpt', 'render_block_core_post_excerpt' );
     $args = fizzie_maybe_override_block(  $args,'core/post-content', 'render_block_core_post_content' );
     $args = fizzie_maybe_override_block(  $args,'core/template-part', 'render_block_core_template_part' );
+    $args = fizzie_maybe_override_block(  $args,'core/navigation', 'render_block_core_navigation' );
 
-
-
-    if ( 'core/navigation' == $args['name'] ) {
-        if ( 'gutenberg_render_block_core_navigation' == $args['render_callback'] ) {
-            $args['render_callback'] = 'fizzie_render_block_core_navigation';
-        }
-    }
 
     if ( 'core/navigation-link' == $args['name'] ) {
         if ( 'gutenberg_render_block_core_navigation_link' == $args['render_callback'] ) {
@@ -59,20 +54,6 @@ function fizzie_register_block_type_args( $args ) {
     return $args;
 }
 
-
-
-
-
-
-
-
-
-function fizzie_render_block_core_navigation( $attributes, $content, $block ) {
-    //bw_trace2();
-    $html = gutenberg_render_block_core_navigation( $attributes, $content, $block );
-    bw_trace2( $html, "html");
-    return $html;
-}
 
 function fizzie_render_block_core_navigation_link( $attributes, $content, $block ) {
     $attributes = fizzie_fiddle_nav_atts( $attributes );
