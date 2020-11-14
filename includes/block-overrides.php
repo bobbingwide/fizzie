@@ -6,11 +6,13 @@
 require_once __DIR__ . '/block-override-functions.php';
 
 /**
- * Here we include only the blocks we want to override
+ * Here we include only the blocks we want to override.
+ *
  * Either comment out the ones that aren't needed any more
- * or find another way of detecting whether or not to include the file
+ * or find another way of detecting whether or not to include the file.
  */
-require_once __DIR__  . '/query-pagination.php';
+require_once __DIR__ . '/query-pagination.php';
+require_once __DIR__ . '/query-loop.php';
 
 
 
@@ -22,18 +24,7 @@ add_filter( 'register_block_type_args', 'fizzie_register_block_type_args', 9 );
 function fizzie_register_block_type_args( $args ) {
     $args = fizzie_maybe_override_block(  $args,'core/query-pagination', 'render_block_core_query_pagination');
     $args = fizzie_maybe_override_block(  $args,'core/query-loop', 'render_block_core_query_loop' );
-    /*
-    if ( 'core/query-pagination' == $args['name']) {
-        if ( 'gutenberg_render_block_core_query_pagination' == $args['render_callback'] ) {
-            $args['render_callback'] = 'fizzie_render_block_core_query_pagination';
-        }
-    }
-    */
-    if ( 'core/query-loop' == $args['name'] ) {
-        if ( 'gutenberg_render_block_core_query_loop' == $args['render_callback'] ) {
-            $args['render_callback'] = 'fizzie_render_block_core_query_loop';
-        }
-    }
+
 
     if ( 'core/post-excerpt' == $args['name'] ) {
         if ( 'gutenberg_render_block_core_post_excerpt' == $args['render_callback'] ) {
@@ -78,60 +69,6 @@ function fizzie_register_block_type_args( $args ) {
     }
 
     return $args;
-}
-
-
-
-/**
- * Overrides core/query-loop to implement main query processing.
- *
- * Hack until a solution is delivered in Gutenberg.
- *
- * @param $attributes
- * @param $content
- * @param $block
- * @return string
- */
-function fizzie_render_block_core_query_loop( $attributes, $content, $block ) {
-    if ( isset( $block->context['queryId'] ) ) {
-        $html = gutenberg_render_block_core_query_loop( $attributes, $content, $block );
-    } else {
-        $html = fizzie_render_block_core_query_loop_main_query( $attributes, $content, $block );
-    }
-    return $html;
-}
-
-
-
-/**
- * Renders the `core/query-loop` block for the main query on the server.
- *
- * @param array    $attributes Block attributes.
- * @param string   $content    Block default content.
- * @param WP_Block $block      Block instance.
- *
- * @return string Returns the output of the query, structured using the layout defined by the block's inner blocks.
- */
-function fizzie_render_block_core_query_loop_main_query( $attributes, $content, $block ) {
-    if ( have_posts() ) {
-        $content = '';
-        while ( have_posts() ) {
-            the_post();
-            $post = get_post();
-            $content .= (
-            new WP_Block(
-                $block->parsed_block,
-                array(
-                    'postType' => $post->post_type,
-                    'postId' => $post->ID,
-                )
-            )
-            )->render(array('dynamic' => false));
-        }
-    } else {
-        $content = __( "No posts found." );
-    }
-    return $content;
 }
 
 /**
