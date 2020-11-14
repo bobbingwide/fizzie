@@ -15,7 +15,7 @@ require_once __DIR__ . '/query-pagination.php';
 require_once __DIR__ . '/query-loop.php';
 require_once __DIR__ . '/post-excerpt.php';
 require_once __DIR__ . '/post-content.php';
-
+require_once __DIR__ . '/template-part.php';
 
 
 /**
@@ -28,13 +28,9 @@ function fizzie_register_block_type_args( $args ) {
     $args = fizzie_maybe_override_block(  $args,'core/query-loop', 'render_block_core_query_loop' );
     $args = fizzie_maybe_override_block(  $args,'core/post-excerpt', 'render_block_core_post_excerpt' );
     $args = fizzie_maybe_override_block(  $args,'core/post-content', 'render_block_core_post_content' );
+    $args = fizzie_maybe_override_block(  $args,'core/template-part', 'render_block_core_template_part' );
 
 
-    if ( 'core/template-part' == $args['name'] ) {
-        if ( 'gutenberg_render_block_core_template_part' == $args['render_callback'] ) {
-            $args['render_callback'] = 'fizzie_render_block_core_template_part';
-        }
-    }
 
     if ( 'core/navigation' == $args['name'] ) {
         if ( 'gutenberg_render_block_core_navigation' == $args['render_callback'] ) {
@@ -69,21 +65,7 @@ function fizzie_register_block_type_args( $args ) {
 
 
 
-/**
- * Overrides core/template-part to return early in certain circumstances.
- *
- * Hack until a solution is delivered in Gutenberg.
- *
- * @param $attributes
- * @param $content
- * @param $block
- * @return string
- */
-function fizzie_render_block_core_template_part( $attributes, $content, $block ) {
-    require_once __DIR__ . '/template-part.php';
-    $html = fizzie_lazy_render_block_core_template_part( $attributes, $content, $block );
-    return $html;
-}
+
 
 function fizzie_render_block_core_navigation( $attributes, $content, $block ) {
     //bw_trace2();

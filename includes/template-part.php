@@ -1,5 +1,62 @@
 <?php
 
+/**
+ * Overrides core/template-part to return early in certain circumstances.
+ *
+ * Renders the template part if it's not recursive.
+ * Hack until a solution is delivered in Gutenberg.
+ *
+ * @param $attributes
+ * @param $content
+ * @param $block
+ * @return string
+ */
+function fizzie_render_block_core_template_part( $attributes, $content, $block  ) {
+    $content = null;
+    $template_part_file_path = null;
+    $postId = null;
+    //bw_trace2( $attributes);
+    //bw_backtrace();
+    $template_id = fizzie_get_template_id( $attributes );
+
+    if ( fizzie_process_this_content( $template_id  ) ) {
+
+        $content = fizzie_load_template_part($attributes);
+        //bw_trace2( $content, "raw content" );
+
+        // Run through the actions that are typically taken on the_content.
+        $content = do_blocks($content);
+        $content = wptexturize($content);
+        $content = convert_smilies($content);
+        // Should we run wpautop() here?
+        //$before = $content;
+        //$content = wpautop( $content );
+        /*
+       if ( 0 !== strcmp( $before,  $content ) ) {
+        bw_trace2( $before, "before", false );
+        bw_trace2( $content, "after", false );
+        bw_trace2(bw_trace_hexdump( $before ), "before wpautop", false);
+        bw_trace2(bw_trace_hexdump( $content ), "after wpautop", false);
+        }
+
+        */
+        $content = shortcode_unautop($content);
+        if (function_exists('wp_filter_content_tags')) {
+            $content = wp_filter_content_tags($content);
+        } else {
+            $content = wp_make_content_images_responsive($content);
+        }
+        $content = do_shortcode($content);
+        $html_tag = esc_attr($attributes['tagName']);
+        $wrapper_attributes = get_block_wrapper_attributes();
+        $html = "<$html_tag $wrapper_attributes>" . str_replace(']]>', ']]&gt;', $content) . "</$html_tag>";
+        fizzie_clear_processed_content( $template_id );
+    } else {
+        $html = fizzie_report_recursion_error( $template_id, "core/template-part");
+    }
+    return $html;
+}
+
 function fizzie_load_template_part( $attributes ) {
     $content = null;
     $postId = empty( $attributes['postId'] ) ? null : $attributes['postId'];
@@ -132,59 +189,4 @@ function fizzie_get_template_id( $attributes ) {
     $parts[] = isset( $attributes['postId'] ) ? $attributes['postId'] : '0';
     $template_id = implode( ':', $parts );
     return $template_id;
-}
-
-/**
- * Renders the template part if it's not recursive.
- *
- * @param $attributes
- * @param $content
- * @param $block
- * @return string
- */
-
-function fizzie_lazy_render_block_core_template_part( $attributes, $content, $block  ) {
-    $content = null;
-    $template_part_file_path = null;
-    $postId = null;
-    //bw_trace2( $attributes);
-    //bw_backtrace();
-    $template_id = fizzie_get_template_id( $attributes );
-
-    if ( fizzie_process_this_content( $template_id  ) ) {
-
-        $content = fizzie_load_template_part($attributes);
-        //bw_trace2( $content, "raw content" );
-
-        // Run through the actions that are typically taken on the_content.
-        $content = do_blocks($content);
-        $content = wptexturize($content);
-        $content = convert_smilies($content);
-        // Should we run wpautop() here?
-        //$before = $content;
-        //$content = wpautop( $content );
-        /*
-       if ( 0 !== strcmp( $before,  $content ) ) {
-        bw_trace2( $before, "before", false );
-        bw_trace2( $content, "after", false );
-        bw_trace2(bw_trace_hexdump( $before ), "before wpautop", false);
-        bw_trace2(bw_trace_hexdump( $content ), "after wpautop", false);
-        }
-
-        */
-        $content = shortcode_unautop($content);
-        if (function_exists('wp_filter_content_tags')) {
-            $content = wp_filter_content_tags($content);
-        } else {
-            $content = wp_make_content_images_responsive($content);
-        }
-        $content = do_shortcode($content);
-        $html_tag = esc_attr($attributes['tagName']);
-        $wrapper_attributes = get_block_wrapper_attributes();
-        $html = "<$html_tag $wrapper_attributes>" . str_replace(']]>', ']]&gt;', $content) . "</$html_tag>";
-        fizzie_clear_processed_content( $template_id );
-    } else {
-        $html = fizzie_report_recursion_error( $template_id, "template-part");
-    }
-    return $html;
 }
