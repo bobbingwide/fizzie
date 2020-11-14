@@ -18,6 +18,7 @@ require_once __DIR__ . '/post-content.php';
 require_once __DIR__ . '/template-part.php';
 require_once __DIR__ . '/navigation.php';
 require_once __DIR__ . '/navigation-link.php';
+require_once __DIR__ . '/post-hierarchical-terms.php';
 
 
 /**
@@ -33,13 +34,8 @@ function fizzie_register_block_type_args( $args ) {
     $args = fizzie_maybe_override_block(  $args,'core/template-part', 'render_block_core_template_part' );
     $args = fizzie_maybe_override_block(  $args,'core/navigation', 'render_block_core_navigation' );
     $args = fizzie_maybe_override_block(  $args,'core/navigation-link', 'render_block_core_navigation_link' );
+    $args = fizzie_maybe_override_block(  $args,'core/post-hierarchical-terms', 'render_block_core_post_hierarchical_terms' );
 
-
-    if ( 'core/post-hierarchical-terms' == $args['name'] ) {
-        if ( 'gutenberg_render_block_core_post_hierarchical_terms' == $args['render_callback'] ) {
-            $args['render_callback'] = 'fizzie_render_block_core_post_hierarchical_terms';
-        }
-    }
 
     if ( 'core/block' == $args['name'] ) {
         if ( 'gutenberg_render_block_core_block' == $args['render_callback'] ) {
@@ -55,29 +51,7 @@ function fizzie_register_block_type_args( $args ) {
 
 
 
-/**
- * Renders the `core/post-hierarchical-terms` block on the server.
- *
- * @param array    $attributes Block attributes.
- * @param string   $content    Block default content.
- * @param WP_Block $block      Block instance.
- * @return string Returns the filtered post hierarchical terms for the current post wrapped inside "a" tags.
- */
-function fizzie_render_block_core_post_hierarchical_terms( $attributes, $content, $block ) {
-    //bw_trace2();
-    if ( ! isset( $block->context['postId'] ) || ! isset( $attributes['term'] ) ) {
-        return '';
-    }
 
-    $post_hierarchical_terms = get_the_terms( $block->context['postId'], $attributes['term'] );
-    //bw_trace2( $post_hierarchical_terms, "pht", false );
-    if ( is_wp_error( $post_hierarchical_terms ) ) {
-        return 'Taxonomy not recognised';
-    }
-    $html=gutenberg_render_block_core_post_hierarchical_terms( $attributes, $content, $block );
-
-    return $html;
-}
 /**
  * Renders the `core/block` block on server.
  *
