@@ -557,5 +557,13 @@ div.recursion-error {
     padding: 5px;
 }
 
+div.Aaa {background-color: #aaa;border: 1px solid grey;padding-left: 1em;}
+div.Aac { background-color: #ccc;border: 1px dotted grey;padding-left: 2em; padding-bottom: 0.5em;}
+div.Aae { padding-left: 0em;}
+ul.Aaa, ul.Aac, ul.Aae { display: block; list-style: none;}
+.Aaa li, .Aac li, .Aae li { margin-right: 5px; display: inline-block; }
+body { font-size: 12px;}
+.Aaa p, .Aac p, .Aae p { margin: 2px; font-size: 12px;}
+
 
 
