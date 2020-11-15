@@ -4,8 +4,8 @@
 * Donate link: https://www.oik-plugins.com/oik/oik-donate/
 * Tags: blocks, FSE, Gutenberg
 * Requires at least: 5.5.1
-* Tested up to: 5.6-beta3
-* Version: 0.0.8
+* Tested up to: 5.6-beta4
+* Version: 0.0.9
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -99,6 +99,12 @@ The template parts are:
 
 
 ## Change Log 
+# 0.0.9 
+* Changed: Refactored block-override-functions as Fizzie_Block_Recursion_Control, Issue #33
+* Changed: Revert to using block content postId to check for recursion in core/post-content, issue #27
+* Changed: Refactor overrides for core blocks into separate files, issue #25
+* Tested: With WordPress 5.6-beta4
+
 # 0.0.8 
 * Added: Disable the logic that attempts to insert the global post ID into the $fizzie_processed_content array. Issue #31
 * Added: Attempt to allow recursive reusable block problems to be fixed using the editor. Issue #31
@@ -187,9 +193,17 @@ Fizzie contains a number of overrides to Gutenberg server rendered blocks which 
 The overrides should continue to work even when the PRs to fix the bugs have been implemented.
 
 Improvement areas include:
+
 - core/query-loop - uses main query when used outside of core/query
 - core/query-pagination - uses the main query when used outside of core/query
--
+- core/block - handle recursion
+- core/post-hierarchical-terms - cater for invalid taxonomy
+- core/navigation-link -
+- core/navigation -
+- core/template-part - handle recursion
+- core/post-content - handle recursion
+- core/post-excerpt - append missing </div>
+
 
 For more see issue #25 and/or the includes folder
 
@@ -212,6 +226,8 @@ During the development I have referred to the following articles, sites and repo
 - https://make.wordpress.org/themes/2020/10/23/developing-the-full-site-editing-version-of-twenty-twenty-one/
 - https://fullsiteediting.com/
 - https://wordpress.org/plugins/block-unit-test/
+- https://developer.wordpress.org/block-editor/contributors/develop/
+- https://developer.wordpress.org/block-editor/contributors/develop/git-workflow/
 
 
 Some other FSE themes
