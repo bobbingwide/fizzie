@@ -8,6 +8,8 @@
  * @return string
  */
 function fizzie_render_block_core_post_excerpt( $attributes, $content, $block ) {
+    bw_trace2();
+
     $html = gutenberg_render_block_core_post_excerpt( $attributes, $content, $block );
     // Should really check that it's missing.
     if ( 0 !== strrpos( $html, '</div>') ) {

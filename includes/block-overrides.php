@@ -5,6 +5,8 @@
  */
 require_once __DIR__ . '/block-override-functions.php';
 require_once __DIR__ . '/class-block-recursion-control.php';
+require_once __DIR__ . '/class-block-recursion-error.php';
+require_once __DIR__ . '/class-block-recursion-error-block.php';
 
 /**
  * Here we include the blocks we want to override.

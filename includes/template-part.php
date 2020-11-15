@@ -19,7 +19,7 @@ function fizzie_render_block_core_template_part( $attributes, $content, $block  
     //bw_backtrace();
     $template_id = fizzie_get_template_id( $attributes );
 
-    if ( fizzie_process_this_content( $template_id  ) ) {
+    if ( fizzie_process_this_content( $template_id, $block->name  ) ) {
 
         $content = fizzie_load_template_part($attributes);
         //bw_trace2( $content, "raw content" );
@@ -50,9 +50,9 @@ function fizzie_render_block_core_template_part( $attributes, $content, $block  
         $html_tag = esc_attr($attributes['tagName']);
         $wrapper_attributes = get_block_wrapper_attributes();
         $html = "<$html_tag $wrapper_attributes>" . str_replace(']]>', ']]&gt;', $content) . "</$html_tag>";
-        fizzie_clear_processed_content( $template_id );
+        fizzie_clear_processed_content( );
     } else {
-        $html = fizzie_report_recursion_error( $template_id, "core/template-part");
+        $html = fizzie_report_recursion_error();
     }
     return $html;
 }

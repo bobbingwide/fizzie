@@ -6,9 +6,9 @@
  * Implements the recursion control functions in an extendable class
  * Blocks use the public API passing the unique ID for their block.
  *
- * - fizzie_process_this_content( $id )
- * - fizzie_clear_processed_content( $id )
- * - fizzie_report_recursion_error( $id )
+ * - fizzie_process_this_content( $id, $block_name )
+ * - fizzie_clear_processed_content()
+ * - fizzie_report_recursion_error( $message )
  *
  * These functions will be implemented by methods
  * accessed using Fizzie_Block_Recursion_Control::get_instance
@@ -26,14 +26,15 @@ class Fizzie_Block_Recursion_Control {
     public $processed_content = [];
 
     /**
-     * Bad $id where recursion was detected.
+     * ID of latest block.
+     * This could be the last straw
      */
-    public $bad_id;
+    public $id;
+
     /**
-     * Call stack when recursion was detected.
-     * @var
+     * Block name of the latest block
      */
-    public $bad_processed_content;
+    public $block_name;
 
     /**
      * Container for the main instance of the class.
@@ -55,20 +56,22 @@ class Fizzie_Block_Recursion_Control {
         if ( null === self::$instance ) {
             self::$instance = new self();
         }
-
         return self::$instance;
     }
 
     /**
      * Determines whether or not to process this content.
      *
-     * @param string|integer Unique ID for the content
+     * @param string|integer $id Unique ID for the content
+     * @param string $block_name Block name e.g. core/post-content
      * @return bool - true if the post has not been processed. false otherwise
      */
-    function process_this_content( $id  ) {
+    function process_this_content( $id, $block_name ) {
+        $this->id = $id;
+        $this->block_name = $block_name;
         $processed = isset( $this->processed_content[ $id ] );
         if ( !$processed ) {
-            $this->processed_content[$id] = $id ;
+            $this->processed_content[$id] = "$block_name $id" ;
         }
 
         /** Stop when it looks highly likely we've missed something */
@@ -93,131 +96,22 @@ class Fizzie_Block_Recursion_Control {
      *
      * Note: The top level is within the template, which loads the template parts and/or queries.
      */
-    function clear_processed_content( $id=null ) {
-        if ( $id ) {
-            array_pop( $this->processed_content );
-        } else {
-            $this->processed_content = array();
-        }
-        bw_trace2( $this->processed_content, "cleared", false, BW_TRACE_DEBUG );
+    function clear_processed_content() {
+       $id = array_pop( $this->processed_content );
+       bw_trace2( $this->processed_content, "cleared", false, BW_TRACE_DEBUG );
+       bw_trace2( $id, "popped", false, BW_TRACE_VERBOSE);
     }
 
-    /**
-     * Reports a recursion error to the user.
-     *
-     * If WP_DEBUG is true then additional information is displayed.
-     *
-     * @param $id string|integer recursive ID detected
-     * @param $type string content type
-     * @return string
-     */
-    function report_recursion_error( $id, $type='core/post-content') {
-        bw_trace2();
-        bw_backtrace();
-
-        $this->bad_id = $id;
-        $this->bad_processed_content = $this->processed_content;
-        // $content = $this->create_basic_error();
-
-        $content = array();
-        $content[] = '<div class="recursion-error">';
-        switch ( $type ) {
-            case 'core/post-content':
-                $content[] = __( 'Content not available; already processed.', 'fizzie' );
-                break;
-            case 'core/template-part':
-                $content[] = __( 'Template part not processed to avoid infinite recursion', 'fizzie');
-                break;
-            case 'core/block':
-                $content[] = __( 'Reusable block not processed to avoid infinite recursion', 'fizzie');
-                $this->add_filter_rest_prepare_wp_block();
-                break;
-            default:
-                $content[] = __( 'Infinite recursion error prevented', 'fizzie');
-        }
-        if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
-            $content[] = "<span class=\"recursion-error-context $type\">";
-            $content[] = '<br />';
-            $content[] = $id;
-            $content[] = '<br />';
-            $content[] = $type;
-            $content[] = '<br />';
-
-            $content[] = implode( ',', $this->processed_content );
-            $content[] = '</span>';
-        }
-        $content[] = '</div>';
-        $content = implode( " \n", $content);
-        return $content;
+    function get_id() {
+        return $this->id;
     }
 
-    /**
-     * Adds a filter hook to alter the response for wp_block.
-     *
-     * There's no need to check if it is REST API processing.
-     * The hook function won't get called if it isn't.
-     */
-    function add_filter_rest_prepare_wp_block() {
-        add_filter( 'rest_prepare_wp_block', [ $this, 'rest_prepare_wp_block' ], 10, 3 );
+    function get_processed_content() {
+        return $this->processed_content;
     }
 
-    /**
-     * Fiddles with the raw content to remove `wp:block` blocks.
-     * `
-     * [raw] => <!-- wp:paragraph -->
-     * <p>This is reusable block 21117</p>
-     * <!-- /wp:paragraph -->
-     * <!-- wp:block {"ref":1134} /-->
-     * `
-     * @param $response
-     * @param $post
-     * @param $request
-     * @return mixed
-     */
-    function rest_prepare_wp_block( $response, $post, $request ) {
-        bw_trace2();
-        bw_backtrace();
-
-        $content = $response->data['content']['raw'];
-        $content = $this->replace_bad( $content, $this->bad_id );
-        foreach ( $this->processed_content as $id ) {
-            $content = $this->replace_bad( $content, $id );
-        }
-        // Convert any remaining `wp:block` values to a `missing` block.
-        $content = str_replace( "wp:block {", "missing {", $content );
-
-        $response->data['content']['raw'] = $content;
-        bw_trace2(  $response, "response", false );
-        return $response;
-    }
-
-    /**
-     * Replaces wp:block for ref:bad_id with a paragraph.
-     *
-     * @param $content
-     * @param $bad_id
-     * @return string|string[]
-     */
-    function replace_bad( $content, $bad_id ) {
-        $replacement_block = "<!-- wp:paragraph -->";
-        $replacement_block .= sprintf(__('Error: Recursion was detected while loading the reusable block with post ID %1$s. '), $bad_id);
-        $replacement_block .= $this->title_link($bad_id);
-        $replacement_block .= '<br />';
-        $replacement_block .= "Recommendation: Please delete this block.";
-        $replacement_block .= "<!-- /wp:paragraph -->";
-        $content = str_replace("<!-- wp:block {\"ref\":$bad_id} /-->", $replacement_block, $content);
-        return $content;
-    }
-
-    /**
-     * Returns a title link to the post.
-     *
-     * @param integer $id Post ID.
-     * @return string HTML title link.
-     */
-    function title_link( $id  ) {
-        $link = sprintf( '<a href="%s">%s</a>', esc_url( get_permalink( $id ) ), esc_html( get_the_title( $id ) ) );
-        return $link;
+    function get_block_name() {
+        return $this->block_name;
     }
 
 }

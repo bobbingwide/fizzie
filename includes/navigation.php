@@ -14,6 +14,6 @@
 function fizzie_render_block_core_navigation( $attributes, $content, $block ) {
     //bw_trace2();
     $html = gutenberg_render_block_core_navigation( $attributes, $content, $block );
-    bw_trace2( $html, "html");
+    bw_trace2( $html, "html", false);
     return $html;
 }

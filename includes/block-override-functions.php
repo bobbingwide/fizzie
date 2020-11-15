@@ -31,46 +31,51 @@ function fizzie_maybe_override_block( $args, $blockname, $render_callback ) {
 /**
  * Determines whether or not to process this content.
  *
- * @param string|integer Unique ID for the content
+ * @param string|integer $id Unique ID for the content
+ * @param string $block_name Block name
  * @return bool - true if the post has not been processed. false otherwise
  */
-function fizzie_process_this_content( $id ) {
+function fizzie_process_this_content( $id, $block_name ) {
     $recursion_control = Fizzie_Block_Recursion_Control::get_instance();
-    return $recursion_control->process_this_content( $id );
+    return $recursion_control->process_this_content( $id, $block_name );
 }
 
 /**
- * Pops or clears the array of processed content.
+ * Pops the last item of processed content.
  *
  * As we return to the previous level we can clear the processed content.
  * Basically this is something we have to do while processing certain inner blocks:
  *
  * - core/post-content
  * - core/template-part
+ * - core/block
  * - core/post-excerpt - possibly
- * - core/block - possibly
  *
  * Note: The top level is within the template, which loads the template parts and/or queries.
  *
- * @param string|integer $id
  */
-function fizzie_clear_processed_content( $id=null ) {
+function fizzie_clear_processed_content() {
     $recursion_control = Fizzie_Block_Recursion_Control::get_instance();
-    $recursion_control->clear_processed_content( $id );
+    $recursion_control->clear_processed_content();
 }
 
 /**
  * Reports a recursion error to the user.
  *
  * If WP_DEBUG is true then additional information is displayed.
+ * Use the $class parameter to override default behavior.
  *
  * @param $id string|integer recursive ID detected
  * @param $type string content type
  * @return string HTML reporting the error to the user
  */
-function fizzie_report_recursion_error( $id, $type='core/post-content') {
+function fizzie_report_recursion_error( $message=null, $class=null ) {
     $recursion_control = Fizzie_Block_Recursion_Control::get_instance();
-    $html = $recursion_control->report_recursion_error($id, $type);
+    if ( $class && class_exists( $class ) ) {
+        $recursion_error = new $class( $recursion_control );
+    } else {
+        $recursion_error = new Fizzie_Block_Recursion_Error( $recursion_control );
+    }
+    $html = $recursion_error->report_recursion_error( $message );
     return $html;
 }
-
