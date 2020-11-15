@@ -13,18 +13,19 @@ function fizzie_render_block_core_post_content( $attributes, $content, $block ) 
     if ( ! isset( $block->context['postId'] ) ) {
         return '';
     }
+    bw_trace2( $block->context['postId'], "postId" );
+    bw_trace2( get_the_id(), "get_the_ID", false );
     /*
     if ( 'revision' === $block->context['postType'] ) {
         return '';
     }
     */
 
-    if ( fizzie_process_this_content( get_the_ID() ) ) {
+    if ( fizzie_process_this_content( $block->context['postId'] ) ) {
         $html = gutenberg_render_block_core_post_content( $attributes, $content, $block );
-        fizzie_clear_processed_content( get_the_ID() );
+        fizzie_clear_processed_content( $block->context['postId'] );
     } else {
-        $html = fizzie_report_recursion_error( get_the_ID() );
-        //$html .= $content;
+        $html = fizzie_report_recursion_error( $block->context['postId'] );
     }
 
     return $html;
