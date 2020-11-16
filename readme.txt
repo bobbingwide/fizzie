@@ -4,7 +4,7 @@ Donate link: https://www.oik-plugins.com/oik/oik-donate/
 Tags: blocks, FSE, Gutenberg
 Requires at least: 5.5.1
 Tested up to: 5.6-beta4
-Version: 0.0.9
+Version: 0.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -98,6 +98,12 @@ Pre-requisite plugins: see also Notes
  
 
 == Change Log ==
+= 0.1.0 = 
+* Changed: Add styles used for the test of core/post-content recursion detection, Issue #33
+* Changed: Continue refactoring recursion detection and error reporting, Issue #33
+* Changed: Set preset font sizes in pixels. Set default fonts for core/post-title and core/post-date, Issue #4
+* Changed: Update the footer menu to match blocks.wp-a2z.org, Issue #4
+
 = 0.0.9 = 
 * Changed: Refactored block-override-functions as Fizzie_Block_Recursion_Control, Issue #33
 * Changed: Revert to using block content postId to check for recursion in core/post-content, issue #27
@@ -189,7 +195,7 @@ It took two days to create the category template.
 A fully working version of the theme is going to take some time.
 
 Fizzie contains a number of overrides to Gutenberg server rendered blocks which don't behave the way I expected. 
-The overrides should continue to work even when the PRs to fix the bugs have been implemented.
+These overrides should continue to work even when the PRs to fix the bugs have been implemented.
 
 Improvement areas include:
 
@@ -197,11 +203,11 @@ Improvement areas include:
 - core/query-pagination - uses the main query when used outside of core/query
 - core/block - handle recursion
 - core/post-hierarchical-terms - cater for invalid taxonomy
-- core/navigation-link - 
-- core/navigation -
+- core/navigation-link - set current-menu-item class for current request
+- core/navigation - tbc
 - core/template-part - handle recursion
 - core/post-content - handle recursion
-- core/post-excerpt - append missing </div>
+- core/post-excerpt - append missing `</div>`
  
 
 For more see issue #25 and/or the includes folder 
