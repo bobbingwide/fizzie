@@ -4,7 +4,7 @@ Theme URI: https://www.oik-plugins.com/oik-themes/fizzie
 Description: Fizzie theme - a Full Site Editing theme using Gutenberg blocks
 Author: Bobbing Wide
 Author URI: https://www.oik-plugins.com/author/bobbingwide
-Version: 0.0.9
+Version: 0.1.0
 Tags: blocks, Gutenberg, FSE, oik
 Requires at least: 5.5.1
 Requires PHP: 7.3
@@ -555,14 +555,15 @@ div.recursion-error {
     border: 1px solid grey;
     max-width: 1140px;
     padding: 5px;
+    font-size: var( --wp--preset--font-size--tiny );
 }
 
 div.Aaa {background-color: #aaa;border: 1px solid grey;padding-left: 1em;}
 div.Aac { background-color: #ccc;border: 1px dotted grey;padding-left: 2em; padding-bottom: 0.5em;}
 div.Aae { padding-left: 0em;}
-ul.Aaa, ul.Aac, ul.Aae { display: block; list-style: none;}
+ul.Aaa, ul.Aac, ul.Aae { display: block; list-style: none; font-size: 12px;}
 .Aaa li, .Aac li, .Aae li { margin-right: 5px; display: inline-block; }
-body { font-size: 12px;}
+/* body { font-size: 12px;} */
 .Aaa p, .Aac p, .Aae p { margin: 2px; font-size: 12px;}
 
 
