@@ -44,7 +44,7 @@ class Fizzie_Block_Recursion_Error_Block extends Fizzie_Block_Recursion_Error {
 
         $content = $response->data['content']['raw'];
         $content = $this->replace_bad($content, $this->bad_id);
-        foreach ($this->processed_content as $id) {
+        foreach ($this->bad_processed_content as $id) {
             $content = $this->replace_bad($content, $id);
         }
         // Convert any remaining `wp:block` values to a `missing` block.
