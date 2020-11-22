@@ -476,7 +476,9 @@ ul.page-numbers {
 
 h2.term_heading,
 h2.wp-block-post-title {
-    font-size: calc( 1px * var( --wp--preset--font-size--normal ) );
+    font-size: var( --wp--preset--font-size--normal );
+    min-height: 60px;
+
 }
 
 div.information {
@@ -607,7 +609,7 @@ div.wp-site-blocks div.WP_DEBUG:first-child:hover {
     height: auto;
     top: 0px;
     left: 50%;
-    color: green;
+    color: black;
 
 }
 
