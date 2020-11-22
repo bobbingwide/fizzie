@@ -567,4 +567,50 @@ ul.Aaa, ul.Aac, ul.Aae { display: block; list-style: none; font-size: 12px;}
 .Aaa p, .Aac p, .Aae p { margin: 2px; font-size: 12px;}
 
 
+div.WP_DEBUG { height: 1px;
+border-top: 1px dotted red;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+div.WP_DEBUG:hover {
+    height: auto;
+    overflow: auto;
+    position: relative;
+}
+
+div.WP_DEBUG.END {
+    border-bottom: 1px solid green;
+}
+
+div.wp-site-blocks div.WP_DEBUG:first-child {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    z-index: 100000;
+    color: white;
+    height: auto;
+    overflow: auto;
+    width: auto;
+    border-top: 1px solid green;
+    background: transparent;
+    left: 50%;
+    padding: 0 1em;
+}
+
+div.wp-site-blocks div.WP_DEBUG:first-child:hover {
+   // margin-top: -1.1em;
+    position: absolute;
+    z-index: 100000;
+    padding: 0 1em;
+    height: auto;
+    top: 0px;
+    left: 50%;
+    color: green;
+
+}
+
+
+
 

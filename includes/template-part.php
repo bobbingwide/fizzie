@@ -40,13 +40,20 @@ function fizzie_render_block_core_template_part( $attributes, $content, $block  
         }
 
         */
-        $content = shortcode_unautop($content);
+
+        // I can't see the point of these filters either
+        /*
+        $content = shortcode_unautop($content);*/
         if (function_exists('wp_filter_content_tags')) {
             $content = wp_filter_content_tags($content);
         } else {
             $content = wp_make_content_images_responsive($content);
         }
+
+        // Except shortcode processing that is.
+
         $content = do_shortcode($content);
+
         $html_tag = esc_attr($attributes['tagName']);
         $wrapper_attributes = get_block_wrapper_attributes();
         $html = "<$html_tag $wrapper_attributes>" . str_replace(']]>', ']]&gt;', $content) . "</$html_tag>";
@@ -91,6 +98,21 @@ function fizzie_load_template_part( $attributes ) {
        	$html .= '</div>';
 	    $content = $html;
 
+    }
+
+    /**
+     * Produce some visual aid to the theme developer, showing where the template starts and ends.
+     *
+     */
+    if ( defined( 'FSE_DEBUG') && FSE_DEBUG ) {
+        if (defined('WP_DEBUG') && WP_DEBUG) {
+            $wrapped = "<div class=\"WP_DEBUG\">template part start: $slug</div>";
+            $wrapped .= $content;
+            $wrapped .= "<div class=\"WP_DEBUG END\">template part end: $slug</div>";
+            $content = $wrapped;
+            global $_wp_current_template_content;
+            bw_trace2($_wp_current_template_content, "current template content", false, BW_TRACE_DEBUG);
+        }
     }
     return $content;
 }
