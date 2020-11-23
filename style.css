@@ -477,8 +477,10 @@ ul.page-numbers {
 h2.term_heading,
 h2.wp-block-post-title {
     font-size: var( --wp--preset--font-size--normal );
-    min-height: 60px;
+}
 
+.post-type-archive-block h2.wp-block-post-title {
+    min-height: 60px;
 }
 
 div.information {
@@ -611,6 +613,26 @@ div.wp-site-blocks div.WP_DEBUG:first-child:hover {
     left: 50%;
     color: black;
 
+}
+
+.bw_blog { font-size: 14px; }
+
+.page-footer {
+    background: #575756;
+    background: linear-gradient(top, rgba(77, 77, 75, 0.1) 0, rgba(111, 111, 109, 0.18) 90%, rgba(92, 92, 90, 0.07) 90%, rgba(92, 92, 90, 0.07) 100%) no-repeat, url('images/footer.png'), linear-gradient(top, #525251 0, #6A6A68 90%, #5D5D5B 90%, #5D5D5B 100%) no-repeat;
+    background: -webkit-linear-gradient(top, rgba(77, 77, 75, 0.1) 0, rgba(111, 111, 109, 0.18) 90%, rgba(92, 92, 90, 0.07) 90%, rgba(92, 92, 90, 0.07) 100%) no-repeat, url('images/footer.png'), -webkit-linear-gradient(top, #525251 0, #6A6A68 90%, #5D5D5B 90%, #5D5D5B 100%) no-repeat;
+    background: -moz-linear-gradient(top, rgba(77, 77, 75, 0.1) 0, rgba(111, 111, 109, 0.18) 90%, rgba(92, 92, 90, 0.07) 90%, rgba(92, 92, 90, 0.07) 100%) no-repeat, url('images/footer.png'), -moz-linear-gradient(top, #525251 0, #6A6A68 90%, #5D5D5B 90%, #5D5D5B 100%) no-repeat;
+    background: -o-linear-gradient(top, rgba(77, 77, 75, 0.1) 0, rgba(111, 111, 109, 0.18) 90%, rgba(92, 92, 90, 0.07) 90%, rgba(92, 92, 90, 0.07) 100%) no-repeat, url('images/footer.png'), -o-linear-gradient(top, #525251 0, #6A6A68 90%, #5D5D5B 90%, #5D5D5B 100%) no-repeat;
+    background: -ms-linear-gradient(top, rgba(77, 77, 75, 0.1) 0, rgba(111, 111, 109, 0.18) 90%, rgba(92, 92, 90, 0.07) 90%, rgba(92, 92, 90, 0.07) 100%) no-repeat, url('images/footer.png'), -ms-linear-gradient(top, #525251 0, #6A6A68 90%, #5D5D5B 90%, #5D5D5B 100%) no-repeat;
+    background: linear-gradient(top, rgba(77, 77, 75, 0.1) 0, rgba(111, 111, 109, 0.18) 90%, rgba(92, 92, 90, 0.07) 90%, rgba(92, 92, 90, 0.07) 100%) no-repeat, url('images/footer.png'), linear-gradient(top, #525251 0, #6A6A68 90%, #5D5D5B 90%, #5D5D5B 100%) no-repeat;
+    -svg-background: linear-gradient(top, rgba(77, 77, 75, 0.1) 0, rgba(111, 111, 109, 0.18) 90%, rgba(92, 92, 90, 0.07) 90%, rgba(92, 92, 90, 0.07) 100%) no-repeat, url('images/footer.png'), linear-gradient(top, #525251 0, #6A6A68 90%, #5D5D5B 90%, #5D5D5B 100%) no-repeat;
+
+    margin:0 auto;
+    position: relative;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+    /* text-align: center; */
 }
 
 
