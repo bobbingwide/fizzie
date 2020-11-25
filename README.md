@@ -4,8 +4,8 @@
 * Donate link: https://www.oik-plugins.com/oik/oik-donate/
 * Tags: blocks, FSE, Gutenberg
 * Requires at least: 5.5.1
-* Tested up to: 5.6-beta4
-* Version: 0.1.0
+* Tested up to: 5.6-RC1
+* Version: 0.1.1
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,49 +16,41 @@ This is an experimental theme attempting to implement Full Site Editing (FSE) wi
 
 The theme is required to replace the Genesis-a2z theme that is used in [blocks.wp-a2z.org](https://blocks.wp-a2z.org)
 
-Even though FSE is not going to make it into WordPress 5.6, I’ll have to implement the theme in order to document the 24 or so new blocks in WordPress core.
+Requirements:
+1. Implement Full Site Editing.
+2. Same look and feel as the Genesis-a2z theme.
+3. Support documentation / demonstration of each of the new blocks in Gutenberg.
+4. Find out what bits are missing from and/or not working on Gutenberg.
+5. Implement on blocks.wp-a2z.org, when stable.
 
-It started as a completely empty theme and then I played with it while following some tutorials.
-- https://developer.wordpress.org/block-editor/tutorials/block-based-themes/
-- https://fullsiteediting.com/
 
-The tutorials didn't really cover the Site Editor (beta) user interface. So I was on my own from there on.
-It’s been quite a learning experience.
-Rather than using the Site Editor ( beta ) user interface,
-I've found it easier to edit the Templates and Template parts directly.
-I've been using the block editor in Code editor mode, then copying and pasting the individual templates and template parts to the .html files that the theme needs to deliver.
-These have to be edited to remove the "postId" attributes.
-In the target site(s) some of the template parts need importing into the Site Editor to be customised for the target site.
-These are the ones that include the navigational blocks.
+Contents:
 
-So far I’ve managed to create:
+- Eleven templates
+- Twenty four template parts
 
-- Nine templates
-- Twenty template parts
+The `block-templates` are:
 
-The templates are:
-
+* 404 - Not found page
 * archive - generic template used for archives: author, taxonomy, date, tag
+* archive-block - to display archives for Blocks
+* archive-oik-plugins - to display archive for Plugins
 * category - used to display the Category archive
 * front-page - used for Page Shown On Front
-* home - used for Blog Posts index page or Posts Shown on Front
+* home - used for Blog Posts index page or Posts Shown on Front (when front-page not implemented)
+* index - used when no other template is found
 * single - used for a single post / attachment / CPT
 * single-oik-plugins - used for a single oik-plugin
 * singular - used when single or page does not exist
-* index - used when no other template is found
-* 404 - Not found page
-
-Not yet done:
-
-* other CPT archives
-* page - used for a single page
 
 
 * See the template visualization: https://developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04.png
 
-The template parts are:
+The `block-template-parts` are:
 
 * a2z-pagination - Letter pagination for blog posts
+* a2z-pagination-block - Letter pagination for blocks
+* a2z-pagination-oik-plugins - Letter pagination for plugins
 * archive-query - Main query for archive pages
 * breadcrumbs - Breadcrumb trail - using sb-breadcrumbs-block-based-widgets
 * category-description - Uses [archive_description] shortcode
@@ -66,8 +58,9 @@ The template parts are:
 * download - To download plugins - uses [oikp_download] shortcode
 * footer - Final full width footer
 * footer-menu - Displays the footer menu - after the final full width footer
-* header-2-columns - A badly named header template part which only has half of the functionality of the header that it’s going to replace.
-* header-menu - Displays the header menu - inner block to header-2-columns
+* header - Displays the header: site logo, site title and tagline, header menu.
+* header-menu - Displays the header menu
+* home-part - A template part used in debugging. Classic block
 * home-query - Displays the posts on the blog page
 * information - Displays post meta data using the oik-block/fields block
 * issue-27 - test case file for issue-27
@@ -78,6 +71,20 @@ The template parts are:
 * post-content - Primary content part for a post
 * posts - An attempt to display the posts using query blocks - incomplete- not used
 * search - Using the Search block
+* social-links - Social link icons
+
+Templates not yet implemented:
+
+Some of these templates will be needed for other subdomains of wp-a2z.org.
+
+* archive-CPT - archive templates for other custom post types - 5 to do
+* image - template for the image mime type
+* page - used for a single page
+* search - display search results
+* single-CPT - single templates for other custom post types - 10 to do
+* tag - for a particular tag
+* taxonomy - for a particular taxonomy
+* taxonomy-oik_letters - taxonomy specifically for oik_letters
 
 
 ## Installation 
@@ -90,15 +97,31 @@ The template parts are:
 * For some of the templates and template parts to work properly you will need to install and activate the pre-requisite plugins.
 * For templates which include navigation blocks you will need to edit the supplied menus.
 
+* Note: Gutenberg 9.4.0 does not choose template parts correctly.
+
 * Pre-requisite plugins: see also Notes
-* oik
-* oik-fields
-* oik-a2z
-* sb-breadcrumbs-block
-* Yoast SEO - for breadcrumbs logic
+
+* [oik](https://wordpress.org/plugins/oik/)
+* [oik-fields](https://github.com/bobbingwide/oik-fields)
+* [oik-a2z](https://github.com/bobbingwide/oik-a2z)
+* [sb-breadcrumbs-block](https://github.com/bobbingwide/sb-breadcrumbs-block)
+* [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/) - for breadcrumbs logic
 
 
 ## Change Log 
+# 0.1.1 
+* Added: Create archive templates & a2z pagination parts for block & oik-plugins,https://github.com/bobbingwide/fizzie/issues/36
+* Added: Debug information for each template,https://github.com/bobbingwide/fizzie/issues/41
+* Changed: Add social links in the footer,https://github.com/bobbingwide/fizzie/issues/4
+* Changed: Copy images from genesis-a2z; even if not actually used,https://github.com/bobbingwide/fizzie/issues/4
+* Changed: Improve styling of footer.,https://github.com/bobbingwide/fizzie/issues/4
+* Changed: Set min-height 60px for h2 on post-type-archive-block only.,https://github.com/bobbingwide/fizzie/issues/4
+* Changed: The About menu item should link to the about page,https://github.com/bobbingwide/fizzie/issues/17
+* Changed: Try to properly implement alignwide and alignfull styling capability,https://github.com/bobbingwide/fizzie/issues/44
+* Fixed: Add a shim to enable Navigation menus to display in the Front end on WordPress 5.6-RC1,https://github.com/bobbingwide/issues/42
+* Fixed: Correct [sites] shortcode to [bw_blogs],https://github.com/bobbingwide/fizzie/issues/4
+* Fixed: Correct reference to $this->bad_processed_content,https://github.com/bobbingwide/fizzie/issues/36
+
 # 0.1.0 
 * Changed: Add styles used for the test of core/post-content recursion detection, Issue #33
 * Changed: Continue refactoring recursion detection and error reporting, Issue #33
@@ -186,32 +209,31 @@ The template parts are:
 ## Notes 
 The theme is designed for use on wp-a2z.org.
 
-It implements template parts which depend on external components
+It implements template parts which depend on external components. For example
 - a2z pagination requires oik-a2z plugin
 - breadcrumbs requires sb-breadcrumbs-block
 
 The CSS is minimal; just enough to make it look OK on my laptop and external monitor.
+Responsibility for responsive styling is left to Gutenberg / WordPress core functionality.
 
-It took two days to create the category template.
-A fully working version of the theme is going to take some time.
+### Block overrides 
 
-Fizzie contains a number of overrides to Gutenberg server rendered blocks which don't behave the way I expected.
+Fizzie contains a number of overrides to Gutenberg server rendered blocks which didn't behave the way I expected.
 These overrides should continue to work even when the PRs to fix the bugs have been implemented.
 
 Improvement areas include:
 
-- core/query-loop - uses main query when used outside of core/query
-- core/query-pagination - uses the main query when used outside of core/query
-- core/block - handle recursion
-- core/post-hierarchical-terms - cater for invalid taxonomy
-- core/navigation-link - set current-menu-item class for current request
-- core/navigation - tbc
-- core/template-part - handle recursion
-- core/post-content - handle recursion
-- core/post-excerpt - append missing `</div>`
+* core/query-loop - uses main query when used outside of core/query
+* core/query-pagination - uses the main query when used outside of core/query
+* core/block - handle recursion
+* core/post-hierarchical-terms - cater for invalid taxonomy
+* core/navigation-link - set current-menu-item class for current request
+* core/navigation - tbc
+* core/template-part - handle recursion
+* core/post-content - handle recursion
+* core/post-excerpt - append missing `</div>`
 
-
-For more see issue #25 and/or the includes folder
+For more information see https://github.com/bobbingwide/fizzie/issues/25 and/or the includes folder.
 
 
 ## References 
@@ -234,13 +256,36 @@ During the development I have referred to the following articles, sites and repo
 - https://wordpress.org/plugins/block-unit-test/
 - https://developer.wordpress.org/block-editor/contributors/develop/
 - https://developer.wordpress.org/block-editor/contributors/develop/git-workflow/
+- https://wpdevelopment.courses/articles/full-site-editing-theme-learnings/
 
 
 Some other FSE themes
+- [WordPress Theme Experiments](https://github.com/WordPress/theme-experiments)
+- [Twenty Twenty-One Blocks](https://github.com/WordPress/theme-experiments/tree/master/twentytwentyone-blocks)
+- [Stanley](https://github.com/carolinan/fullsiteediting/blob/course/Block%20based%20themes/Lesson%201%20-Theme%20structure/stanley.zip)
+- [Seedlet Blocks)[https://github.com/Automattic/themes/tree/trunk/seedlet-blocks]
 
-- https://github.com/WordPress/theme-experiments
-- https://github.com/WordPress/theme-experiments/tree/master/twentytwentyone-blocks
-- https://github.com/Automattic/themes/tree/trunk/seedlet-blocks
+## Brief development history 
+
+Even though FSE is not going to make it into WordPress 5.6, I have to implement the theme in order to document the 24 or so new blocks
+that are already in Gutenberg and that will eventually appear in WordPress core.
+
+It started as a completely empty theme and then I played with it while following some tutorials.
+- https://developer.wordpress.org/block-editor/tutorials/block-based-themes/
+- https://fullsiteediting.com/
+
+The tutorials didn't really cover the Site Editor (beta) user interface. So I was on my own from there on.
+It’s been quite a learning experience.
+Rather than using the Site Editor ( beta ) user interface,
+I've found it easier to edit the Templates and Template parts directly.
+
+I've been using the block editor in Code editor mode, then copying and pasting the individual templates and template parts to the .html files that the theme needs to deliver.
+In some cases these had to be edited to remove the "postId" attributes.
+
+In the target site(s) some of the template parts need importing into the Site Editor to be customised for the target site.
+These are the ones that include the navigational blocks.
+
+* Note: You can set the Site icon without having to edit a template or template part. Just create a new post, add the Site icon block and select the image file.
 
 
 ## Copyright 
