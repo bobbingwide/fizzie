@@ -1,0 +1,187 @@
+# Copyright (C) 2020
+# This file is distributed under the same licence as WordPress
+msgid ""
+msgstr ""
+"Project-Id-Version: fizzie\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/fizzie\n"
+"POT-Creation-Date: 2020-11-29 09:57:28+00:00\n"
+"MIME-Version: 1.0\n"
+"Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
+"Language: en_GB\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+#: 404.html  div>#text
+msgid "404.html"
+msgstr "404.html"
+
+#: archive-block.html  div>#text
+msgid "archive-block.html"
+msgstr "archive-block.html"
+
+#: archive.html  div>#text
+msgid "archive.html - why this one?"
+msgstr "archive.html - why this one?"
+
+#: category.html  div>#text
+msgid "category.html"
+msgstr "category.html"
+
+#: front-page.html  div>#text
+msgid "front-page.html"
+msgstr "front-page.html"
+
+#: home.html  div>#text
+msgid "home.html"
+msgstr "home.html"
+
+#: index.html  div>#text
+msgid "index.html"
+msgstr "index.html"
+
+#: page-13.html  div>#text
+msgid "pgae-13.hmtl 12:22"
+msgstr "pgae-13.hmtl 12:22"
+
+#: page-about.html  div>#text
+msgid "pgae-aobut.hmtl 12:20"
+msgstr "pgae-aobut.hmtl 12:20"
+
+#: search.html  div>#text
+msgid "saecrh.hmtl"
+msgstr "saecrh.hmtl"
+
+#: single-oik-plugins.html  div>#text
+msgid "single-oik-plugins.html"
+msgstr "single-oik-plugins.html"
+
+#: single.html  div>#text
+msgid "single.html"
+msgstr "single.html"
+
+#: singular.html  div>#text
+msgid "singular.html"
+msgstr "singular.html"
+
+#: a2z-pagination-block.html core/paragraph p>#text
+msgid "[bw_terms taxonomy=block_letters post_type=block]"
+msgstr "[bw_terms taxonomy=block_letters post_type=block]"
+
+#: a2z-pagination-oik-plugins.html core/paragraph p>#text
+msgid "[bw_terms taxonomy=letters post_type=oik-plugins]"
+msgstr "[bw_terms taxonomy=letters post_type=oik-plugins]"
+
+#: a2z-pagination.html core/paragraph p>#text
+msgid "[bw_terms]"
+msgstr "[bw_terms]"
+
+#: category-description.html core/shortcode p>#text
+msgid "[archive_description]"
+msgstr "[archive_description]"
+
+#: download.html core/shortcode p>#text
+msgid "[oikp_download plugin=.]"
+msgstr "[oikp_download plugin=.]"
+
+#: footer-menu.html core/navigation-link  label
+msgid "Home"
+msgstr "Home"
+
+#: footer-menu.html core/navigation-link  label
+msgid "Blog"
+msgstr "Blog"
+
+#: footer-menu.html core/navigation-link  label
+msgid "Sitemap"
+msgstr "Sitemap"
+
+#: footer-menu.html core/navigation-link  label
+msgid "Sites"
+msgstr "Sites"
+
+#: footer.html core/paragraph p>#text
+msgid "[bw_wpadmin]"
+msgstr "[bw_wpadmin]"
+
+#: footer.html core/paragraph p>#text
+msgid "(C) Copyright Bobbing Wide 2020. All rights reserved"
+msgstr "(C) Copyright Bobbing Wide 2020. All rights reserved"
+
+#: footer.html core/paragraph p>#text
+msgid "Website designed and developed by "
+msgstr "Website designed and developed by "
+
+#: footer.html core/paragraph p>a>#text
+msgid "Herb Miller"
+msgstr "Herb Miller"
+
+#: footer.html core/paragraph p>#text
+msgid " "
+msgstr " "
+
+#: footer.html core/paragraph p>a>#text
+msgid "Proudly powered by WordPress"
+msgstr "Proudly powered by WordPress"
+
+#: footer.html core/paragraph p>#text
+msgid " and "
+msgstr " and "
+
+#: footer.html core/paragraph p>a>#text
+msgid "oik plugins"
+msgstr "oik plugins"
+
+#: header-menu.html core/navigation-link  label
+msgid "ome"
+msgstr "ome"
+
+#: header-menu.html core/navigation-link  label
+msgid "Blocks"
+msgstr "Blocks"
+
+#: header-menu.html core/navigation-link  label
+msgid "Plugins"
+msgstr "Plugins"
+
+#: header-menu.html core/navigation-link  label
+msgid "Block news"
+msgstr "Block news"
+
+#: header-menu.html core/navigation-link  label
+msgid "About"
+msgstr "About"
+
+#: home-part.html  div>#text
+msgid "home-part.html is part of home.html"
+msgstr "home-part.html is part of home.html"
+
+#: information.html core/heading h2>#text
+msgid "Information"
+msgstr "Information"
+
+#: issue-27.html  ul>li>#text
+msgid "Issue-27 test case."
+msgstr "Issue-27 test case."
+
+#: issue-30.html  ul>li>#text
+msgid "Issue-30 test case."
+msgstr "Issue-30 test case."
+
+#: metadates.html  p>#text
+msgid "Published: [bw_field post_date] | Last updated: [bw_field post_modified] [post-edit]"
+msgstr "Published: [bw_field post_date] | Last updated: [bw_field post_modified] [post-edit]"
+
+#: page-footer.html core/shortcode p>#text
+msgid "[guts]"
+msgstr "[guts]"
+
+#: page-footer.html core/shortcode p>#text
+msgid "[bw_blogs]"
+msgstr "[bw_blogs]"
+
+#: search.html core/search  label
+msgid "Search"
+msgstr "Search"
+

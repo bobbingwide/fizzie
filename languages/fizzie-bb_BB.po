@@ -1,0 +1,230 @@
+# Copyright (C) 2020
+# This file is distributed under the same licence as WordPress
+msgid ""
+msgstr ""
+"Project-Id-Version: fizzie\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/fizzie\n"
+"POT-Creation-Date: 2020-11-29 09:57:28+00:00\n"
+"MIME-Version: 1.0\n"
+"Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
+"Language: bb_BB\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+#: 404.html  div>#text
+msgid "404.html"
+msgstr "404.hmtl"
+
+
+#: archive-block.html  div>#text
+msgid "archive-block.html"
+msgstr "acrihve-bolck.hmtl"
+
+
+#: archive.html  div>#text
+msgid "archive.html - why this one?"
+msgstr "acrihve.hmtl - why tihs OnE?"
+
+
+#: category.html  div>#text
+msgid "category.html"
+msgstr "ctageroy.hmtl"
+
+
+#: front-page.html  div>#text
+msgid "front-page.html"
+msgstr "fornt-pgae.hmtl"
+
+
+#: home.html  div>#text
+msgid "home.html"
+msgstr "hmoe.hmtl"
+
+
+#: index.html  div>#text
+msgid "index.html"
+msgstr "idnex.hmtl"
+
+
+#: page-13.html  div>#text
+msgid "pgae-13.hmtl 12:22"
+msgstr "page-13.html 12:22"
+
+
+#: page-about.html  div>#text
+msgid "pgae-aobut.hmtl 12:20"
+msgstr "page-about.html 12:20"
+
+
+#: search.html  div>#text
+msgid "saecrh.hmtl"
+msgstr "search.html"
+
+
+#: single-oik-plugins.html  div>#text
+msgid "single-oik-plugins.html"
+msgstr "snilge-OIk-puligns.hmtl"
+
+
+#: single.html  div>#text
+msgid "single.html"
+msgstr "snilge.hmtl"
+
+
+#: singular.html  div>#text
+msgid "singular.html"
+msgstr "sniugalr.hmtl"
+
+
+#: a2z-pagination-block.html core/paragraph p>#text
+msgid "[bw_terms taxonomy=block_letters post_type=block]"
+msgstr "[bw_terms taxonomy=block_letters post_type=block]"
+
+
+#: a2z-pagination-oik-plugins.html core/paragraph p>#text
+msgid "[bw_terms taxonomy=letters post_type=oik-plugins]"
+msgstr "[bw_terms taxonomy=letters post_type=oik-plugins]"
+
+
+#: a2z-pagination.html core/paragraph p>#text
+msgid "[bw_terms]"
+msgstr "[bw_terms]"
+
+
+#: category-description.html core/shortcode p>#text
+msgid "[archive_description]"
+msgstr "[archive_description]"
+
+
+#: download.html core/shortcode p>#text
+msgid "[oikp_download plugin=.]"
+msgstr "[oikp_download plugin=.]"
+
+
+#: footer-menu.html core/navigation-link  label
+msgid "Home"
+msgstr "Hmoe"
+
+
+#: footer-menu.html core/navigation-link  label
+msgid "Blog"
+msgstr "Bolg"
+
+
+#: footer-menu.html core/navigation-link  label
+msgid "Sitemap"
+msgstr "Stimeap"
+
+
+#: footer-menu.html core/navigation-link  label
+msgid "Sites"
+msgstr "Sties"
+
+
+#: footer.html core/paragraph p>#text
+msgid "[bw_wpadmin]"
+msgstr "[bw_wpadmin]"
+
+
+#: footer.html core/paragraph p>#text
+msgid "(C) Copyright Bobbing Wide 2020. All rights reserved"
+msgstr "(C) Cporygiht Bboibng Wdie 2020. All rgiths rsereevd"
+
+
+#: footer.html core/paragraph p>#text
+msgid "Website designed and developed by "
+msgstr "Wbeiste dsegiend And dvelepoed by "
+
+
+#: footer.html core/paragraph p>a>#text
+msgid "Herb Miller"
+msgstr "Hreb Mlielr"
+
+
+#: footer.html core/paragraph p>#text
+msgid " "
+msgstr " "
+
+
+#: footer.html core/paragraph p>a>#text
+msgid "Proudly powered by WordPress"
+msgstr "Porduly pworeed by WroPderss"
+
+
+#: footer.html core/paragraph p>#text
+msgid " and "
+msgstr " adn "
+
+
+#: footer.html core/paragraph p>a>#text
+msgid "oik plugins"
+msgstr "OIk puligns"
+
+
+#: header-menu.html core/navigation-link  label
+msgid "ome"
+msgstr "OmE"
+
+
+#: header-menu.html core/navigation-link  label
+msgid "Blocks"
+msgstr "Bolkcs"
+
+
+#: header-menu.html core/navigation-link  label
+msgid "Plugins"
+msgstr "Puligns"
+
+
+#: header-menu.html core/navigation-link  label
+msgid "Block news"
+msgstr "Bolck nwes"
+
+
+#: header-menu.html core/navigation-link  label
+msgid "About"
+msgstr "Aobut"
+
+
+#: home-part.html  div>#text
+msgid "home-part.html is part of home.html"
+msgstr "hmoe-prat.hmtl Is prat Of hmoe.hmtl"
+
+
+#: information.html core/heading h2>#text
+msgid "Information"
+msgstr "Ifnroamiton"
+
+
+#: issue-27.html  ul>li>#text
+msgid "Issue-27 test case."
+msgstr "Issue-27 tset csae."
+
+
+#: issue-30.html  ul>li>#text
+msgid "Issue-30 test case."
+msgstr "Issue-30 tset csae."
+
+
+#: metadates.html  p>#text
+msgid "Published: [bw_field post_date] | Last updated: [bw_field post_modified] [post-edit]"
+msgstr "Pbuilhsed: [bw_field post_date] | Lsat udptaed: [bw_field post_modified] [post-edit]"
+
+
+#: page-footer.html core/shortcode p>#text
+msgid "[guts]"
+msgstr "[guts]"
+
+
+#: page-footer.html core/shortcode p>#text
+msgid "[bw_blogs]"
+msgstr "[bw_blogs]"
+
+
+#: search.html core/search  label
+msgid "Search"
+msgstr "Saecrh"
+
+

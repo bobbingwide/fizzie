@@ -1,0 +1,186 @@
+# Copyright (C) 2020
+# This file is distributed under the same licence as WordPress
+msgid ""
+msgstr ""
+"Project-Id-Version: fizzie\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/fizzie\n"
+"POT-Creation-Date: 2020-11-29 09:57:28+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: 404.html  div>#text
+msgid "404.html"
+msgstr ""
+
+#: archive-block.html  div>#text
+msgid "archive-block.html"
+msgstr ""
+
+#: archive.html  div>#text
+msgid "archive.html - why this one?"
+msgstr ""
+
+#: category.html  div>#text
+msgid "category.html"
+msgstr ""
+
+#: front-page.html  div>#text
+msgid "front-page.html"
+msgstr ""
+
+#: home.html  div>#text
+msgid "home.html"
+msgstr ""
+
+#: index.html  div>#text
+msgid "index.html"
+msgstr ""
+
+#: page-13.html  div>#text
+msgid "pgae-13.hmtl 12:22"
+msgstr ""
+
+#: page-about.html  div>#text
+msgid "pgae-aobut.hmtl 12:20"
+msgstr ""
+
+#: search.html  div>#text
+msgid "saecrh.hmtl"
+msgstr ""
+
+#: single-oik-plugins.html  div>#text
+msgid "single-oik-plugins.html"
+msgstr ""
+
+#: single.html  div>#text
+msgid "single.html"
+msgstr ""
+
+#: singular.html  div>#text
+msgid "singular.html"
+msgstr ""
+
+#: a2z-pagination-block.html core/paragraph p>#text
+msgid "[bw_terms taxonomy=block_letters post_type=block]"
+msgstr ""
+
+#: a2z-pagination-oik-plugins.html core/paragraph p>#text
+msgid "[bw_terms taxonomy=letters post_type=oik-plugins]"
+msgstr ""
+
+#: a2z-pagination.html core/paragraph p>#text
+msgid "[bw_terms]"
+msgstr ""
+
+#: category-description.html core/shortcode p>#text
+msgid "[archive_description]"
+msgstr ""
+
+#: download.html core/shortcode p>#text
+msgid "[oikp_download plugin=.]"
+msgstr ""
+
+#: footer-menu.html core/navigation-link  label
+msgid "Home"
+msgstr ""
+
+#: footer-menu.html core/navigation-link  label
+msgid "Blog"
+msgstr ""
+
+#: footer-menu.html core/navigation-link  label
+msgid "Sitemap"
+msgstr ""
+
+#: footer-menu.html core/navigation-link  label
+msgid "Sites"
+msgstr ""
+
+#: footer.html core/paragraph p>#text
+msgid "[bw_wpadmin]"
+msgstr ""
+
+#: footer.html core/paragraph p>#text
+msgid "(C) Copyright Bobbing Wide 2020. All rights reserved"
+msgstr ""
+
+#: footer.html core/paragraph p>#text
+msgid "Website designed and developed by "
+msgstr ""
+
+#: footer.html core/paragraph p>a>#text
+msgid "Herb Miller"
+msgstr ""
+
+#: footer.html core/paragraph p>#text
+msgid " "
+msgstr ""
+
+#: footer.html core/paragraph p>a>#text
+msgid "Proudly powered by WordPress"
+msgstr ""
+
+#: footer.html core/paragraph p>#text
+msgid " and "
+msgstr ""
+
+#: footer.html core/paragraph p>a>#text
+msgid "oik plugins"
+msgstr ""
+
+#: header-menu.html core/navigation-link  label
+msgid "ome"
+msgstr ""
+
+#: header-menu.html core/navigation-link  label
+msgid "Blocks"
+msgstr ""
+
+#: header-menu.html core/navigation-link  label
+msgid "Plugins"
+msgstr ""
+
+#: header-menu.html core/navigation-link  label
+msgid "Block news"
+msgstr ""
+
+#: header-menu.html core/navigation-link  label
+msgid "About"
+msgstr ""
+
+#: home-part.html  div>#text
+msgid "home-part.html is part of home.html"
+msgstr ""
+
+#: information.html core/heading h2>#text
+msgid "Information"
+msgstr ""
+
+#: issue-27.html  ul>li>#text
+msgid "Issue-27 test case."
+msgstr ""
+
+#: issue-30.html  ul>li>#text
+msgid "Issue-30 test case."
+msgstr ""
+
+#: metadates.html  p>#text
+msgid "Published: [bw_field post_date] | Last updated: [bw_field post_modified] [post-edit]"
+msgstr ""
+
+#: page-footer.html core/shortcode p>#text
+msgid "[guts]"
+msgstr ""
+
+#: page-footer.html core/shortcode p>#text
+msgid "[bw_blogs]"
+msgstr ""
+
+#: search.html core/search  label
+msgid "Search"
+msgstr ""
+
