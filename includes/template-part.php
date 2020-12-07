@@ -12,6 +12,7 @@
  * @return string
  */
 function fizzie_render_block_core_template_part( $attributes, $content, $block  ) {
+
     $content = null;
     $template_part_file_path = null;
     $postId = null;
@@ -75,11 +76,19 @@ function fizzie_load_template_part( $attributes ) {
         $content = fizzie_load_template_part_by_postId( $postId );
     }
     if ( !$content && $slug && $theme ) {
-        $content = fizzie_load_template_part_for_theme( $theme, $slug );
+        //$content = fizzie_load_template_part_for_theme( $theme, $slug );
     }
     if ( !$content && $slug ) {
-        $template_part_file_path = get_stylesheet_directory() . '/block-template-parts/' . $slug . '.html';
+    	$locale = get_locale();
+
+    	if ( 'en_US' !== $locale) {
+		    $template_part_file_path = get_stylesheet_directory() . "/languages/$locale/block-template-parts/" . $slug . '.html';
+	    } else {
+		    $template_part_file_path = get_stylesheet_directory() . '/block-template-parts/' . $slug . '.html';
+	    }
+
         $content = fizzie_load_template_part_file_by_slug( $slug, $template_part_file_path );
+    	//echo $content;
     }
 
     // What's the best way of telling the user that something's gone wrong?
