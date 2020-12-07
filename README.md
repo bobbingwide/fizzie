@@ -1,11 +1,11 @@
 # fizzie 
-![screenshot](https://raw.githubusercontent.com/bobbingwide/fizzie/main/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/bobbingwide/fizzie/master/screenshot.png)
 * Contributors: bobbingwide, vsgloik
 * Donate link: https://www.oik-plugins.com/oik/oik-donate/
 * Tags: blocks, FSE, Gutenberg
 * Requires at least: 5.5.1
-* Tested up to: 5.6-RC1
-* Version: 0.1.1
+* Tested up to: 5.6-RC2
+* Version: 0.2.0
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,8 +26,8 @@ Requirements:
 
 Contents:
 
-- Eleven templates
-- Twenty four template parts
+* Fifteen templates
+* Twenty five template parts
 
 The `block-templates` are:
 
@@ -39,10 +39,13 @@ The `block-templates` are:
 * front-page - used for Page Shown On Front
 * home - used for Blog Posts index page or Posts Shown on Front (when front-page not implemented)
 * index - used when no other template is found
+* page-13.html - template for page ID 13
+* page-about - template for page with slug `about`
+* page-i18n-test.html - template for Internationalization test
+* search - Display search results
 * single - used for a single post / attachment / CPT
 * single-oik-plugins - used for a single oik-plugin
 * singular - used when single or page does not exist
-
 
 * See the template visualization: https://developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04.png
 
@@ -62,6 +65,7 @@ The `block-template-parts` are:
 * header-menu - Displays the header menu
 * home-part - A template part used in debugging. Classic block
 * home-query - Displays the posts on the blog page
+* i18n-test - Internationalization, extraction and localization test file
 * information - Displays post meta data using the oik-block/fields block
 * issue-27 - test case file for issue-27
 * issue-30 - test-case file for issue-30
@@ -79,8 +83,7 @@ Some of these templates will be needed for other subdomains of wp-a2z.org.
 
 * archive-CPT - archive templates for other custom post types - 5 to do
 * image - template for the image mime type
-* page - used for a single page
-* search - display search results
+* page - used for a single page -but see page-13, page-about and page-i18n-test
 * single-CPT - single templates for other custom post types - 10 to do
 * tag - for a particular tag
 * taxonomy - for a particular taxonomy
@@ -93,11 +96,11 @@ Some of these templates will be needed for other subdomains of wp-a2z.org.
 * Activate Gutenberg.
 * Install and activate the Fizzie theme, as you would install any other theme.
 * For Gutenberg 9.2.2 enable Full site editing, in Gutenberg > Experiments. Note: There is no need to Enable Full Site Editing Demo Templates
-* For Gutenberg 9.3.0 Full Site Editing will be enabled automatically.
+* For Gutenberg 9.3.0 and above Full Site Editing will be enabled automatically.
 * For some of the templates and template parts to work properly you will need to install and activate the pre-requisite plugins.
 * For templates which include navigation blocks you will need to edit the supplied menus.
 
-* Note: Gutenberg 9.4.0 does not choose template parts correctly.
+* Note: Gutenberg 9.4.0 did not choose template parts correctly. Update to Gutenberg 9.5.0
 
 * Pre-requisite plugins: see also Notes
 
@@ -109,6 +112,16 @@ Some of these templates will be needed for other subdomains of wp-a2z.org.
 
 
 ## Change Log 
+# 0.2.0 
+* Added: Extracted and localized to UK English ( en_GB ) and the obfuscated bbboing language ( bb_BB ),https://github.com/bobbingwide/fizzie/issues/46
+* Changed: Add more templates to test the template hierarchy logic: page-13, page-about and search,https://github.com/bobbingwide/fizzie/issues/38
+* Changed: Enable cloning from wp.a2z to wp-a2z.org,https://github.com/bobbingwide/fizzie/issues/48
+* Changed: Remove empty paragraph from page footer,https://github.com/bobbingwide/fizzie/issues/4
+* Changed: Update 'naughty' message from index.php
+* Changed: Update screenshot for v0.1.1
+* Fixed: Add text domain to 'No posts found'
+* Fixed: Update home.html to use header.html,https://github.com/bobbingwide/fizzie/issues/36
+
 # 0.1.1 
 * Added: Create archive templates & a2z pagination parts for block & oik-plugins,https://github.com/bobbingwide/fizzie/issues/36
 * Added: Debug information for each template,https://github.com/bobbingwide/fizzie/issues/41
@@ -210,8 +223,9 @@ Some of these templates will be needed for other subdomains of wp-a2z.org.
 The theme is designed for use on wp-a2z.org.
 
 It implements template parts which depend on external components. For example
-- a2z pagination requires oik-a2z plugin
-- breadcrumbs requires sb-breadcrumbs-block
+
+* a2z pagination requires oik-a2z plugin
+* breadcrumbs requires sb-breadcrumbs-block
 
 The CSS is minimal; just enough to make it look OK on my laptop and external monitor.
 Responsibility for responsive styling is left to Gutenberg / WordPress core functionality.
@@ -237,6 +251,12 @@ For more information see https://github.com/bobbingwide/fizzie/issues/25 and/or 
 
 
 ## References 
+See my articles on herbmiller.me:
+
+- [Localization of Full Site Editing themes](https://herbmiller.me/localization-of-full-site-editing-themes/)
+- [Fizzie - an experimental Full Site Editing theme](https://herbmiller.me/fizzie-an-experimental-full-site-editing-theme/)
+
+
 During the development I have referred to the following articles, sites and repositories.
 
 - https://developer.wordpress.org/block-editor/developers/themes/theme-json/
@@ -259,7 +279,8 @@ During the development I have referred to the following articles, sites and repo
 - https://wpdevelopment.courses/articles/full-site-editing-theme-learnings/
 
 
-Some other FSE themes
+Some other FSE themes:
+
 - [WordPress Theme Experiments](https://github.com/WordPress/theme-experiments)
 - [Twenty Twenty-One Blocks](https://github.com/WordPress/theme-experiments/tree/master/twentytwentyone-blocks)
 - [Stanley](https://github.com/carolinan/fullsiteediting/blob/course/Block%20based%20themes/Lesson%201%20-Theme%20structure/stanley.zip)
@@ -286,6 +307,8 @@ In the target site(s) some of the template parts need importing into the Site Ed
 These are the ones that include the navigational blocks.
 
 * Note: You can set the Site icon without having to edit a template or template part. Just create a new post, add the Site icon block and select the image file.
+
+
 
 
 ## Copyright 
