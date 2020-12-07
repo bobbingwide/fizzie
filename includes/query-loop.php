@@ -44,7 +44,7 @@ function fizzie_render_block_core_query_loop_main_query( $attributes, $content, 
             )->render(array('dynamic' => false));
         }
     } else {
-        $content = __( "No posts found." );
+        $content = __( "No posts found.", "fizzie" );
     }
     return $content;
 }
