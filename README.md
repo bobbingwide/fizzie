@@ -1,5 +1,5 @@
 # fizzie 
-![screenshot](https://raw.githubusercontent.com/bobbingwide/fizzie/master/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/bobbingwide/fizzie/main/screenshot.png)
 * Contributors: bobbingwide, vsgloik
 * Donate link: https://www.oik-plugins.com/oik/oik-donate/
 * Tags: blocks, FSE, Gutenberg
