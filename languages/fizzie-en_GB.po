@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fizzie\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/fizzie\n"
-"POT-Creation-Date: 2020-11-29 09:57:28+00:00\n"
+"POT-Creation-Date: 2020-11-30 10:40:30+00:00\n"
 "MIME-Version: 1.0\n"
 "Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
 "Language: en_GB\n"
@@ -42,16 +42,20 @@ msgid "index.html"
 msgstr "index.html"
 
 #: page-13.html  div>#text
-msgid "pgae-13.hmtl 12:22"
-msgstr "pgae-13.hmtl 12:22"
+msgid "page-13.html 12:48"
+msgstr "page-13.html 12:48"
 
 #: page-about.html  div>#text
-msgid "pgae-aobut.hmtl 12:20"
-msgstr "pgae-aobut.hmtl 12:20"
+msgid "page-about.html 11:49"
+msgstr "page-about.html 11:49"
+
+#: page-i18n-test.html  div>#text
+msgid "page-i18-test.html 12:22"
+msgstr "page-i18-test.html 12:22"
 
 #: search.html  div>#text
-msgid "saecrh.hmtl"
-msgstr "saecrh.hmtl"
+msgid "search.html"
+msgstr "search.html"
 
 #: single-oik-plugins.html  div>#text
 msgid "single-oik-plugins.html"
@@ -133,9 +137,9 @@ msgstr " and "
 msgid "oik plugins"
 msgstr "oik plugins"
 
-#: header-menu.html core/navigation-link  label
-msgid "ome"
-msgstr "ome"
+#: footer.html core/paragraph p>#text
+msgid "[clone][cloned]"
+msgstr "[clone][cloned]"
 
 #: header-menu.html core/navigation-link  label
 msgid "Blocks"
@@ -156,6 +160,78 @@ msgstr "About"
 #: home-part.html  div>#text
 msgid "home-part.html is part of home.html"
 msgstr "home-part.html is part of home.html"
+
+#: i18n-test.html core/heading h2>#text
+msgid "List"
+msgstr "List"
+
+#: i18n-test.html core/list ul>li>#text
+msgid "Color"
+msgstr "Colour"
+
+#: i18n-test.html core/list ul>li>#text
+msgid "Center"
+msgstr "Centre"
+
+#: i18n-test.html core/list ul>li>#text
+msgid "Check"
+msgstr "Check"
+
+#: i18n-test.html core/list ul>li>#text
+msgid "Internationalize"
+msgstr "Internationalise"
+
+#: i18n-test.html core/list ul>li>#text
+msgid "Localize"
+msgstr "Localise"
+
+#: i18n-test.html core/list ul>li>#text
+msgid "Aluminum"
+msgstr "Aluminum"
+
+#: i18n-test.html core/heading h2>#text
+msgid "Reversed bbboing"
+msgstr "Reversed bbboing"
+
+#: i18n-test.html core/paragraph p>#text
+msgid "According to a researcher at Cambridge University, it doesn't matter in which order the letters in a word are, the only important thing is that the first and last letter be at the right place. The rest can be a total mess and you can still read it without problem. This is because the human mind does not read every letter by itself but the word as a whole."
+msgstr "According to a researcher at Cambridge University, it doesn't matter in which order the letters in a word are, the only important thing is that the first and last letter be at the right place. The rest can be a total mess and you can still read it without problem. This is because the human mind does not read every letter by itself but the word as a whole."
+
+#: i18n-test.html core/heading h2>#text
+msgid "Non translatable"
+msgstr "Non translatable"
+
+#: i18n-test.html core/paragraph p>#text
+msgid "Content that should not be translated can be marked up with"
+msgstr "Content that should not be translated can be marked up with"
+
+#: i18n-test.html core/paragraph p>code>#text
+msgid "translate=\"no\""
+msgstr "translate=\"no\""
+
+#: i18n-test.html core/paragraph p>#text
+msgid "."
+msgstr "."
+
+#: i18n-test.html core/quote blockquote>p>#text
+msgid "Obfuscate text but leave it readable."
+msgstr "Obfuscate text but leave it readable."
+
+#: i18n-test.html core/quote blockquote>cite>#text
+msgid "Herb Miller, author of bbboing"
+msgstr "Herb Miller, author of bbboing"
+
+#: i18n-test.html core/paragraph p>#text
+msgid "Example, using the"
+msgstr "Example, using the"
+
+#: i18n-test.html core/paragraph p>code>#text
+msgid "core/html"
+msgstr "core/html"
+
+#: i18n-test.html core/paragraph p>#text
+msgid "block."
+msgstr "block."
 
 #: information.html core/heading h2>#text
 msgid "Information"
