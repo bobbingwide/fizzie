@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fizzie\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/fizzie\n"
-"POT-Creation-Date: 2020-12-07 09:39:58+00:00\n"
+"POT-Creation-Date: 2020-12-08 05:45:42+00:00\n"
 "MIME-Version: 1.0\n"
 "Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
 "Language: en_GB\n"
@@ -105,37 +105,13 @@ msgstr "Sitemap"
 msgid "Sites"
 msgstr "Sites"
 
-#: footer.html core/paragraph p>#text
-msgid "[bw_wpadmin]"
-msgstr "[bw_wpadmin]"
+#: footer.html core/paragraph p
+msgid "[bw_wpadmin]<br>(C) Copyright Bobbing Wide 2020. All rights reserved"
+msgstr "[bw_wpadmin]<br>(C) Copyright Bobbing Wide 2020. All rights reserved"
 
-#: footer.html core/paragraph p>#text
-msgid "(C) Copyright Bobbing Wide 2020. All rights reserved"
-msgstr "(C) Copyright Bobbing Wide 2020. All rights reserved"
-
-#: footer.html core/paragraph p>#text
-msgid "Website designed and developed by "
-msgstr "Website designed and developed by "
-
-#: footer.html core/paragraph p>a>#text
-msgid "Herb Miller"
-msgstr "Herb Miller"
-
-#: footer.html core/paragraph p>#text
-msgid " "
-msgstr " "
-
-#: footer.html core/paragraph p>a>#text
-msgid "Proudly powered by WordPress"
-msgstr "Proudly powered by WordPress"
-
-#: footer.html core/paragraph p>#text
-msgid " and "
-msgstr " and "
-
-#: footer.html core/paragraph p>a>#text
-msgid "oik plugins"
-msgstr "oik plugins"
+#: footer.html core/paragraph p
+msgid "Website designed and developed by&#xA0;<a href=\"https://herbmiller.me/\">Herb Miller</a>&#xA0;<a href=\"https://www.twitter.com/herb_miller\"></a>&#13;    <br><a href=\"https://www.wordpress.org/\">Proudly powered by WordPress</a>&#xA0;and&#xA0;<a href=\"https://oik-plugins.com/\">oik plugins</a>"
+msgstr "Website designed and developed by&#xA0;<a href=\"https://herbmiller.me/\">Herb Miller</a>&#xA0;<a href=\"https://www.twitter.com/herb_miller\"></a>&#13;    <br><a href=\"https://www.wordpress.org/\">Proudly powered by WordPress</a>&#xA0;and&#xA0;<a href=\"https://oik-plugins.com/\">oik plugins</a>"
 
 #: footer.html core/paragraph p>#text
 msgid "[clone][cloned]"
@@ -201,17 +177,9 @@ msgstr "According to a researcher at Cambridge University, it doesn't matter in 
 msgid "Non translatable"
 msgstr "Non translatable"
 
-#: i18n-test.html core/paragraph p>#text
-msgid "Content that should not be translated can be marked up with"
-msgstr "Content that should not be translated can be marked up with"
-
-#: i18n-test.html core/paragraph p>code>#text
-msgid "translate=\"no\""
-msgstr "translate=\"no\""
-
-#: i18n-test.html core/paragraph p>#text
-msgid "."
-msgstr "."
+#: i18n-test.html core/paragraph p
+msgid "Content that should not be translated can be marked up with <code>translate=\"no\"</code>."
+msgstr "Content that should not be translated can be marked up with <code>translate=\"no\"</code>."
 
 #: i18n-test.html core/quote blockquote>p>#text
 msgid "Obfuscate text but leave it readable."
@@ -221,17 +189,13 @@ msgstr "Obfuscate text but leave it readable."
 msgid "Herb Miller, author of bbboing"
 msgstr "Herb Miller, author of bbboing"
 
-#: i18n-test.html core/paragraph p>#text
-msgid "Example, using the"
-msgstr "Example, using the"
+#: i18n-test.html core/paragraph p
+msgid "Example, using the <code>core/html</code> block."
+msgstr "Example, using the <code>core/html</code> block."
 
-#: i18n-test.html core/paragraph p>code>#text
-msgid "core/html"
-msgstr "core/html"
-
-#: i18n-test.html core/paragraph p>#text
-msgid "block."
-msgstr "block."
+#: i18n-test.html core/html p
+msgid "<span translate=\"no\">Herb Miller</span>"
+msgstr "<span translate=\"no\">Herb Miller</span>"
 
 #: information.html core/heading h2>#text
 msgid "Information"
