@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fizzie\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/fizzie\n"
-"POT-Creation-Date: 2020-12-08 05:45:42+00:00\n"
+"POT-Creation-Date: 2020-12-11 10:21:46+00:00\n"
 "MIME-Version: 1.0\n"
 "Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
 "Language: en_GB\n"
@@ -136,6 +136,34 @@ msgstr "About"
 #: home-part.html  div>#text
 msgid "home-part.html is part of home.html"
 msgstr "home-part.html is part of home.html"
+
+#: i18n-rich-text.html core/paragraph p
+msgid "Testing translation of rich text strings. <code><a href=\"https://github.com/bobbingwide/oik-i18n\">oik-i18n</a></code>'s routines will extract the <strong>rich text</strong> strings for translation, these are automatically translated into UK English ( <code>en_GB</code> ) and the <em>obfuscated</em> bbboing language ( bb_BB ), then the theme's files are <strong>localized</strong>."
+msgstr "Testing translation of rich text strings. <code><a href=\"https://github.com/bobbingwide/oik-i18n\">oik-i18n</a></code>'s routines will extract the <strong>rich text</strong> strings for translation, these are automatically translated into UK English ( <code>en_GB</code> ) and the <em>obfuscated</em> bbboing language ( bb_BB ), then the theme's files are <strong>localised</strong>."
+
+#: i18n-rich-text.html core/heading h2
+msgid "Test creation -<strong> rich text</strong>"
+msgstr "Test creation -<strong> rich text</strong>"
+
+#: i18n-rich-text.html core/list ul>li>#text
+msgid "Color check"
+msgstr "Colour check"
+
+#: i18n-rich-text.html core/list ul>li
+msgid "sb-toolicons-block will help us find the blocks that support <strong>rich text</strong> strings."
+msgstr "sb-toolicons-block will help us find the blocks that support <strong>rich text</strong> strings."
+
+#: i18n-rich-text.html core/list ul>li>#text
+msgid "this includes List, Heading, Blockquote etc"
+msgstr "this includes List, Heading, Blockquote etc"
+
+#: i18n-rich-text.html core/list ul>li>#text
+msgid "Will it translate this one?"
+msgstr "Will it translate this one?"
+
+#: i18n-rich-text.html  p>#text
+msgid "F"
+msgstr "F"
 
 #: i18n-test.html core/heading h2>#text
 msgid "List"
