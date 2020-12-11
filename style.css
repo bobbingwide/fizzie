@@ -44,6 +44,7 @@ figure:not(.alignfull).alignwide {
 
 }
 
+.wp-block-template-part.alignfull > *,
 figure.alignfull {
     margin:0;
 
