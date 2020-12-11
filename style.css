@@ -680,6 +680,19 @@ div.wp-site-blocks > div.WP_DEBUG:first-of-type:hover {
     /* text-align: center; */
 }
 
+.wp-block-template-part.home .wp-block-group {
+    background-color: #ffffff;
+}
+
+.wp-block-template-part:not(.alignfull) .wp-block-group {
+    padding: 0.5em;
+}
+
+.home .wp-block-post-title
+.home p{
+    padding: 0px 30px 20px 30px;
+}
+
 
 
 
