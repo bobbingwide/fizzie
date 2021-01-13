@@ -599,6 +599,10 @@ input, select, textarea {
     width: 100%;
 }
 
+input[type="radio"] {
+    width:auto;
+}
+
 div.recursion-error {
     display: block;
     margin: 0 auto;
