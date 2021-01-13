@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fizzie\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/fizzie\n"
-"POT-Creation-Date: 2020-12-11 10:21:46+00:00\n"
+"POT-Creation-Date: 2021-01-13 05:22:23+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -105,7 +105,7 @@ msgid "Sites"
 msgstr ""
 
 #: footer.html core/paragraph p
-msgid "[bw_wpadmin]<br>(C) Copyright Bobbing Wide 2020. All rights reserved"
+msgid "[bw_wpadmin]<br>(C) Copyright Bobbing Wide 2020, 2021 All rights reserved"
 msgstr ""
 
 #: footer.html core/paragraph p
