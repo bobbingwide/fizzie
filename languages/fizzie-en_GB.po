@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fizzie\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/fizzie\n"
-"POT-Creation-Date: 2021-01-13 05:22:23+00:00\n"
+"POT-Creation-Date: 2021-02-24 10:35:43+00:00\n"
 "MIME-Version: 1.0\n"
 "Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
 "Language: en_GB\n"
@@ -20,6 +20,14 @@ msgstr "404.html"
 #: archive-block.html  div>#text
 msgid "archive-block.html"
 msgstr "archive-block.html"
+
+#: archive-oik-plugins.html  div>#text
+msgid "archive-oik-plugins.html"
+msgstr "archive-oik-plugins.html"
+
+#: archive-oik-themes.html  div>#text
+msgid "archive-oik-themes.html"
+msgstr "archive-oik-themes.html"
 
 #: archive.html  div>#text
 msgid "archive.html - why this one?"
@@ -61,6 +69,10 @@ msgstr "search.html"
 msgid "single-oik-plugins.html"
 msgstr "single-oik-plugins.html"
 
+#: single-oik-themes.html  div>#text
+msgid "single-oik-themes.html"
+msgstr "single-oik-themes.html"
+
 #: single.html  div>#text
 msgid "single.html"
 msgstr "single.html"
@@ -77,6 +89,10 @@ msgstr "[bw_terms taxonomy=block_letters post_type=block]"
 msgid "[bw_terms taxonomy=letters post_type=oik-plugins]"
 msgstr "[bw_terms taxonomy=letters post_type=oik-plugins]"
 
+#: a2z-pagination-oik-themes.html core/paragraph p>#text
+msgid "[bw_terms taxonomy=letters post_type=oik-themes]"
+msgstr "[bw_terms taxonomy=letters post_type=oik-themes]"
+
 #: a2z-pagination.html core/paragraph p>#text
 msgid "[bw_terms]"
 msgstr "[bw_terms]"
@@ -84,6 +100,10 @@ msgstr "[bw_terms]"
 #: category-description.html core/shortcode p>#text
 msgid "[archive_description]"
 msgstr "[archive_description]"
+
+#: download-theme.html core/shortcode p>#text
+msgid "[oikth_download theme=.]"
+msgstr "[oikth_download theme=.]"
 
 #: download.html core/shortcode p>#text
 msgid "[oikp_download plugin=.]"
@@ -106,8 +126,8 @@ msgid "Sites"
 msgstr "Sites"
 
 #: footer.html core/paragraph p
-msgid "[bw_wpadmin]<br>(C) Copyright Bobbing Wide 2020, 2021 All rights reserved"
-msgstr "[bw_wpadmin]<br>(C) Copyright Bobbing Wide 2020, 2021 All rights reserved"
+msgid "[bw_wpadmin]<br>(C) Copyright Bobbing Wide 2020, 2021. All rights reserved"
+msgstr "[bw_wpadmin]<br>(C) Copyright Bobbing Wide 2020, 2021. All rights reserved"
 
 #: footer.html core/paragraph p
 msgid "Website designed and developed by&#xA0;<a href=\"https://herbmiller.me/\">Herb Miller</a>&#xA0;<a href=\"https://www.twitter.com/herb_miller\"></a>&#13;    <br><a href=\"https://www.wordpress.org/\">Proudly powered by WordPress</a>&#xA0;and&#xA0;<a href=\"https://oik-plugins.com/\">oik plugins</a>"
@@ -124,6 +144,10 @@ msgstr "Blocks"
 #: header-menu.html core/navigation-link  label
 msgid "Plugins"
 msgstr "Plugins"
+
+#: header-menu.html core/navigation-link  label
+msgid "Themes"
+msgstr "Themes"
 
 #: header-menu.html core/navigation-link  label
 msgid "Block news"
