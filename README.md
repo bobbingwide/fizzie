@@ -5,7 +5,7 @@
 * Tags: blocks, FSE, Gutenberg
 * Requires at least: 5.5.1
 * Tested up to: 5.7-beta3
-* Version: 0.3.0
+* Version: 0.3.1
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -113,6 +113,10 @@ Some of these templates will be needed for other subdomains of wp-a2z.org.
 
 
 ## Change Log 
+# 0.3.1 
+* Changed: Rename more query-pagination blocks to query-pagination-numbers,,https://github.com/bobbingwide/fizzie/issues/11
+* Changed: Rename editor-style.css to style-editor.css and set block widths in the editor
+
 # 0.3.0 
 * Changed: Change from overriding query-pagination to query-pagination-numbers,https://github.com/bobbingwide/fizzie/issues/18
 * Changed: Add support for oik-themes - for FSE themes,https://github.com/bobbingwide/fizzie/issues/51
