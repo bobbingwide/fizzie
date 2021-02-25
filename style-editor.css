@@ -22,3 +22,18 @@ p.has-dropcap:first-child:first-letter {
     border-bottom: 1px solid grey;
 }
 
+/* Main column width */
+.wp-block {
+    max-width: 1040px;
+}
+
+/* Width of "wide" blocks */
+.wp-block[data-align="wide"] {
+    max-width: 1340px;
+}
+
+/* Width of "full-wide" blocks */
+.wp-block[data-align="full"] {
+    max-width: none;
+}
+
