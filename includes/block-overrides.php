@@ -15,7 +15,8 @@ require_once __DIR__ . '/class-block-recursion-error-block.php';
  * satisfies the requirement
  * or find another way to automatically determine whether or not to include the file.
  */
-require_once __DIR__ . '/query-pagination.php';
+//require_once __DIR__ . '/query-pagination.php';
+require_once __DIR__ . '/query-pagination-numbers.php';
 require_once __DIR__ . '/query-loop.php';
 require_once __DIR__ . '/post-excerpt.php';
 require_once __DIR__ . '/post-content.php';
@@ -38,7 +39,9 @@ add_filter( 'register_block_type_args', 'fizzie_register_block_type_args', 9 );
  */
 function fizzie_register_block_type_args( $args ) {
     $args = fizzie_maybe_override_block(  $args,'core/query-pagination', 'render_block_core_query_pagination');
-    $args = fizzie_maybe_override_block(  $args,'core/query-loop', 'render_block_core_query_loop' );
+	$args = fizzie_maybe_override_block(  $args,'core/query-pagination-numbers', 'render_block_core_query_pagination_numbers');
+
+	$args = fizzie_maybe_override_block(  $args,'core/query-loop', 'render_block_core_query_loop' );
     $args = fizzie_maybe_override_block(  $args,'core/post-excerpt', 'render_block_core_post_excerpt' );
     $args = fizzie_maybe_override_block(  $args,'core/post-content', 'render_block_core_post_content' );
     $args = fizzie_maybe_override_block(  $args,'core/template-part', 'render_block_core_template_part' );

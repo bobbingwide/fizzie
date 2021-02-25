@@ -4,7 +4,7 @@ Theme URI: https://www.oik-plugins.com/oik-themes/fizzie
 Description: Fizzie theme - a Full Site Editing theme using Gutenberg blocks
 Author: Bobbing Wide
 Author URI: https://www.oik-plugins.com/author/bobbingwide
-Version: 0.2.0
+Version: 0.3.0
 Tags: blocks, Gutenberg, FSE, oik, Full Site Editing, single-column
 Requires at least: 5.5.1
 Requires PHP: 7.3
@@ -27,8 +27,8 @@ body {
     line-height: 1.625;
 }
 
-/**
- */
+
+
 .wp-block-template-part >  *:not(.alignfull),
 figure:not(.alignfull) {
     width: 71%;
@@ -49,6 +49,8 @@ figure.alignfull {
     margin:0;
 
 }
+
+
 
 a {
     color: var(--wp--preset--color--greeny, #6a6a2a );
@@ -419,7 +421,28 @@ img {
     clear: both;
 }
 
-div.wp-site-blocks .content { max-width: 1100px; margin: 0 auto;}
+/*
+div.wp-site-blocks {
+    grid-gap: 10px;
+    grid-template-rows: auto;
+    grid-template-columns:
+        [body-start]
+        minmax( 10px, 1fr )
+        [wide-start]
+        minmax( 0px, 100px )
+        [container-start]
+        minmax( 300px, 1000px)
+        [container-end]
+        minmax( 0px, 100px)
+        [wide-end]
+        minmax( 10px, 1fr )
+        [body-end];
+
+}
+*/
+
+
+/* div.wp-site-blocks .content { max-width: 1100px; margin: 0 auto;} */
 .content:after { clear:both; display: table; content: " ";}
 
 .alignfull {
@@ -487,9 +510,8 @@ b, strong {
  pre {
      font-family: monospace;
  }
-
-
- .wp-block-query-pagination {
+ 
+ .wp-block-query-pagination-numbers {
      clear: both;
  }
 
@@ -696,6 +718,41 @@ div.wp-site-blocks > div.WP_DEBUG:first-of-type:hover {
 .home .wp-block-post-title
 .home p{
     padding: 0px 30px 20px 30px;
+}
+
+/*
+.wp-site-blocks >
+.wp-block-template-part {
+    display: grid;
+
+
+}
+
+.wp-site-blocks > .wp-block-template-part  .alignfull {
+    grid-column: body-start / body-end;
+}
+
+
+.wp-site-blocks > .wp-block-template-part  .alignwide {
+    grid-column: wide-start / wide-end;
+    background-color: #ffffff;
+}
+
+
+.wp-site-blocks > .wp-block-template-part  div:not(.alignwide):not(.alignfull)
+{
+    grid-column: container-start / container-end;
+    background-color: #ffffff;
+}
+
+ */
+
+.download.wp-block-template-part a.button {
+    background-color: #eb672b;
+}
+
+.download.wp-block-template-part a.github {
+    background-color: #5b5f13;
 }
 
 
