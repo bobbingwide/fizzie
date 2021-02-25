@@ -3,8 +3,8 @@ Contributors: bobbingwide, vsgloik
 Donate link: https://www.oik-plugins.com/oik/oik-donate/
 Tags: blocks, FSE, Gutenberg
 Requires at least: 5.5.1
-Tested up to: 5.6-RC2
-Version: 0.2.0
+Tested up to: 5.7-beta3
+Version: 0.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,8 +25,8 @@ Requirements:
 
 Contents:
 
-* Fifteen templates
-* Twenty five template parts
+* Seventeen templates
+* Twenty eight template parts
 
 The `block-templates` are:
 
@@ -34,6 +34,7 @@ The `block-templates` are:
 * archive - generic template used for archives: author, taxonomy, date, tag 
 * archive-block - to display archives for Blocks
 * archive-oik-plugins - to display archive for Plugins
+* archive-oik-themes - to display archive for Themes
 * category - used to display the Category archive
 * front-page - used for Page Shown On Front
 * home - used for Blog Posts index page or Posts Shown on Front (when front-page not implemented)
@@ -44,6 +45,7 @@ The `block-templates` are:
 * search - Display search results
 * single - used for a single post / attachment / CPT
 * single-oik-plugins - used for a single oik-plugin 
+* single-oik-themes - used for a single oik-theme
 * singular - used when single or page does not exist
 
 See the template visualization: https://developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04.png
@@ -53,17 +55,20 @@ The `block-template-parts` are:
 * a2z-pagination - Letter pagination for blog posts
 * a2z-pagination-block - Letter pagination for blocks
 * a2z-pagination-oik-plugins - Letter pagination for plugins
+* a2z-pagination-oik-themes - Letter pagination for themes
 * archive-query - Main query for archive pages
 * breadcrumbs - Breadcrumb trail - using sb-breadcrumbs-block-based-widgets
 * category-description - Uses [archive_description] shortcode
 * category-query - To list posts in a chosen category term
 * download - To download plugins - uses [oikp_download] shortcode
+* download-theme - To download themes - uses [oikth_download] shortcode
 * footer - Final full width footer
 * footer-menu - Displays the footer menu - after the final full width footer
 * header - Displays the header: site logo, site title and tagline, header menu.
 * header-menu - Displays the header menu 
 * home-part - A template part used in debugging. Classic block
 * home-query - Displays the posts on the blog page
+* i18n-rich-text.html
 * i18n-test - Internationalization, extraction and localization test file
 * information - Displays post meta data using the oik-block/fields block
 * issue-27 - test case file for issue-27
@@ -91,15 +96,11 @@ Some of these templates will be needed for other subdomains of wp-a2z.org.
 
 == Installation ==
 
-* Either install Gutenberg 9.2.2 or higher or install and build the latest Gutenberg source.
+* Either install Gutenberg 10.0.0 or higher or install and build the latest Gutenberg source.
 * Activate Gutenberg.
-* Install and activate the Fizzie theme, as you would install any other theme.
-* For Gutenberg 9.2.2 enable Full site editing, in Gutenberg > Experiments. Note: There is no need to Enable Full Site Editing Demo Templates
-* For Gutenberg 9.3.0 and above Full Site Editing will be enabled automatically.
+* Install and activate the Fizzie theme, as you would install any other theme. Full Site Editing will be enabled automatically.
 * For some of the templates and template parts to work properly you will need to install and activate the pre-requisite plugins.
 * For templates which include navigation blocks you will need to edit the supplied menus.
-
-Note: Gutenberg 9.4.0 did not choose template parts correctly. Update to Gutenberg 9.5.0
 
 Pre-requisite plugins: see also Notes
 
@@ -111,6 +112,22 @@ Pre-requisite plugins: see also Notes
  
 
 == Change Log ==
+= 0.3.0 = 
+* Changed: Change from overriding query-pagination to query-pagination-numbers,[github bobbingwide fizzie issues 18]
+* Changed: Add support for oik-themes - for FSE themes,[github bobbingwide fizzie issue 51]
+* Changed: Update experimental-theme.json to new structure - with Gutenberg 10.0.0,[github bobbingwide fizzie issue 3]
+* Changed: relocalize updated template parts,[github bobbingwide fizzie issues 46]
+* Changed: Style radio buttons with width:auto
+* Changed: Update Copyright years in the footer
+* Changed: Workaround to prevent recursion occurring in the editor,[github bobbingwide fizzie issues 49]
+* Changed: Move metadates template part back into the group, with className alignfull,[github bobbingwide fizzie issues 44]
+* Changed: Allow nested template parts with class alignfull to use 100% width,[github bobbingwide fizzie issues 44]
+* Changed: Remove workaround for post-excerpt,[github bobbingwide fizzie issues 25]
+* Changed: Improve styling of blog display ( home.html ),[github bobbingwide fizzie issues 4]
+* Tested: With Gutenberg 10.0.2
+* Tested: With WordPress 5.7-beta3
+* Tested: With PHP 8.0
+
 = 0.2.0 = 
 * Added: Extracted and localized to UK English ( en_GB ) and the obfuscated bbboing language ( bb_BB ),[github bobbingwide fizzie issues 46]
 * Changed: Add more templates to test the template hierarchy logic: page-13, page-about and search,[github bobbingwide fizzie issues 38]
@@ -311,7 +328,7 @@ Note: You can set the Site icon without having to edit a template or template pa
 
 
 == Copyright ==
-(C) Copyright Herb Miller, Bobbing Wide 2020
+(C) Copyright Herb Miller, Bobbing Wide 2020, 2021
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
