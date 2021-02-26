@@ -28,32 +28,29 @@ function fizzie_render_block_core_navigation_link( $attributes, $content, $block
  * @return mixed
  */
 function fizzie_fiddle_nav_atts( $attributes ) {
-    $attributes['url'] = str_replace( 'https://s.b/wp56', site_url(), $attributes['url'] );
-    $request_uri = $_SERVER["REQUEST_URI"];
-    $request_uri_path = parse_url( $request_uri, PHP_URL_PATH );
-    $url_path = parse_url( $attributes['url'], PHP_URL_PATH );
-    $site_url = trailingslashit( parse_url( site_url(), PHP_URL_PATH ) );
-    /*
-    echo $request_uri_path;
-    echo ' ';
-    echo $url_path;
-    echo ' ';
-    echo $site_url;
-    echo '<br/>';
-    */
-    // We need to avoid the home page: home_url() or site_url()
-    if ( $url_path === $site_url ) {
-        if ( $url_path === $request_uri_path ) {
-            $attributes['className'] = ['current-menu-item'];
-        } else {
-            // don't match this $url path with all the other paths
+	if  ( isset( $attributes['url'] ) ) {
+		$attributes['url']=str_replace( 'https://s.b/wp56', site_url(), $attributes['url'] );
+		$request_uri      =$_SERVER["REQUEST_URI"];
+		$request_uri_path =parse_url( $request_uri, PHP_URL_PATH );
+		$url_path         =parse_url( $attributes['url'], PHP_URL_PATH );
+		$site_url         =trailingslashit( parse_url( site_url(), PHP_URL_PATH ) );
 
-        }
-    } elseif ( 0 === strpos( $request_uri, $url_path ) ) {
+		// We need to avoid the home page: home_url() or site_url()
+		if ( $url_path === $site_url ) {
+			if ( $url_path === $request_uri_path ) {
+				$attributes['className']=[ 'current-menu-item' ];
+			} else {
+				// don't match this $url path with all the other paths
 
-        // @TODO check that the attributes URL is
-        //if ( parse_url( $request_uri, PHP_URL_PATH ) === parse_url( $attributes['url'], PHP_URL_PATH ) ) {
-        $attributes['className'] = ['current-menu-item'];
-    }
+			}
+		} elseif ( 0 === strpos( $request_uri, $url_path ) ) {
+
+			// @TODO check that the attributes URL is
+			//if ( parse_url( $request_uri, PHP_URL_PATH ) === parse_url( $attributes['url'], PHP_URL_PATH ) ) {
+			$attributes['className']=[ 'current-menu-item' ];
+		}
+	}
+	// Pragmatic workaround to problems when the id's not what Gutenberg thinks it is.
+	unset( $attributes['id'] );
     return $attributes;
 }
