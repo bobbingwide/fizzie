@@ -625,6 +625,10 @@ input[type="radio"] {
     width:auto;
 }
 
+input[type="submit"] {
+    width: auto;
+}
+
 div.recursion-error {
     display: block;
     margin: 0 auto;
