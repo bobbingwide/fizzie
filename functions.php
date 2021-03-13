@@ -28,6 +28,9 @@ function fizzie_after_setup_theme()
      */
     add_theme_support('experimental-link-color');
 
+	// Add support for custom units.  Is this necessary for FSE?
+	//add_theme_support( 'custom-units' );
+
     /**
      * You need to register nav menus in order for admin to display Appearance > Menus
      * and for Navigation (beta) to allow you to Manage locations.
@@ -81,7 +84,6 @@ add_action( 'after_setup_theme', 'fizzie_after_setup_theme');
 add_action( 'after_setup_theme', 'fizzie_stanley_theme_support');
 add_action( 'init', 'fizzie_init', 20 );
 
-
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -89,7 +91,7 @@ add_action( 'init', 'fizzie_init', 20 );
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  *
- * Copied from stanley theme. 2020/10/27
+ * Originally copied from stanley theme on 2020/10/27.
  */
 function fizzie_stanley_theme_support() {
 
@@ -111,6 +113,8 @@ function fizzie_stanley_theme_support() {
 
     // Add support for full and wide align blocks.
     add_theme_support( 'align-wide' );
+
+
 }
 
 /**

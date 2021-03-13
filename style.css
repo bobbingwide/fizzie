@@ -28,7 +28,7 @@ body {
 }
 
 
-
+/*
 .wp-block-template-part >  *:not(.alignfull),
 figure:not(.alignfull) {
     width: 71%;
@@ -49,6 +49,8 @@ figure.alignfull {
     margin:0;
 
 }
+
+ */
 
 
 
@@ -212,19 +214,24 @@ h6 {
 .wp-block-group.page-footer .wp-block-group__inner-container,
 .wp-block-group.page,
 .wp-block-group.post,
-.wp-block-group.posts,
+.wp-block-group.posts,div.a2z,
+*/
 div.breadcrumbs,
-div.a2z,
 div.information,
 div.download,
 div.metadates,
 section.archive,
 div.home {
     max-width: 1140px;
+    max-width: var(--wp--custom--responsive--aligndefault-width);
     margin: 0 auto;
 }
 
- */
+div.breadcrumbs {
+    margin-top: 0.5em;
+}
+
+
 
 div.wp-block-template-part {
     display: block;
@@ -552,7 +559,7 @@ h2.wp-block-post-title {
 }
 
 div.information {
-    padding: 20px 30px;
+    /*padding: 20px 30px; */
     margin-top: 20px;
 }
 
@@ -716,8 +723,27 @@ div.wp-site-blocks > div.WP_DEBUG:first-of-type:hover {
 }
 
 .wp-block-template-part:not(.alignfull) .wp-block-group {
+    padding: 0.5em 0;
+}
+
+/*
+.wp-block-template-part:not(.alignfull) .wp-block-group__inner-container > * {
     padding: 0.5em;
 }
+
+
+.wp-block-template-part:not(.alignfull) :not(.wp-block-cover) {
+    padding: 0.5em;
+}
+*/
+h1,h2,h3,h4,h5,h6,
+*:not(.alignfull) p:not(.wp-block-site-title)
+p:not(.wp-block-site-tagline){
+    padding: 0.5em;
+}
+
+
+
 
 .home .wp-block-post-title
 .home p{
@@ -758,6 +784,70 @@ div.wp-site-blocks > div.WP_DEBUG:first-of-type:hover {
 .download.wp-block-template-part a.github {
     background-color: #5b5f13;
 }
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+
+* {
+    box-sizing: border-box;
+}
+
+/**
+ Styling copied from TT1-blocks
+ where do the vars come from?
+
+*/
+.wp-site-blocks,
+.wp-block-template-part {
+    /* padding: 0 var(--wp--custom--spacing--horizontal); */
+    max-width: 100%;
+}
+
+.wp-block-oik-sb-toolicons,
+.wp-block-oik-sb-toolicons * {
+    margin: 0;
+}
+
+
+.wp-site-blocks * {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-site-blocks *:not(.wp-block-template-part):not(.wp-block-post-content):not(.wp-block-group):not(.alignfull):not(.alignwide):not([class$="__inner-container"]):not(img) {
+    max-width: var(--wp--custom--responsive--aligndefault-width);
+}
+
+.wp-site-blocks .alignwide {
+    width: var(--wp--custom--responsive--alignwide-width);
+    max-width: 100%;
+}
+
+.aligncenter {
+    text-align: center;
+}
+
+.wp-site-blocks .alignleft {
+    float: left;
+    margin-right: 2em;
+    max-width: 360px;
+}
+
+.wp-site-blocks .alignright {
+    float: right;
+    margin-left: 2em;
+    max-width: 360px;
+}
+
+/** This shifts some of the template parts to the left */
+.wp-site-blocks *:not(.wp-block-template-part) *:not(.wp-block-template-part):not(.wp-block-columns).alignfull {
+    /* margin: 0 calc(0px - var(--wp--custom--spacing--horizontal));
+    width: calc(100% + (2 - var(--wp--custom--spacing--horizontal))); */
+    margin: 0 auto;
+    width: 100%;
+}
+
 
 
 

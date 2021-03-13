@@ -164,9 +164,29 @@
             "fontFamily": "Geneva, Tahoma, Verdana, sans-serif",
             "slug": "geneva-verdana"
           }
-          ]
+        ]
+      },
+      "spacing": {
+        "customPadding": true
+      },
+       "custom": {
+          "font-primary": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
+          "line-height": {
+            "body": 1.7,
+            "heading": 1.3,
+            "page-title": 1.1
+          },
+          "responsive": {
+            "aligndefault-width": "1140px",
+            "alignwide-width": "1340px"
+          },
+          "spacing": {
+            "unit": "20px",
+            "horizontal": "25px",
+            "vertical": "30px"
+          }
+        }
       }
-    }
   },
   "styles": {
     "root": {
