@@ -3,8 +3,8 @@ Contributors: bobbingwide, vsgloik
 Donate link: https://www.oik-plugins.com/oik/oik-donate/
 Tags: blocks, FSE, Gutenberg
 Requires at least: 5.5.1
-Tested up to: 5.7-beta3
-Version: 0.3.1
+Tested up to: 5.7
+Version: 0.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -112,6 +112,14 @@ Pre-requisite plugins: see also Notes
  
 
 == Change Log ==
+= 0.4.0 =
+* Changed: Another attempt at supporting alignfull and alignwide - solution copied/cobbled from TT1-blocks,[github bobbingwide fizzie issues 44]
+* Fixed: Avoid problems attempting to valid the id attribute. Just unset it!,[github bobbingwide fizzie issues 52]
+* Fixed: Adjust the width of submit buttons from 100% to auto
+* Tested: With Gutenberg 10.1.1
+* Tested: With WordPress 5.7 and WordPress Multi Site
+* Tested: With PHP 8.0
+
 = 0.3.1 =
 * Changed: Rename more query-pagination blocks to query-pagination-numbers,,[github bobbingwide fizzie issues 11]
 * Changed: Rename editor-style.css to style-editor.css and set block widths in the editor
@@ -304,7 +312,8 @@ Some other FSE themes:
 - [WordPress Theme Experiments](https://github.com/WordPress/theme-experiments)
 - [Twenty Twenty-One Blocks](https://github.com/WordPress/theme-experiments/tree/master/twentytwentyone-blocks)
 - [Stanley](https://github.com/carolinan/fullsiteediting/blob/course/Block%20based%20themes/Lesson%201%20-Theme%20structure/stanley.zip)
-- [Seedlet Blocks)[https://github.com/Automattic/themes/tree/trunk/seedlet-blocks]
+- [Seedlet Blocks](https://github.com/Automattic/themes/tree/trunk/seedlet-blocks)
+- See also [WP-a2z FSE themes](https://blocks.wp-a2z.org/oik-themes)
 
 == Brief development history ==
 
