@@ -54,8 +54,24 @@ function fizzie_render_block_core_template_part( $attributes, $content, $block  
         // Except shortcode processing that is.
 
         $content = do_shortcode($content);
+        // This code will now require Gutenberg 10.2.0
+	    if ( defined( 'WP_TEMPLATE_PART_AREA_UNCATEGORIZED' )) {
+		    $area=WP_TEMPLATE_PART_AREA_UNCATEGORIZED;
+		    //$html_tag = isset( $attributes['tagName'] ) ? esc_attr($attributes['tagName']) : 'div';
+		    if ( empty( $attributes['tagName'] ) ) {
+			    $area_tags=array(
+				    WP_TEMPLATE_PART_AREA_HEADER       =>'header',
+				    WP_TEMPLATE_PART_AREA_FOOTER       =>'footer',
+				    WP_TEMPLATE_PART_AREA_UNCATEGORIZED=>'div',
+			    );
+			    $html_tag =null !== $area && isset( $area_tags[ $area ] ) ? $area_tags[ $area ] : $area_tags[ WP_TEMPLATE_PART_AREA_UNCATEGORIZED ];
+		    } else {
+			    $html_tag=esc_attr( $attributes['tagName'] );
+		    }
+	    } else {
+		    $html_tag = isset( $attributes['tagName'] ) ? esc_attr($attributes['tagName']) : 'div';
+	    }
 
-        $html_tag = esc_attr($attributes['tagName']);
         $wrapper_attributes = get_block_wrapper_attributes();
         $html = "<$html_tag $wrapper_attributes>" . str_replace(']]>', ']]&gt;', $content) . "</$html_tag>";
         fizzie_clear_processed_content( );
