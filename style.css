@@ -4,7 +4,7 @@ Theme URI: https://www.oik-plugins.com/oik-themes/fizzie
 Description: Fizzie theme - a Full Site Editing theme using Gutenberg blocks
 Author: Bobbing Wide
 Author URI: https://www.oik-plugins.com/author/bobbingwide
-Version: 0.4.0
+Version: 0.4.1
 Tags: blocks, Gutenberg, FSE, oik, Full Site Editing, single-column
 Requires at least: 5.5.1
 Requires PHP: 7.3
@@ -152,8 +152,18 @@ h6 {
     display: inline;
     padding: 1em;
 }
-.footer .wp-block-navigation li {
-    display: inline-block;
+
+.wp-block-navigation .wp-block-navigation-link {
+    margin-right: 0em;
+}
+
+.wp-block-navigation ul li {
+   padding-right: 4px;
+}
+
+.wp-block-navigation .wp-block-navigation-link__content,
+.wp-block-navigation .wp-block-pages-list__item__link {
+    color: #ffffff;
 }
 /*
 .wp-block-group.has-background {
@@ -316,10 +326,6 @@ p.wp-block-site-tagline {
 
 .wp-block-navigation ul ul {
     margin-top: 0em;
-}
-
-.wp-block-navigation-link {
-    padding-right: 4px;
 }
 
 .wp-block-navigation a {
