@@ -4,7 +4,7 @@ Theme URI: https://www.oik-plugins.com/oik-themes/fizzie
 Description: Fizzie theme - a Full Site Editing theme using Gutenberg blocks
 Author: Bobbing Wide
 Author URI: https://www.oik-plugins.com/author/bobbingwide
-Version: 0.4.1
+Version: 0.5.0
 Tags: blocks, Gutenberg, FSE, oik, Full Site Editing, single-column
 Requires at least: 5.5.1
 Requires PHP: 7.3
@@ -26,33 +26,6 @@ body {
     font-weight: 300;
     line-height: 1.625;
 }
-
-
-/*
-.wp-block-template-part >  *:not(.alignfull),
-figure:not(.alignfull) {
-    width: 71%;
-    max-width: 1040px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.wp-block-template-part > *:not(.alignfull).alignwide,
-figure:not(.alignfull).alignwide {
-    width: 88%;
-    max-width: 1340px;
-
-}
-
-.wp-block-template-part.alignfull > *,
-figure.alignfull {
-    margin:0;
-
-}
-
- */
-
-
 
 a {
     color: var(--wp--preset--color--greeny, #6a6a2a );
@@ -111,16 +84,20 @@ h6 {
     font-size: 1.2em;
 }
 
-.header .wp-block-columns {
+
+/**
+Styling for the header
+ */
+
+header .wp-block-columns {
     margin-bottom: 0;
 }
 
-.header a {
+header a {
     color: #333;
 }
 
-
-.wp-block-group.header {
+header {
     /* border-bottom: 1px solid grey; */
     padding: 0;
     background-color: #ffffff;
@@ -165,22 +142,6 @@ h6 {
 .wp-block-navigation .wp-block-pages-list__item__link {
     color: #ffffff;
 }
-/*
-.wp-block-group.has-background {
-     padding: 0px 0px;
- }
-
-//
-
-.wp-block-group.has-background .wp-block-group__inner-container .wp-block-post-content > *:not(figure),
-.wp-block-group.has-background .wp-block-group__inner-container *.wp-block-post-content  *:not(figure)
-{
-    padding: 20px 30px;
-}
-*/
-
-
-
 
 
 .page-footer {
@@ -353,25 +314,7 @@ img {
     height: auto;
 }
 
-/*--------------------------------------------------------------
-# Alignments - these came from Stanley but aren't as good as we want.
---------------------------------------------------------------*/
-/* Let's work to make this !important unnecessary
-.alignleft,
-.alignright {
-    max-width: 580px !important;
-}
-
-
-.alignleft img,
-.alignright img,
-.alignleft figcaption,
-.alignright figcaption {
-    max-width: 50%;
-    width: 50%;
-}
-
- */
+/*
 
 .alignleft figcaption {
     clear: left;
@@ -400,20 +343,9 @@ img {
     margin-right: auto;
 }
 
-/**
- * Setting alignwide to halfway between alignfull and normal on my laptop.
- * normal = 1140px
- * alignfull = 1519px
- *
- * Perhaps this should be responsive.
-
-.wp-block-group .alignwide,
-.alignwide {
-    max-width: 1340px;
-    margin: 0 auto;
-}
-
  */
+
+
 
 /*
 .wp-block-group.col3 { columns: 3; column-width: 150px; column-rule: 2px solid #fff; column-gap: 3em; }
@@ -434,33 +366,11 @@ img {
     clear: both;
 }
 
-/*
-div.wp-site-blocks {
-    grid-gap: 10px;
-    grid-template-rows: auto;
-    grid-template-columns:
-        [body-start]
-        minmax( 10px, 1fr )
-        [wide-start]
-        minmax( 0px, 100px )
-        [container-start]
-        minmax( 300px, 1000px)
-        [container-end]
-        minmax( 0px, 100px)
-        [wide-end]
-        minmax( 10px, 1fr )
-        [body-end];
 
-}
-*/
 
 
 /* div.wp-site-blocks .content { max-width: 1100px; margin: 0 auto;} */
 .content:after { clear:both; display: table; content: " ";}
-
-.alignfull {
-    max-width: 100%;
-}
 
 div.pagination {
     width: 100%;
@@ -724,30 +634,11 @@ div.wp-site-blocks > div.WP_DEBUG:first-of-type:hover {
     /* text-align: center; */
 }
 
-.wp-block-template-part.home .wp-block-group {
+
+.wp-block-post-content {
     background-color: #ffffff;
+    /* padding-left: 5px; */
 }
-
-.wp-block-template-part:not(.alignfull) .wp-block-group {
-    padding: 0.5em 0;
-}
-
-/*
-.wp-block-template-part:not(.alignfull) .wp-block-group__inner-container > * {
-    padding: 0.5em;
-}
-
-
-.wp-block-template-part:not(.alignfull) :not(.wp-block-cover) {
-    padding: 0.5em;
-}
-*/
-h1,h2,h3,h4,h5,h6,
-*:not(.alignfull) p:not(.wp-block-site-title)
-p:not(.wp-block-site-tagline){
-    padding: 0.5em;
-}
-
 
 
 
@@ -756,32 +647,6 @@ p:not(.wp-block-site-tagline){
     padding: 0px 30px 20px 30px;
 }
 
-/*
-.wp-site-blocks >
-.wp-block-template-part {
-    display: grid;
-
-
-}
-
-.wp-site-blocks > .wp-block-template-part  .alignfull {
-    grid-column: body-start / body-end;
-}
-
-
-.wp-site-blocks > .wp-block-template-part  .alignwide {
-    grid-column: wide-start / wide-end;
-    background-color: #ffffff;
-}
-
-
-.wp-site-blocks > .wp-block-template-part  div:not(.alignwide):not(.alignfull)
-{
-    grid-column: container-start / container-end;
-    background-color: #ffffff;
-}
-
- */
 
 .download.wp-block-template-part a.button {
     background-color: #eb672b;
@@ -814,47 +679,3 @@ p:not(.wp-block-site-tagline){
 .wp-block-oik-sb-toolicons * {
     margin: 0;
 }
-
-
-.wp-site-blocks * {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.wp-site-blocks *:not(.wp-block-template-part):not(.wp-block-post-content):not(.wp-block-group):not(.alignfull):not(.alignwide):not([class$="__inner-container"]):not(img) {
-    max-width: var(--wp--custom--responsive--aligndefault-width);
-}
-
-.wp-site-blocks .alignwide {
-    width: var(--wp--custom--responsive--alignwide-width);
-    max-width: 100%;
-}
-
-.aligncenter {
-    text-align: center;
-}
-
-.wp-site-blocks .alignleft {
-    float: left;
-    margin-right: 2em;
-    max-width: 360px;
-}
-
-.wp-site-blocks .alignright {
-    float: right;
-    margin-left: 2em;
-    max-width: 360px;
-}
-
-/** This shifts some of the template parts to the left */
-.wp-site-blocks *:not(.wp-block-template-part) *:not(.wp-block-template-part):not(.wp-block-columns).alignfull {
-    /* margin: 0 calc(0px - var(--wp--custom--spacing--horizontal));
-    width: calc(100% + (2 - var(--wp--custom--spacing--horizontal))); */
-    margin: 0 auto;
-    width: 100%;
-}
-
-
-
-
-
