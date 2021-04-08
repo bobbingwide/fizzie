@@ -9,7 +9,7 @@ function fizzie_after_setup_theme()
     add_action('wp_enqueue_scripts', 'fizzie_enqueue_a2z');
 
     add_theme_support('wp-block-styles');
-    add_theme_support('align-wide');
+    //add_theme_support('align-wide');
     add_theme_support('custom-line-height');
     add_theme_support('responsive-embeds');
 
@@ -112,7 +112,7 @@ function fizzie_stanley_theme_support() {
     add_editor_style( 'style-editor.css' );
 
     // Add support for full and wide align blocks.
-    add_theme_support( 'align-wide' );
+    //add_theme_support( 'align-wide' );
 
 
 }
