@@ -323,7 +323,7 @@ img {
 .alignright figcaption {
     clear: right;
 }
-
+*/
 .alignleft img,
 .alignleft figcaption {
     float: left;
@@ -343,7 +343,7 @@ img {
     margin-right: auto;
 }
 
- */
+ 
 
 
 
@@ -678,4 +678,8 @@ div.wp-site-blocks > div.WP_DEBUG:first-of-type:hover {
 .wp-block-oik-sb-toolicons,
 .wp-block-oik-sb-toolicons * {
     margin: 0;
+}
+
+.wp-block-group.has-background {
+    padding: 0px 0px 0px 5px;
 }
