@@ -1,16 +1,18 @@
-<div class="WP_DEBUG">archive.html - why this one?</div>
+<!-- wp:html -->
+<div class="WP_DEBUG">archive.html</div>
+<!-- /wp:html -->
 
-<!-- wp:template-part {"slug":"header","theme":"fizzie"} /-->
+<!-- wp:template-part {"slug":"header","theme":"fizzie", "align":"full","tagName":"header" } /-->
 
-<!-- wp:template-part {"slug":"a2z-pagination","theme":"fizzie"} /-->
+<!-- wp:template-part {"slug":"a2z-pagination","theme":"fizzie","layout":{"inherit":true}} /-->
 
-<!-- wp:template-part {"slug":"breadcrumbs","theme":"fizzie","className":"breadcrumbs"} /-->
+<!-- wp:template-part {"slug":"breadcrumbs","theme":"fizzie","className":"breadcrumbs","layout":{"inherit":true}} /-->
 
-<!-- wp:query-title {"type":"any", "level":3 } /-->
+<!-- wp:query-title {"type":"any", "level":"3", "align":"wide","layout":{"inherit":true} }  /-->
 
-<!-- wp:template-part {"slug":"archive-query","theme":"fizzie","tagName":"section","className":"archive"} /-->
+<!-- wp:template-part {"slug":"archive-query","theme":"fizzie","tagName":"section","className":"archive","layout":{"inherit":true} } /-->
 
-<!-- wp:template-part {"slug":"search","theme":"fizzie"} /-->
+<!-- wp:template-part {"slug":"search","theme":"fizzie","layout":{"inherit":true} } /-->
 
 <!-- wp:template-part {"slug":"page-footer","theme":"fizzie"} /-->
 
