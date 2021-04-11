@@ -57,7 +57,7 @@ function fizzie_init() {
 }
 
 function fizzie_enqueue_styles() {
-	$theme_version = wp_get_theme()->get( 'Version' );
+	//$theme_version = wp_get_theme()->get( 'Version' );
 
 	if ( defined( 'SCRIPT_DEBUG') && SCRIPT_DEBUG ) {
         $theme_version = filemtime( get_stylesheet_directory() . "/style.css" );
