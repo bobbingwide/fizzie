@@ -184,5 +184,18 @@
         "typography": {}
       }
     }
-  }
+  },
+  "customTemplates": [
+    {
+      "name": "single-full",
+      "title": "Full width stuff",
+      "postTypes": [
+        "page",
+        "post",
+        "block",
+        "block_example"
+      ]
+    }
+  ]
+
 }
