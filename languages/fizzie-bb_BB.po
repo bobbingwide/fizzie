@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fizzie\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/fizzie\n"
-"POT-Creation-Date: 2021-03-13 10:27:25+00:00\n"
+"POT-Creation-Date: 2021-04-14 09:03:00+00:00\n"
 "MIME-Version: 1.0\n"
 "Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
 "Language: bb_BB\n"
@@ -13,47 +13,47 @@ msgstr ""
 "PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-#: 404.html  div>#text
+#: 404.html core/html div>#text
 msgid "404.html"
 msgstr "404.hmtl"
 
-#: archive-block.html  div>#text
+#: archive-block.html core/html div>#text
 msgid "archive-block.html"
 msgstr "acrihve-bolck.hmtl"
 
-#: archive-oik-plugins.html  div>#text
+#: archive-oik-plugins.html core/html div>#text
 msgid "archive-oik-plugins.html"
 msgstr "acrihve-OIk-puligns.hmtl"
 
-#: archive-oik-themes.html  div>#text
+#: archive-oik-themes.html core/html div>#text
 msgid "archive-oik-themes.html"
 msgstr "acrihve-OIk-tehems.hmtl"
 
-#: archive.html  div>#text
-msgid "archive.html - why this one?"
-msgstr "acrihve.hmtl - why tihs OnE?"
+#: archive.html core/html div>#text
+msgid "archive.html"
+msgstr "acrihve.hmtl"
 
-#: category.html  div>#text
+#: category.html core/html div>#text
 msgid "category.html"
 msgstr "ctageroy.hmtl"
 
-#: front-page.html  div>#text
+#: front-page.html core/html div>#text
 msgid "front-page.html"
 msgstr "fornt-pgae.hmtl"
 
-#: home.html  div>#text
+#: home.html core/html div>#text
 msgid "home.html"
 msgstr "hmoe.hmtl"
 
-#: index.html  div>#text
-msgid "index.html"
-msgstr "idnex.hmtl"
+#: index.html core/html div>#text
+msgid "index.html - you shouldn't have got here!"
+msgstr "idnex.hmtl - yOU sohludn't hvae gOt hree!"
 
-#: page-13.html  div>#text
-msgid "page-13.html 12:48"
-msgstr "pgae-13.hmtl 12:48"
+#: page-13.html core/html div>#text
+msgid "page-13.html for the Sitemap"
+msgstr "pgae-13.hmtl fOr thE Stimeap"
 
-#: page-about.html  div>#text
+#: page-about.html core/html div>#text
 msgid "page-about.html 11:49"
 msgstr "pgae-aobut.hmtl 11:49"
 
@@ -61,23 +61,27 @@ msgstr "pgae-aobut.hmtl 11:49"
 msgid "page-i18-test.html 12:22"
 msgstr "pgae-I18-tset.hmtl 12:22"
 
-#: search.html  div>#text
+#: search.html core/html div>#text
 msgid "search.html"
 msgstr "saecrh.hmtl"
 
-#: single-oik-plugins.html  div>#text
+#: single-full.html core/html div>#text
+msgid "single-full.html custom template"
+msgstr "snilge-flul.hmtl csuotm tmelptae"
+
+#: single-oik-plugins.html core/html div>#text
 msgid "single-oik-plugins.html"
 msgstr "snilge-OIk-puligns.hmtl"
 
-#: single-oik-themes.html  div>#text
+#: single-oik-themes.html core/html div>#text
 msgid "single-oik-themes.html"
 msgstr "snilge-OIk-tehems.hmtl"
 
-#: single.html  div>#text
+#: single.html core/html div>#text
 msgid "single.html"
 msgstr "snilge.hmtl"
 
-#: singular.html  div>#text
+#: singular.html core/html div>#text
 msgid "singular.html"
 msgstr "sniugalr.hmtl"
 
@@ -96,10 +100,6 @@ msgstr "[bw_terms taxonomy=letters post_type=oik-themes]"
 #: a2z-pagination.html core/paragraph p>#text
 msgid "[bw_terms]"
 msgstr "[bw_terms]"
-
-#: category-description.html core/shortcode p>#text
-msgid "[archive_description]"
-msgstr "[archive_description]"
 
 #: download-theme.html core/shortcode p>#text
 msgid "[oikth_download theme=.]"
@@ -124,6 +124,10 @@ msgstr "Stimeap"
 #: footer-menu.html core/navigation-link  label
 msgid "Sites"
 msgstr "Sties"
+
+#: footer-variant-example.html core/paragraph p>#text
+msgid "This is an example of the Footer variant of the template part with a single paragraph."
+msgstr "Tihs Is An eaxpmle Of thE Fooetr vraaint Of thE tmelptae prat wtih A snilge pragaarph."
 
 #: footer.html core/paragraph p
 msgid "[bw_wpadmin]<br>(C) Copyright Bobbing Wide 2020, 2021. All rights reserved"
@@ -157,7 +161,7 @@ msgstr "Bolck nwes"
 msgid "About"
 msgstr "Aobut"
 
-#: home-part.html  div>#text
+#: home-part.html core/html div>#text
 msgid "home-part.html is part of home.html"
 msgstr "hmoe-prat.hmtl Is prat Of hmoe.hmtl"
 

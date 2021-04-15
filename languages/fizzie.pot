@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fizzie\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/fizzie\n"
-"POT-Creation-Date: 2021-03-13 10:27:25+00:00\n"
+"POT-Creation-Date: 2021-04-14 09:03:00+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,47 +12,47 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: 404.html  div>#text
+#: 404.html core/html div>#text
 msgid "404.html"
 msgstr ""
 
-#: archive-block.html  div>#text
+#: archive-block.html core/html div>#text
 msgid "archive-block.html"
 msgstr ""
 
-#: archive-oik-plugins.html  div>#text
+#: archive-oik-plugins.html core/html div>#text
 msgid "archive-oik-plugins.html"
 msgstr ""
 
-#: archive-oik-themes.html  div>#text
+#: archive-oik-themes.html core/html div>#text
 msgid "archive-oik-themes.html"
 msgstr ""
 
-#: archive.html  div>#text
-msgid "archive.html - why this one?"
+#: archive.html core/html div>#text
+msgid "archive.html"
 msgstr ""
 
-#: category.html  div>#text
+#: category.html core/html div>#text
 msgid "category.html"
 msgstr ""
 
-#: front-page.html  div>#text
+#: front-page.html core/html div>#text
 msgid "front-page.html"
 msgstr ""
 
-#: home.html  div>#text
+#: home.html core/html div>#text
 msgid "home.html"
 msgstr ""
 
-#: index.html  div>#text
-msgid "index.html"
+#: index.html core/html div>#text
+msgid "index.html - you shouldn't have got here!"
 msgstr ""
 
-#: page-13.html  div>#text
-msgid "page-13.html 12:48"
+#: page-13.html core/html div>#text
+msgid "page-13.html for the Sitemap"
 msgstr ""
 
-#: page-about.html  div>#text
+#: page-about.html core/html div>#text
 msgid "page-about.html 11:49"
 msgstr ""
 
@@ -60,23 +60,27 @@ msgstr ""
 msgid "page-i18-test.html 12:22"
 msgstr ""
 
-#: search.html  div>#text
+#: search.html core/html div>#text
 msgid "search.html"
 msgstr ""
 
-#: single-oik-plugins.html  div>#text
+#: single-full.html core/html div>#text
+msgid "single-full.html custom template"
+msgstr ""
+
+#: single-oik-plugins.html core/html div>#text
 msgid "single-oik-plugins.html"
 msgstr ""
 
-#: single-oik-themes.html  div>#text
+#: single-oik-themes.html core/html div>#text
 msgid "single-oik-themes.html"
 msgstr ""
 
-#: single.html  div>#text
+#: single.html core/html div>#text
 msgid "single.html"
 msgstr ""
 
-#: singular.html  div>#text
+#: singular.html core/html div>#text
 msgid "singular.html"
 msgstr ""
 
@@ -94,10 +98,6 @@ msgstr ""
 
 #: a2z-pagination.html core/paragraph p>#text
 msgid "[bw_terms]"
-msgstr ""
-
-#: category-description.html core/shortcode p>#text
-msgid "[archive_description]"
 msgstr ""
 
 #: download-theme.html core/shortcode p>#text
@@ -122,6 +122,10 @@ msgstr ""
 
 #: footer-menu.html core/navigation-link  label
 msgid "Sites"
+msgstr ""
+
+#: footer-variant-example.html core/paragraph p>#text
+msgid "This is an example of the Footer variant of the template part with a single paragraph."
 msgstr ""
 
 #: footer.html core/paragraph p
@@ -156,7 +160,7 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: home-part.html  div>#text
+#: home-part.html core/html div>#text
 msgid "home-part.html is part of home.html"
 msgstr ""
 
