@@ -3,8 +3,8 @@ Contributors: bobbingwide, vsgloik
 Donate link: https://www.oik-plugins.com/oik/oik-donate/
 Tags: blocks, FSE, Gutenberg
 Requires at least: 5.5.1
-Tested up to: 5.7
-Version: 0.4.0
+Tested up to: 5.7.1
+Version: 0.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,8 +25,8 @@ Requirements:
 
 Contents:
 
-* Seventeen templates
-* Twenty eight template parts
+* 19 templates
+* 31 template parts
 
 The `block-templates` are:
 
@@ -39,11 +39,13 @@ The `block-templates` are:
 * front-page - used for Page Shown On Front
 * home - used for Blog Posts index page or Posts Shown on Front (when front-page not implemented)
 * index - used when no other template is found
+* output-input - custom template for debugging output vs input
 * page-13.html - template for page ID 13
 * page-about - template for page with slug `about`
 * page-i18n-test.html - template for Internationalization test
 * search - Display search results
 * single - used for a single post / attachment / CPT
+* single-full - custom full width template for post,page,block and block_example
 * single-oik-plugins - used for a single oik-plugin 
 * single-oik-themes - used for a single oik-theme
 * singular - used when single or page does not exist
@@ -60,12 +62,16 @@ The `block-template-parts` are:
 * breadcrumbs - Breadcrumb trail - using sb-breadcrumbs-block-based-widgets
 * category-description - Uses [archive_description] shortcode
 * category-query - To list posts in a chosen category term
+* contents-shortcode - Contents shortcode etc for the output-input custom template
 * download - To download plugins - uses [oikp_download] shortcode
 * download-theme - To download themes - uses [oikth_download] shortcode
 * footer - Final full width footer
 * footer-menu - Displays the footer menu - after the final full width footer
+* footer-variant-example - Example of a footer template part
 * header - Displays the header: site logo, site title and tagline, header menu.
 * header-menu - Displays the header menu 
+* header-variant-example - Example of a header template part
+
 * home-part - A template part used in debugging. Classic block
 * home-query - Displays the posts on the blog page
 * i18n-rich-text.html
@@ -77,6 +83,7 @@ The `block-template-parts` are:
 * page-content - Primary content part for a page
 * page-footer - Full width footer with 3 columns - representing widgets
 * post-content - Primary content part for a post
+* post-content-full - Full width post content 
 * posts - An attempt to display the posts using query blocks - incomplete- not used
 * search - Using the Search block
 * social-links - Social link icons
@@ -96,11 +103,10 @@ Some of these templates will be needed for other subdomains of wp-a2z.org.
 
 == Installation ==
 
-* Either install Gutenberg 10.0.0 or higher or install and build the latest Gutenberg source.
+* Either install Gutenberg 10.4.0 or higher or install and build the latest Gutenberg source.
 * Activate Gutenberg.
 * Install and activate the Fizzie theme, as you would install any other theme. Full Site Editing will be enabled automatically.
 * For some of the templates and template parts to work properly you will need to install and activate the pre-requisite plugins.
-* For templates which include navigation blocks you will need to edit the supplied menus.
 
 Pre-requisite plugins: see also Notes
 
@@ -109,9 +115,27 @@ Pre-requisite plugins: see also Notes
 * [oik-a2z](https://github.com/bobbingwide/oik-a2z)
 * [sb-breadcrumbs-block](https://github.com/bobbingwide/sb-breadcrumbs-block)
 * [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/) - for breadcrumbs logic
+
+For the Output Input Debugging custom template
+
+* [oik-block](https://github.com/bobbingwide/oik-block/) - for contents & guts shortcodes
+* [oik-css](https://github.com/bobbingwide/oik-css) - for CSS block
  
 
 == Change Log ==
+= 0.5.0 =
+* Added: Add Input Output Debugging custom template,[github bobbingwide fizzie issues 65]
+* Changed: Improve support for align wide and align full,[github bobbingwide fizzie issues 44]
+* Changed: Add Header and Footer template variant examples,[github bobbingwide fizzie issues 60]
+* Changed: Add query-title to archive.html to aid the block's documentation,[github bobbingwide fizzie issues 60]
+* Changed: Replace [archive_description] by query-title and term-description,[github bobbingwide fizzie issues 60]
+* Changed: Add .gitignore to ignore custom.css and/or oik-custom.css,[github bobbingwide fizzie issues 57]
+* Changed: Override nav menu spacing and colour again for Gutenberg 10.3.0,[github bobbingwide fizzie issues 26]
+* Changed: Set default template part tagName based on template area,[github bobbingwide fizzie issues 55]
+* Tested: With Gutenberg 10.4.0
+* Tested: With WordPress 5.7 and WordPress Multi Site
+* Tested: With PHP 8.0
+
 = 0.4.0 =
 * Changed: Another attempt at supporting alignfull and alignwide - solution copied/cobbled from TT1-blocks,[github bobbingwide fizzie issues 44]
 * Fixed: Avoid problems attempting to valid the id attribute. Just unset it!,[github bobbingwide fizzie issues 52]
@@ -313,12 +337,13 @@ Some other FSE themes:
 - [Twenty Twenty-One Blocks](https://github.com/WordPress/theme-experiments/tree/master/twentytwentyone-blocks)
 - [Stanley](https://github.com/carolinan/fullsiteediting/blob/course/Block%20based%20themes/Lesson%201%20-Theme%20structure/stanley.zip)
 - [Seedlet Blocks](https://github.com/Automattic/themes/tree/trunk/seedlet-blocks)
+- [SB - Second Byte](https://github.com/bobbingwide/SB)
 - See also [WP-a2z FSE themes](https://blocks.wp-a2z.org/oik-themes)
 
 == Brief development history ==
 
-Even though FSE is not going to make it into WordPress 5.6, I have to implement the theme in order to document the 24 or so new blocks
-that are already in Gutenberg and that will eventually appear in WordPress core.
+Even though FSE was not going to make it into WordPress 5.6 or 5.7, I had to implement the theme in order to document the 24 or so new blocks
+that were already in Gutenberg and that will eventually appear in WordPress core.
 
 It started as a completely empty theme and then I played with it while following some tutorials.
 - https://developer.wordpress.org/block-editor/tutorials/block-based-themes/
