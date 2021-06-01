@@ -1,0 +1,269 @@
+{
+  "version": 1,
+  "settings": {
+    "border": {
+      "customColor": true,
+      "customRadius": true,
+      "customStyle": true,
+      "customWidth": true
+    },
+    "color": {
+      "custom": true,
+      "customGradient": true,
+      "duotone": [],
+      "gradients": [ ],
+      "link": true,
+      "palette": [
+          {
+            "slug": "foreground",
+            "name": "Foreground",
+            "color": "#1a1a2a"
+          },
+          {
+            "slug": "background",
+            "name": "Background",
+            "color": "#ffffff"
+          },
+          {
+            "slug": "greeny",
+            "name": "Greeny",
+            "color": "#6a6a2a"
+          },
+          {
+            "name": "Pale pink",
+            "slug": "pale-pink",
+            "color": "#f78da7"
+          },
+          {
+            "name": "Vivid red",
+            "slug": "vivid-red",
+            "color": "#cf2e2e"
+          },
+          {
+            "name": "Luminous vivid orange",
+            "slug": "luminous-vivid-orange",
+            "color": "#ff6900"
+          },
+          {
+            "name": "Luminous vivid amber",
+            "slug": "luminous-vivid-amber",
+            "color": "#fcb900"
+          },
+          {
+            "name": "Light green cyan",
+            "slug": "light-green-cyan",
+            "color": "#7bdcb5"
+          },
+          {
+            "name": "Vivid green cyan",
+            "slug": "vivid-green-cyan",
+            "color": "#00d084"
+          },
+          {
+            "name": "Pale cyan blue",
+            "slug": "pale-cyan-blue",
+            "color": "#8ed1fc"
+          },
+          {
+            "name": "Vivid cyan blue",
+            "slug": "vivid-cyan-blue",
+            "color": "#0693e3"
+          },
+          {
+            "name": "Vivid purple",
+            "slug": "vivid-purple",
+            "color": "#9b51e0"
+          },
+          {
+            "name": "Very light gray",
+            "slug": "very-light-gray",
+            "color": "#eeeeee"
+          },
+          {
+            "name": "Cyan bluish gray",
+            "slug": "cyan-bluish-gray",
+            "color": "#abb8c3"
+          },
+          {
+            "name": "Darker gray",
+            "slug": "darker-gray",
+            "color": "#616161"
+          },
+          {
+            "name": "White",
+            "slug": "white",
+            "color": "#ffffff"
+          }
+        ]
+    },
+    "custom": {},
+    "layout": {
+      "contentSize": "1140px",
+      "wideSize": "1340px"
+    },
+    "spacing": {
+      "customPadding": true,
+      "units": [ "px", "em", "rem", "vh", "vw" ]
+    },
+    "typography": {
+      "customLineHeight": true,
+      "customFontWeight": true,
+      "customFontSize": true,
+      "dropCap": true,
+      "fontFamilies": [
+        {
+          "fontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+          "slug": "helvetica-arial"
+        },
+        {
+          "fontFamily": "Geneva, Tahoma, Verdana, sans-serif",
+          "slug": "geneva-verdana"
+        }
+      ],
+      "fontSizes": [
+        {
+          "name": "Tiny",
+          "size": "12px",
+          "slug": "tiny"
+        },
+        {
+          "name": "Small",
+          "size": "16px",
+          "slug": "small"
+        },
+        {
+          "name": "Normal",
+          "size": "18px",
+          "slug": "normal"
+        },
+        {
+          "name": "Medium",
+          "size": "20px",
+          "slug": "medium"
+        },
+        {
+          "name": "Large",
+          "size": "24px",
+          "slug": "large"
+        },
+        {
+          "name": "Larger",
+          "size": "30px",
+          "slug": "larger"
+        },
+        {
+          "name": "Largest",
+          "size": "36px",
+          "slug": "largest"
+        }
+      ],
+      "fontWeights": [
+        {
+          "slug": "light",
+          "value": 300,
+          "name": "Light"
+        },
+        {
+          "slug": "normal",
+          "value": "normal",
+          "name": "Normal"
+        },
+        {
+          "slug": "medium",
+          "value": "500",
+          "name": "Medium"
+        },
+        {
+          "slug": "semibold",
+          "value": 600,
+          "name": "Semibold"
+        },
+        {
+          "slug": "bold",
+          "value": 700,
+          "name": "Bold"
+        }
+      ]
+    },
+    "blocks": {
+      "core/paragraph": {
+        "color": {
+          "custom": true
+        }
+      },
+      "core/table": {
+        "border": {
+          "customColor": true,
+          "customRadius": true,
+          "customStyle": true,
+          "customWidth": true
+        }
+      }
+    }
+
+
+  },
+  "styles": {
+    "color": {
+      "text": "var(--wp--preset--color--foreground)",
+      "background": "var(--wp--preset--color--background)"
+    },
+
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--opensans)"
+    },
+    "elements": {
+      "link": {
+        "color": {
+          "text": "var( --wp--preset--color--link)"
+        }
+      }
+    },
+    "blocks": {
+      "core/button": {
+        "border": {
+          "radius": "5px"
+        }
+      },
+      "core/table": {
+        "border": {
+          "color": "green",
+          "width": "2px",
+          "style": "dashed"
+        }
+      }
+    }
+  },
+  "templateParts": [
+    {
+      "name": "header",
+      "area": "header"
+    },
+    {
+      "name": "footer",
+      "area": "footer"
+    }
+  ],
+   "customTemplates": [
+    {
+      "name": "full-width",
+      "title": "Full width stuff",
+      "postTypes": [
+        "page",
+        "post",
+        "block",
+        "block_example"
+      ]
+    },
+    {
+      "name": "output-input",
+      "title": "Output Input Debugging",
+      "postTypes": [
+        "page",
+        "post",
+        "block",
+        "block_example"
+      ]
+    }
+  ]
+}
