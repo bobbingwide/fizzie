@@ -173,8 +173,9 @@
         "contentSize": "1140px",
         "wideSize": "1340px"
       }
-    },
-    "styles": {
+    }
+  },
+  "styles": {
       "root": {
         "color": {
           "background": "var( --wp--preset--color--background )",
@@ -183,11 +184,10 @@
         },
         "typography": {}
       }
-    }
-  },
+    },
   "customTemplates": [
     {
-      "name": "single-full",
+      "name": "full-width",
       "title": "Full width stuff",
       "postTypes": [
         "page",
