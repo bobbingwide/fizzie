@@ -93,9 +93,12 @@ header .wp-block-columns {
     margin-bottom: 0;
 }
 
+/*
 header a {
     color: #333;
 }
+*/
+
 
 header {
     /* border-bottom: 1px solid grey; */
@@ -141,6 +144,13 @@ header {
 .wp-block-navigation .wp-block-navigation-link__content,
 .wp-block-navigation .wp-block-pages-list__item__link {
     color: #ffffff;
+}
+
+
+
+.wp-block-navigation .wp-block-navigation-link__label:hover,
+.wp-block-navigation-link.current-menu-item > a .wp-block-navigation-link__label {
+    color: #792b0c;
 }
 
 
@@ -288,23 +298,25 @@ p.wp-block-site-tagline {
 }
 
 .wp-block-navigation ul {
-    margin-top: 2em;
+    margin-top: 1.5em;
 }
+
 
 .wp-block-navigation ul ul {
     margin-top: 0em;
 }
 
+.wp-block-navigation.wp-block-navigation a,
 .wp-block-navigation a {
     border: 1px solid #baba54;
     margin: 0 auto;
     color: #ffffff;
     text-decoration: none;
     background-color: #a2ab3b;
-    font-size: 13px;
+    /* font-size: 13px; */
 }
 
-.wp-block-navigation a:hover,
+.wp-block-navigation  .wp-block-navigation-link__content:hover,
 .wp-block-navigation .current-menu-item > a {
 background: #ffffff;
 border: 1px solid #baba54;
