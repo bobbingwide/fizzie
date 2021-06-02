@@ -16,15 +16,15 @@ require_once __DIR__ . '/class-block-recursion-error-block.php';
  * or find another way to automatically determine whether or not to include the file.
  */
 //require_once __DIR__ . '/query-pagination.php';
-require_once __DIR__ . '/query-pagination-numbers.php';
-require_once __DIR__ . '/query-loop.php';
+//require_once __DIR__ . '/query-pagination-numbers.php';
+//require_once __DIR__ . '/query-loop.php';
 require_once __DIR__ . '/post-excerpt.php';
 require_once __DIR__ . '/post-content.php';
-require_once __DIR__ . '/template-part.php';
-require_once __DIR__ . '/navigation.php';
+//require_once __DIR__ . '/template-part.php';
+//require_once __DIR__ . '/navigation.php';
 require_once __DIR__ . '/navigation-link.php';
 require_once __DIR__ . '/post-hierarchical-terms.php';
-require_once __DIR__ . '/block.php';
+//require_once __DIR__ . '/block.php';
 
 /**
  * Hook into register_block_types_args before WP_Block_Supports
