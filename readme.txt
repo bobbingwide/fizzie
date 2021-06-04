@@ -3,8 +3,8 @@ Contributors: bobbingwide, vsgloik
 Donate link: https://www.oik-plugins.com/oik/oik-donate/
 Tags: blocks, FSE, Gutenberg
 Requires at least: 5.5.1
-Tested up to: 5.7.1
-Version: 0.5.0
+Tested up to: 5.7.2
+Version: 0.6.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -103,7 +103,7 @@ Some of these templates will be needed for other subdomains of wp-a2z.org.
 
 == Installation ==
 
-* Either install Gutenberg 10.4.0 or higher or install and build the latest Gutenberg source.
+* Either install Gutenberg 10.7.1 or higher or install and build the latest Gutenberg source.
 * Activate Gutenberg.
 * Install and activate the Fizzie theme, as you would install any other theme. Full Site Editing will be enabled automatically.
 * For some of the templates and template parts to work properly you will need to install and activate the pre-requisite plugins.
@@ -123,6 +123,25 @@ For the Output Input Debugging custom template
  
 
 == Change Log ==
+= 0.6.1 = 
+* Changed: Replace [guts] shortcode with oik-bbw/wp using g attribute
+* Changed: Update screenshot for Gutenberg 10.7.1 WordPress 5.7.2
+* Changed: Rework home-query to use the Query block. Issue #11
+* Changed: Set post title as link
+
+= 0.6.0 =
+* Changed: Adjust header menu for Gutenberg 10.7.1. Issue #26
+* Changed: Remove redundant styling for the 3 column archive
+* Changed: Update screenshot for 10.4.0
+* Changed: No longer override certain blocks. This disables language versions.
+* Changed: Refresh from DB version
+* Changed: Use query block with inherit true and update pagination block. Issue #11
+* Changed: Simplify add_theme_support logic. Remove unneeded stuff.
+* Changed: Switch to using theme.json   issue #3
+* Tested: With Gutenberg 10.7.1 and WordPress Multi Site
+* Tested: With WordPress 5.7.2 and WordPress Multi Site
+* Tested: With PHP 8.0
+
 = 0.5.0 =
 * Added: Add Input Output Debugging custom template,[github bobbingwide fizzie issues 65]
 * Changed: Improve support for align wide and align full,[github bobbingwide fizzie issues 44]
