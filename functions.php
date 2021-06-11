@@ -100,11 +100,13 @@ function fizzie_enqueue_styles() {
  * Enqueue special styles for archives
  */
 function fizzie_enqueue_a2z() {
+    //echo get_template_directory(); fizzie
+    //echo get_stylesheet_directory(); wizzie
     $timestamp = null;
     if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
-        $timestamp = filemtime( get_stylesheet_directory() . "/category.css" );
+        $timestamp = filemtime( get_template_directory() . "/category.css" );
     }
-    wp_enqueue_style( "category-css", get_stylesheet_directory_uri() . '/category.css', array() );
+    wp_enqueue_style( "category-css", get_template_directory_uri() . '/category.css', array() );
 }
 
 
