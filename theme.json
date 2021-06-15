@@ -210,12 +210,12 @@
     },
 
     "typography": {
-      "fontFamily": "var(--wp--preset--font-family--opensans)"
+      "fontFamily": "var(--wp--preset--font-family--helvetica-arial)"
     },
     "elements": {
       "link": {
         "color": {
-          "text": "var( --wp--preset--color--link)"
+          "text": "var( --wp--preset--color--greeny)"
         }
       }
     },
