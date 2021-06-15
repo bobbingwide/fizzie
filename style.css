@@ -27,10 +27,13 @@ body {
     line-height: 1.625;
 }
 
+/*
 a {
     color: var(--wp--preset--color--greeny, #6a6a2a );
     text-decoration: none;
 }
+
+ */
 
 a:hover,
 a:focus {
@@ -308,18 +311,18 @@ p.wp-block-site-tagline {
 
 .wp-block-navigation.wp-block-navigation a,
 .wp-block-navigation a {
-    border: 1px solid #baba54;
+    border: 1px solid var( --woocommerce,  #baba54 );
     margin: 0 auto;
     color: #ffffff;
     text-decoration: none;
-    background-color: #a2ab3b;
+    background-color: var( --woocommerce, #a2ab3b );
     /* font-size: 13px; */
 }
 
 .wp-block-navigation  .wp-block-navigation-link__content:hover,
 .wp-block-navigation .current-menu-item > a {
 background: #ffffff;
-border: 1px solid #baba54;
+border: 1px solid var( --woocommerce, #baba54 );
 margin: 0 auto;
 color: #792B0C;
 text-decoration: none;
