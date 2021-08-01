@@ -222,13 +222,13 @@ div.breadcrumbs {
 }
 
 
-
+/*
 div.wp-block-template-part {
     display: block;
     box-sizing: border-box;
     clear: both;
 }
-
+*/
 a.wordpress {
     display: block;
     text-align: center;
@@ -701,3 +701,45 @@ footer {
 .wp-block-group.page {
     margin-top: 1.5em;
 }
+
+/**
+ Fizzie's equivalent of Written's .is-style-flexed
+ */
+.metadates,
+.is-style-flexed .wp-block-group {
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+
+.metadates p,
+.is-style-flexed p,
+span.post_modified {
+    font-size: var(--wp--preset--font-size--small);
+}
+
+
+.wp-block-post-date,
+span.post_modified {
+    margin: 0 10px 0 0;
+}
+
+div.wp-block-oik-sb-sb-post-edit-block {
+    margin: 0 0;
+}
+
+.metadates p,
+.is-style-flexed p,
+.is-style-griddled p {
+    margin: 0 10px 0 0;
+}
+
+/**
+Add a bottom-margin to each post in the post-template list
+ */
+ul.wp-block-post-template li {
+    margin-bottom: 20px;
+}
+
+
