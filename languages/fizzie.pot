@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fizzie\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/fizzie\n"
-"POT-Creation-Date: 2021-04-14 09:03:00+00:00\n"
+"POT-Creation-Date: 2021-07-14 10:20:06+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,7 +37,7 @@ msgid "category.html"
 msgstr ""
 
 #: front-page.html core/html div>#text
-msgid "front-page.html"
+msgid "Fizzie front-page.html"
 msgstr ""
 
 #: home.html core/html div>#text
@@ -98,6 +98,12 @@ msgstr ""
 
 #: a2z-pagination.html core/paragraph p>#text
 msgid "[bw_terms]"
+msgstr ""
+
+#: contents-shortcode.html  p>#text
+msgid "[contents]
+[guts]
+[bw_wpadmin]"
 msgstr ""
 
 #: download-theme.html core/shortcode p>#text
@@ -264,12 +270,12 @@ msgstr ""
 msgid "Issue-30 test case."
 msgstr ""
 
-#: metadates.html  p>#text
-msgid "Published: [bw_field post_date] | Last updated: [bw_field post_modified] [post-edit]"
+#: metadates.html core/paragraph p>#text
+msgid "Published:"
 msgstr ""
 
-#: page-footer.html core/shortcode p>#text
-msgid "[guts]"
+#: metadates.html core/paragraph p>#text
+msgid "Last updated:"
 msgstr ""
 
 #: page-footer.html core/shortcode p>#text

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fizzie\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/fizzie\n"
-"POT-Creation-Date: 2021-04-14 09:03:00+00:00\n"
+"POT-Creation-Date: 2021-07-14 10:20:06+00:00\n"
 "MIME-Version: 1.0\n"
 "Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
 "Language: bb_BB\n"
@@ -38,8 +38,8 @@ msgid "category.html"
 msgstr "ctageroy.hmtl"
 
 #: front-page.html core/html div>#text
-msgid "front-page.html"
-msgstr "fornt-pgae.hmtl"
+msgid "Fizzie front-page.html"
+msgstr "Fziize fornt-pgae.hmtl"
 
 #: home.html core/html div>#text
 msgid "home.html"
@@ -100,6 +100,12 @@ msgstr "[bw_terms taxonomy=letters post_type=oik-themes]"
 #: a2z-pagination.html core/paragraph p>#text
 msgid "[bw_terms]"
 msgstr "[bw_terms]"
+
+#: contents-shortcode.html  p>#text
+msgid "[contents]
+[guts]
+[bw_wpadmin]"
+msgstr "[contents"
 
 #: download-theme.html core/shortcode p>#text
 msgid "[oikth_download theme=.]"
@@ -265,13 +271,13 @@ msgstr "Issue-27 tset csae."
 msgid "Issue-30 test case."
 msgstr "Issue-30 tset csae."
 
-#: metadates.html  p>#text
-msgid "Published: [bw_field post_date] | Last updated: [bw_field post_modified] [post-edit]"
-msgstr "Pbuilhsed: [bw_field post_date] | Lsat udptaed: [bw_field post_modified] [post-edit]"
+#: metadates.html core/paragraph p>#text
+msgid "Published:"
+msgstr "Pbuilhsed:"
 
-#: page-footer.html core/shortcode p>#text
-msgid "[guts]"
-msgstr "[guts]"
+#: metadates.html core/paragraph p>#text
+msgid "Last updated:"
+msgstr "Lsat udptaed:"
 
 #: page-footer.html core/shortcode p>#text
 msgid "[bw_blogs]"
