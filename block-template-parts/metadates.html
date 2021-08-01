@@ -1,3 +1,18 @@
-<!-- wp:html -->
-<p>Published: [bw_field post_date] | Last updated: [bw_field post_modified] [post-edit]</p>
-<!-- /wp:html -->
+<!-- wp:group {"className":"page"} -->
+<div class="wp-block-group page ">
+
+
+<!-- wp:paragraph {"fontSize":"small"} -->
+<p class="has-small-font-size">Published:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:post-date {"fontSize":"small"} /-->
+
+<!-- wp:paragraph {"fontSize":"small"} -->
+<p class="has-small-font-size">Last updated:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:oik-block/fields {"fields":"post_modified"} /-->
+
+<!-- wp:oik-sb/sb-post-edit-block {"fontSize":"small"} /--></div>
+<!-- /wp:group -->
