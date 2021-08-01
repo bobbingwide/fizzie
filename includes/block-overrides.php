@@ -41,7 +41,7 @@ function fizzie_register_block_type_args( $args ) {
     $args = fizzie_maybe_override_block(  $args,'core/query-pagination', 'render_block_core_query_pagination');
 	$args = fizzie_maybe_override_block(  $args,'core/query-pagination-numbers', 'render_block_core_query_pagination_numbers');
 
-	$args = fizzie_maybe_override_block(  $args,'core/query-loop', 'render_block_core_query_loop' );
+	//$args = fizzie_maybe_override_block(  $args,'core/query-loop', 'render_block_core_query_loop' );
     $args = fizzie_maybe_override_block(  $args,'core/post-excerpt', 'render_block_core_post_excerpt' );
     $args = fizzie_maybe_override_block(  $args,'core/post-content', 'render_block_core_post_content' );
     $args = fizzie_maybe_override_block(  $args,'core/template-part', 'render_block_core_template_part' );
