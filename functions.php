@@ -125,7 +125,7 @@ add_action( 'init', 'fizzie_init', 20 );
  *                otherwise $template.
  */
 function fizzie_front_page_template( $template ) {
-    echo $template;
+    //echo $template;
     return is_home() ? '' : $template;
 }
 add_filter( 'frontpage_template', 'fizzie_front_page_template' );
@@ -187,7 +187,7 @@ require_once __DIR__ . '/includes/block-overrides.php';
 
 
 if ( !function_exists( "bw_trace2" ) ) {
-    function bw_trace2( $content, $args) {
+    function bw_trace2( $content=null, $args=null) {
         return $content;
     }
 
