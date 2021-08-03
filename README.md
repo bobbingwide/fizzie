@@ -5,7 +5,7 @@
 * Tags: blocks, FSE, Gutenberg
 * Requires at least: 5.5.1
 * Tested up to: 5.7.2
-* Version: 0.6.0
+* Version: 0.7.0
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -72,7 +72,6 @@ The `block-template-parts` are:
 * header - Displays the header: site logo, site title and tagline, header menu.
 * header-menu - Displays the header menu
 * header-variant-example - Example of a header template part
-
 * home-part - A template part used in debugging. Classic block
 * home-query - Displays the posts on the blog page
 * i18n-rich-text.html
@@ -124,6 +123,22 @@ For the Output Input Debugging custom template
 
 
 ## Change Log 
+# 0.7.0 
+* Changed: Add styling for metadates. #23 #71
+* Changed: Add bottom margin for post template list. #70
+* Changed: Don't override core/query-loop anymore. #33 #70
+* Fixed: Correct bw_trace2() args for when oik-bwtrace is not activated
+* Changed: Change metadates className to is-style-flexed #71
+* Changed: Rename query-loop to post-template. #70
+* Changed: Don't set default font-family. Use different CSS property for nav menus #69
+* Fixed: Correct styles: typography.fontFamily and elements.link.color.text #3
+* Changed: Enable WooCommerce background colour for navigation menus #69
+* Changed: Start enabling Fizzie as a parent theme #69
+* Changed: Enqueue category.css from the template (parent) theme #69
+* Tested: With WordPress 5.8 and WordPress Multi Site
+* Tested: With Gutenberg 11.1.0
+* Tested: With PHP 8.0
+
 # 0.6.1 
 * Changed: Replace [guts] shortcode with oik-bbw/wp using g attribute
 * Changed: Update screenshot for Gutenberg 10.7.1 WordPress 5.7.2
