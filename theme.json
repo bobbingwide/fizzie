@@ -1,6 +1,7 @@
 {
-  "version": 1,
+  "version": 2,
   "settings": {
+    "appearanceTools": true,
     "border": {
       "customColor": true,
       "customRadius": true,
@@ -29,6 +30,11 @@
             "name": "Greeny",
             "color": "#6a6a2a"
           },
+        {
+          "slug": "lolive",
+          "name": "Light olive",
+          "color": "#cfdbc7"
+        },
           {
             "name": "Pale pink",
             "slug": "pale-pink",
