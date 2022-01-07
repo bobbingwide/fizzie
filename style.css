@@ -706,9 +706,9 @@ footer {
  Fizzie's equivalent of Written's .is-style-flexed
  */
 .metadates,
-.is-style-flexed .wp-block-group {
+.is-style-flexed.wp-block-group {
     display: flex;
-    justify-content: flex-start;
+    justify-content: left;
 
 }
 
@@ -731,6 +731,7 @@ div.wp-block-oik-sb-sb-post-edit-block {
 
 .metadates p,
 .is-style-flexed p,
+.is-style-flexed div,
 .is-style-griddled p {
     margin: 0 10px 0 0;
 }
