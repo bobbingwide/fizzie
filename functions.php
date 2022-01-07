@@ -72,6 +72,9 @@ function fizzie_after_setup_theme()
 
     // Add support for full and wide align blocks.
     //add_theme_support( 'align-wide' );
+    add_action( 'post_edit_form_tag', 'fizzie_enable_wp_navigation_editor');
+
+
 }
 
 /**
@@ -180,6 +183,11 @@ function fizzie_post_edit( $attrs, $content, $tag ) {
 		$link='<a class="' . esc_attr( $class ) . '" href="' . esc_url( $url ) . '">' . $text . '</a>';
 	}
 	return $link;
+}
+
+function fizzie_enable_wp_navigation_editor( $post ) {
+    remove_action( 'edit_form_after_title', '_disable_content_editor_for_navigation_post_type' );
+    remove_action( 'edit_form_after_title', 'gutenberg_disable_content_editor_for_navigation_post_type');
 }
 
 require_once __DIR__ . '/includes/block-overrides.php';
