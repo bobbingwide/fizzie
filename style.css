@@ -708,25 +708,10 @@ footer {
 }
 
 /**
- Fizzie's equivalent of Written's .is-style-flexed
+ Fizzie's equivalent of Written's .is-style-flexed is now implemented using the row variation of the core/group block.
  */
-.metadates,
-.is-style-flexed.wp-block-group {
-    display: flex;
-    justify-content: left;
-
-}
-
-
-.metadates p,
-.is-style-flexed p,
 span.post_modified {
     font-size: var(--wp--preset--font-size--small);
-}
-
-
-.wp-block-post-date,
-span.post_modified {
     margin: 0 10px 0 0;
 }
 
@@ -734,12 +719,6 @@ div.wp-block-oik-sb-sb-post-edit-block {
     margin: 0 0;
 }
 
-.metadates p,
-.is-style-flexed p,
-.is-style-flexed div,
-.is-style-griddled p {
-    margin: 0 10px 0 0;
-}
 
 /**
 Add a bottom-margin to each post in the post-template list
