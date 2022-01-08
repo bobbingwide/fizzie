@@ -727,4 +727,8 @@ ul.wp-block-post-template li {
     margin-bottom: 20px;
 }
 
+.wp-site-blocks header {
+    margin-top: 0;
+}
+
 
