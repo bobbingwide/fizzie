@@ -83,8 +83,13 @@
           {
             "name": "Very light gray",
             "slug": "very-light-gray",
-            "color": "#eeeeee"
+            "color": "#f5f5f5"
           },
+        {
+          "name": "Light gray",
+          "slug": "light-gray",
+          "color": "#eeeeee"
+        },
           {
             "name": "Cyan bluish gray",
             "slug": "cyan-bluish-gray",

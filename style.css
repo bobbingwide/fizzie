@@ -386,7 +386,7 @@ div.pagination {
 }
 
 .archive-pagination li a {
-    background-color: #f5f5f5;
+    background-color: #eeeeee;
     color: #333;
     cursor: pointer;
     display: inline-block;
