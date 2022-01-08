@@ -483,6 +483,11 @@ div.information {
     margin-top: 20px;
 }
 
+div.information div.bw_metadata,
+div.information div.bw_taxonomy {
+    margin-top: 0px;
+}
+
 /**
  Table styling
  */
