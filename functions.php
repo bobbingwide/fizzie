@@ -84,7 +84,6 @@ function fizzie_init() {
     if (function_exists('bw_add_shortcode')) {
         do_action("oik_add_shortcodes");
     }
-    add_shortcode( 'archive_description', 'fizzie_archive_description' );
     add_shortcode( 'post-edit', 'fizzie_post_edit' );
 }
 
@@ -132,35 +131,6 @@ function fizzie_front_page_template( $template ) {
     return is_home() ? '' : $template;
 }
 add_filter( 'frontpage_template', 'fizzie_front_page_template' );
-
-/**
- * Displays a description for an archive page, with title and description
- *
- * For genesis shortcodes such as [post_date] see genesis/lib/shortcodes/post.php
- */
-function fizzie_archive_description( $attrs, $content, $tag ) {
-    $term = null;
-    $html = null;
-    if (  is_tax() || is_tag() || is_category()  ) {
-        $term = get_queried_object();
-        if ($term) {
-            $heading = $term->name;
-            $description = term_description($term->term_id);
-            $html = '<h2 class="term_heading">';
-            $html .= $heading;
-            $html .= '</h2>';
-            $html .= $description;
-        }
-    }
-
-    // ( is_post_type_archive() && genesis_has_post_type_archive_support() ) {
-    //		$cpt_description = genesis_get_cpt_option( 'description' );
-    //		$description     = $cpt_description ?: '';
-    //	} elseif ( is_author() ) {
-    //		$description = get_the_author_meta( 'meta_description', (int) get_query_var( 'author' ) );
-    //	}
-    return $html;
-}
 
 /**
  * Implements [post-edit] shortcode.

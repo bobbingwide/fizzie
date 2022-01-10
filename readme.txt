@@ -60,7 +60,7 @@ The `block-template-parts` are:
 * a2z-pagination-oik-themes - Letter pagination for themes
 * archive-query - Main query for archive pages
 * breadcrumbs - Breadcrumb trail - using sb-breadcrumbs-block-based-widgets
-* category-description - Uses [archive_description] shortcode
+* category-description - Displays the category description
 * category-query - To list posts in a chosen category term
 * contents-shortcode - Contents shortcode etc for the output-input custom template
 * download - To download plugins - uses [oikp_download] shortcode
@@ -122,6 +122,11 @@ For the Output Input Debugging custom template
  
 
 == Change Log ==
+= 1.0.0 =
+* Tested: With WordPress 5.9-RC1 and WordPress Multi Site
+* Tested: With Gutenberg 12.3.0
+* Tested: With PHP 8.0
+
 = 0.7.0 = 
 * Changed: Add styling for metadates. #23 #71 
 * Changed: Add bottom margin for post template list. #70
