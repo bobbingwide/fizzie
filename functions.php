@@ -84,7 +84,6 @@ function fizzie_init() {
     if (function_exists('bw_add_shortcode')) {
         do_action("oik_add_shortcodes");
     }
-    add_shortcode( 'post-edit', 'fizzie_post_edit' );
 }
 
 function fizzie_enqueue_styles() {
@@ -111,8 +110,6 @@ function fizzie_enqueue_a2z() {
     wp_enqueue_style( "category-css", get_template_directory_uri() . '/category.css', array() );
 }
 
-
-
 add_action( 'after_setup_theme', 'fizzie_after_setup_theme');
 //add_action( 'after_setup_theme', 'fizzie_stanley_theme_support');
 add_action( 'init', 'fizzie_init', 20 );
@@ -132,37 +129,12 @@ function fizzie_front_page_template( $template ) {
 }
 add_filter( 'frontpage_template', 'fizzie_front_page_template' );
 
-/**
- * Implements [post-edit] shortcode.
- *
- * If the user is authorised return a post edit link for the current post.
- *
- * @param $attrs
- * @param $content
- * @param $tag
- *
- * @return string
- */
-
-function fizzie_post_edit( $attrs, $content, $tag ) {
-	$link = '';
-	$url = get_edit_post_link();
-	if ( $url ) {
-		$class = 'bw_edit';
-		$text= __( '[Edit]', 'fizzie' );
-		$link='<a class="' . esc_attr( $class ) . '" href="' . esc_url( $url ) . '">' . $text . '</a>';
-	}
-	return $link;
-}
-
 function fizzie_enable_wp_navigation_editor( $post ) {
     remove_action( 'edit_form_after_title', '_disable_content_editor_for_navigation_post_type' );
     remove_action( 'edit_form_after_title', 'gutenberg_disable_content_editor_for_navigation_post_type');
 }
 
 require_once __DIR__ . '/includes/block-overrides.php';
-
-
 
 if ( !function_exists( "bw_trace2" ) ) {
     function bw_trace2( $content=null, $args=null) {
