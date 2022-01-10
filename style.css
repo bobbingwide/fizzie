@@ -727,7 +727,9 @@ ul.wp-block-post-template li {
     margin-bottom: 20px;
 }
 
-.wp-site-blocks header {
+.wp-site-blocks header,
+.wp-site-blocks .footer,
+.wp-site-blocks .footer-menu {
     margin-top: 0;
 }
 
