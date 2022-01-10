@@ -1,9 +1,12 @@
 <!-- wp:html --><div class="WP_DEBUG">404.hmtl</div>
 <!-- /wp:html -->
-<!-- wp:template-part {"slug":"header","theme":"fizzie","align":"full","tagName":"header"} /-->
-<!-- wp:template-part {"slug":"breadcrumbs","theme":"fizzie","className":"breadcrumbs","layout":{"inherit":true}} /--><!-- wp:template-part{"slug":"issue-27","theme":"fizzie"} /--><!-- wp:template-part{"slug":"issue-30","theme":"fizzie"} /--><!-- wp:block{"ref":1134} /-->
-<!-- wp:template-part {"slug":"category-query","theme":"fizzie","className":"main","layout":{"inherit":true}} /-->
-<!-- wp:template-part {"slug":"search","theme":"fizzie","layout":{"inherit":true}} /-->
-<!-- wp:template-part {"slug":"page-footer","theme":"fizzie","tagName":"footer","layout":{"inherit":true}} /-->
-<!-- wp:template-part {"slug":"footer","theme":"fizzie"} /-->
+<!-- wp:template-part {"slug":"header","theme":"fizzie","tagName":"header","align":"full"} /-->
+<!-- wp:template-part {"slug":"breadcrumbs","theme":"fizzie","className":"breadcrumbs"} /-->
+<!-- wp:template-part {"slug":"no-posts-found","theme":"fizzie"} /-->
+<!-- wp:template-part {"slug":"search","theme":"fizzie"} /-->
+<!-- wp:group {"layout":{"inherit":true}} -->
+<div class="wp-block-group"><!-- wp:latest-posts {"postsToShow":6,"displayPostDate":true,"postLayout":"grid"} /--></div>
+<!-- /wp:group -->
+<!-- wp:template-part {"slug":"page-footer","theme":"fizzie","tagName":"footer"} /-->
+<!-- wp:template-part {"slug":"footer","theme":"fizzie","className":"footer"} /-->
 <!-- wp:template-part {"slug":"footer-menu","theme":"fizzie","className":"footer-menu"} /-->

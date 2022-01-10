@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fizzie\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/fizzie\n"
-"POT-Creation-Date: 2022-01-09 06:10:07+00:00\n"
+"POT-Creation-Date: 2022-01-10 11:56:20+00:00\n"
 "MIME-Version: 1.0\n"
 "Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
 "Language: en_GB\n"
@@ -276,6 +276,10 @@ msgstr "Published:"
 #: metadates.html core/paragraph p>#text
 msgid "Last updated:"
 msgstr "Last updated:"
+
+#: no-posts-found.html core/paragraph p>#text
+msgid "No posts found."
+msgstr "No posts found."
 
 #: page-footer.html core/shortcode p>#text
 msgid "[bw_blogs]"
