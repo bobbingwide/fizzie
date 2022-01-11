@@ -1,6 +1,6 @@
 <?php
 /**
- * Overrides core/navigation-link
+ * Overrides core/navigation-link.
  *
  * @param $attributes
  * @param $content
@@ -9,6 +9,7 @@
  */
 function fizzie_render_block_core_navigation_link( $attributes, $content, $block ) {
     $attributes = fizzie_fiddle_nav_atts( $attributes );
+    $block->context = fizzie_fiddle_block_context( $attributes, $block );
     $html = gutenberg_render_block_core_navigation_link($attributes, $content, $block);
     return $html;
 }
@@ -53,4 +54,28 @@ function fizzie_fiddle_nav_atts( $attributes ) {
 	// Pragmatic workaround to problems when the id's not what Gutenberg thinks it is.
 	unset( $attributes['id'] );
     return $attributes;
+}
+
+/**
+ * Fiddles the block context to set the current menu item's background color.
+ *
+ * fizzie_fiddle_nav_atts() changes the url attribute
+ * and also sets the className to include current-menu-item when relevant.
+ * gutenberg_render_block_core_navigation_link() no longer uses className from $attributes.
+ * But it does set the class attribute from the backgroundColor, which
+ * normally applies to the menu as a whole.
+ *
+ * Note: I'm not quite sure where Gutenberg does get its className from; but it does...
+ * and this can be applied as well.
+ *
+ *
+ * @param $attributes
+ * @param $block
+ * @return mixed
+ */
+function fizzie_fiddle_block_context( $attributes, $block ) {
+    if ( isset( $attributes[ 'className'] ) ) {
+        $block->context['backgroundColor'] = implode( ' ', $attributes['className'] );
+    }
+    return $block->context;
 }

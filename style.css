@@ -141,7 +141,7 @@ header {
 }
 
 .wp-block-navigation ul li {
-   padding-right: 4px;
+   padding-right: 2px;
 }
 
 .wp-block-navigation .wp-block-navigation-link__content,
@@ -154,7 +154,8 @@ header {
 .wp-block-navigation .wp-block-navigation-link__label:hover,
 .wp-block-navigation .wp-block-navigation-item__label:hover,
 .wp-block-navigation-link.current-menu-item > a .wp-block-navigation-link__label,
-.wp-block-navigation-link.current-menu-item > a .wp-block-navigation-item__label {
+.wp-block-navigation-link.current-menu-item > a .wp-block-navigation-item__label,
+.wp-block-navigation-link.has-current-menu-item-background-color > a .wp-block-navigation-item__label {
     color: #792b0c;
 }
 
@@ -323,7 +324,9 @@ p.wp-block-site-tagline {
 
 .wp-block-navigation  .wp-block-navigation-link__content:hover,
 .wp-block-navigation  .wp-block-navigation-item__content:hover,
-.wp-block-navigation .current-menu-item > a {
+.wp-block-navigation .current-menu-item > a,
+.wp-block-navigation .has-current-menu-item-background-color > a
+{
 background: #ffffff;
 border: 1px solid var( --wp--preset--color--woo-deep-purple, #baba54 );
 margin: 0 auto;
