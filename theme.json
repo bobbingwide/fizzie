@@ -35,6 +35,11 @@
           "name": "Light olive",
           "color": "#cfdbc7"
         },
+        {
+          "slug": "current-menu-item",
+          "name":  "Current menu item",
+          "color":  "#a2ab3b"
+        },
           {
             "name": "Pale pink",
             "slug": "pale-pink",
