@@ -9,10 +9,11 @@ require_once __DIR__ . '/class-block-recursion-control.php';
 /**
  * Overrides a core block's render_callback method, if required.
  *
- * For the given blockname, if the overriding function is available
- * and the current callback is the gutenberg function
+ * For the given block name, if the overriding function is available,
  * replace the render_callback with our own function.
- *
+ * Note: For WordPress 5.9, as Gutenberg is no longer a pre-requisite to FSE themes,
+ * this no longer checks that the implementing render callback function is prefixed with `gutenberg_`
+  *
  * @param array $args Block attributes.
  * @param string $blockname The block name to test for.
  * @param string $render_callback The common suffix for the block's callback function.
@@ -21,9 +22,9 @@ require_once __DIR__ . '/class-block-recursion-control.php';
 function fizzie_maybe_override_block( $args, $blockname, $render_callback ) {
     $fizzie_render_callback = 'fizzie_' . $render_callback;
     if ( $blockname == $args['name'] && function_exists( $fizzie_render_callback ) ) {
-        if ( 'gutenberg_' . $render_callback == $args['render_callback'] ) {
+        //if ( 'gutenberg_' . $render_callback == $args['render_callback'] ) {
             $args['render_callback'] = $fizzie_render_callback;
-        }
+       // }
     }
     return $args;
 }

@@ -22,7 +22,11 @@ function fizzie_render_block_core_post_content( $attributes, $content, $block ) 
     */
 
     if ( fizzie_process_this_content( $block->context['postId'], $block->name ) ) {
-        $html = gutenberg_render_block_core_post_content( $attributes, $content, $block );
+        if ( function_exists( 'gutenberg_render_block_core_post_content') ) {
+            $html = gutenberg_render_block_core_post_content($attributes, $content, $block);
+        } else {
+            $html = render_block_core_post_content($attributes, $content, $block);
+        }
         fizzie_clear_processed_content();
     } else {
         $html = fizzie_report_recursion_error();

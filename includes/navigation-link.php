@@ -10,7 +10,11 @@
 function fizzie_render_block_core_navigation_link( $attributes, $content, $block ) {
     $attributes = fizzie_fiddle_nav_atts( $attributes );
     $block->context = fizzie_fiddle_block_context( $attributes, $block );
-    $html = gutenberg_render_block_core_navigation_link($attributes, $content, $block);
+    if ( function_exists( 'gutenberg_render_block_core_navigation_link' )) {
+        $html = gutenberg_render_block_core_navigation_link($attributes, $content, $block);
+    } else {
+        $html = render_block_core_navigation_link($attributes, $content, $block);
+    }
     return $html;
 }
 
