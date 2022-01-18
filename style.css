@@ -632,7 +632,7 @@ div.wp-site-blocks > div.WP_DEBUG:first-of-type:hover {
 .bw_blog { font-size: 14px; }
 
 .page-footer,
-footer {
+footer:not(.comment-meta) {
     background: #575756;
     background: linear-gradient(top, rgba(77, 77, 75, 0.1) 0, rgba(111, 111, 109, 0.18) 90%, rgba(92, 92, 90, 0.07) 90%, rgba(92, 92, 90, 0.07) 100%) no-repeat, url('images/footer.png'), linear-gradient(top, #525251 0, #6A6A68 90%, #5D5D5B 90%, #5D5D5B 100%) no-repeat;
     background: -webkit-linear-gradient(top, rgba(77, 77, 75, 0.1) 0, rgba(111, 111, 109, 0.18) 90%, rgba(92, 92, 90, 0.07) 90%, rgba(92, 92, 90, 0.07) 100%) no-repeat, url('images/footer.png'), -webkit-linear-gradient(top, #525251 0, #6A6A68 90%, #5D5D5B 90%, #5D5D5B 100%) no-repeat;
