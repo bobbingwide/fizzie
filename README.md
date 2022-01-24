@@ -1,35 +1,38 @@
 # fizzie 
-![screenshot](https://raw.githubusercontent.com/bobbingwide/fizzie/main/screenshot.png)
+![screenshot](screenshot.png)
 * Contributors: bobbingwide, vsgloik
 * Donate link: https://www.oik-plugins.com/oik/oik-donate/
 * Tags: blocks, FSE, Gutenberg
 * Requires at least: 5.5.1
-* Tested up to: 5.7.2
-* Version: 0.7.0
+* Tested up to: 5.9-RC3
+* Version: 1.0.0
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Fizzie theme - a Full Site Editing theme using Gutenberg blocks.
 
 ## Description 
-This is an experimental theme attempting to implement Full Site Editing (FSE) with Gutenberg blocks.
+A Full Site Editing (FSE) with Gutenberg blocks.
 
 The theme is required to replace the Genesis-a2z theme that is used in [blocks.wp-a2z.org](https://blocks.wp-a2z.org)
+and [core.wp-a2z.org](https://core.wp-a2z.org).
+
+It's also the parent theme of Wizzie, used in [woocommerce.wp-a2z.org](https://woocommerce.wp-a2z.org).
 
 Requirements:
 1. Implement Full Site Editing.
 2. Same look and feel as the Genesis-a2z theme.
 3. Support documentation / demonstration of each of the new blocks in Gutenberg.
 4. Find out what bits are missing from and/or not working on Gutenberg.
-5. Implement on blocks.wp-a2z.org, when stable.
+5. Implement on blocks.wp-a2z.org, core.wp-a2z.org and woocommerce.wp-a2z.org
 
 
 Contents:
 
 * 19 templates
-* 31 template parts
+* 34 template parts
 
-The `block-templates` are:
+The `templates` are:
 
 * 404 - Not found page
 * archive - generic template used for archives: author, taxonomy, date, tag
@@ -51,9 +54,10 @@ The `block-templates` are:
 * single-oik-themes - used for a single oik-theme
 * singular - used when single or page does not exist
 
+
 * See the template visualization: https://developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04.png
 
-The `block-template-parts` are:
+The `parts` are:
 
 * a2z-pagination - Letter pagination for blog posts
 * a2z-pagination-block - Letter pagination for blocks
@@ -61,8 +65,9 @@ The `block-template-parts` are:
 * a2z-pagination-oik-themes - Letter pagination for themes
 * archive-query - Main query for archive pages
 * breadcrumbs - Breadcrumb trail - using sb-breadcrumbs-block-based-widgets
-* category-description - Uses [archive_description] shortcode
+* category-description - Displays the category description
 * category-query - To list posts in a chosen category term
+* comments - Comments template part
 * contents-shortcode - Contents shortcode etc for the output-input custom template
 * download - To download plugins - uses [oikp_download] shortcode
 * download-theme - To download themes - uses [oikth_download] shortcode
@@ -80,6 +85,7 @@ The `block-template-parts` are:
 * issue-27 - test case file for issue-27
 * issue-30 - test-case file for issue-30
 * metadates - Displays Date published, last updated and [Edit] link
+* no-posts-found - Displays No posts found on 404 page
 * page-content - Primary content part for a page
 * page-footer - Full width footer with 3 columns - representing widgets
 * post-content - Primary content part for a post
@@ -87,6 +93,7 @@ The `block-template-parts` are:
 * posts - An attempt to display the posts using query blocks - incomplete- not used
 * search - Using the Search block
 * social-links - Social link icons
+
 
 Templates not yet implemented:
 
@@ -114,6 +121,7 @@ Some of these templates will be needed for other subdomains of wp-a2z.org.
 * [oik-fields](https://github.com/bobbingwide/oik-fields)
 * [oik-a2z](https://github.com/bobbingwide/oik-a2z)
 * [sb-breadcrumbs-block](https://github.com/bobbingwide/sb-breadcrumbs-block)
+* [sb-post-edit-block](https://github.com/bobbingwide/sb-post-edit-block)
 * [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/) - for breadcrumbs logic
 
 For the Output Input Debugging custom template
@@ -123,6 +131,15 @@ For the Output Input Debugging custom template
 
 
 ## Change Log 
+# 1.0.0 
+* Changes for the following issues: #11 #12 #13 #15 #24 #25 #26 #72 #74 #76 #77 #78
+
+For details see the Git commit history.
+
+* Tested: With WordPress 5.9-RC3and WordPress Multi Site
+* Tested: With Gutenberg 12.4.0
+* Tested: With PHP 8.0
+
 # 0.7.0 
 * Changed: Add styling for metadates. #23 #71
 * Changed: Add bottom margin for post template list. #70
@@ -319,8 +336,8 @@ Responsibility for responsive styling is left to Gutenberg / WordPress core func
 
 ### Block overrides 
 
-Fizzie contains a number of overrides to Gutenberg server rendered blocks which didn't behave the way I expected.
-These overrides should continue to work even when the PRs to fix the bugs have been implemented.
+Fizzie contained a number of overrides to Gutenberg server rendered blocks which didn't behave the way I expected.
+Many of these are no longer necessary and have been disabled.
 
 Improvement areas include:
 
@@ -344,7 +361,7 @@ See my articles on herbmiller.me:
 - [Fizzie - an experimental Full Site Editing theme](https://herbmiller.me/fizzie-an-experimental-full-site-editing-theme/)
 
 
-During the development I have referred to the following articles, sites and repositories.
+During the development, in 2021, I referred to the following articles, sites and repositories.
 
 - https://developer.wordpress.org/block-editor/developers/themes/theme-json/
 - https://developer.wordpress.org/block-editor/tutorials/block-based-themes/
@@ -373,6 +390,9 @@ Some other FSE themes:
 - [Stanley](https://github.com/carolinan/fullsiteediting/blob/course/Block%20based%20themes/Lesson%201%20-Theme%20structure/stanley.zip)
 - [Seedlet Blocks](https://github.com/Automattic/themes/tree/trunk/seedlet-blocks)
 - [SB - Second Byte](https://github.com/bobbingwide/SB)
+- [Wizzie](https://github.com/bobbingwide/wizzie)
+- [ThisIs...](https://github.com/bobbingwide/thisis)
+- [Written](https://github.com/bobbingwide/written)
 - See also [WP-a2z FSE themes](https://blocks.wp-a2z.org/oik-themes)
 
 ## Brief development history 
@@ -401,7 +421,7 @@ These are the ones that include the navigational blocks.
 
 
 ## Copyright 
-(C) Copyright Herb Miller, Bobbing Wide 2020, 2021
+(C) Copyright Herb Miller, Bobbing Wide 2020, 2021, 2022
 
 * This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
