@@ -3,8 +3,8 @@ Contributors: bobbingwide, vsgloik
 Donate link: https://www.oik-plugins.com/oik/oik-donate/
 Tags: blocks, FSE, Gutenberg
 Requires at least: 5.5.1
-Tested up to: 5.9-RC3
-Version: 1.0.0
+Tested up to: 6.0
+Version: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -130,6 +130,13 @@ For the Output Input Debugging custom template
  
 
 == Change Log ==
+= 1.1.0 =
+* Changed: set background for foster-child table rows
+* Fixed: Remove theme attribute from template-part blocks #79
+* Fixed: Avoid undefined id #81
+* Tested: With WordPress 6.0 and WordPress Multi Site
+* Tested: With Gutenberg 13.4.0
+
 = 1.0.0 =
 * Changes for the following issues: #11 #12 #13 #15 #24 #25 #26 #72 #74 #76 #77 #78
 
