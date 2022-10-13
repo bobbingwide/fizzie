@@ -1,0 +1,4 @@
+{
+  "blockTypes": ["core/post-content"],
+  "postTypes": ["page"]
+}
