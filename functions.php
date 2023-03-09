@@ -47,8 +47,8 @@ function fizzie_after_setup_theme()
      * Additionally, I can't see how the server side rendering adds the class names required
      * to allow the menu to display the current selection.
      */
-    register_nav_menu( 'header', 'Header menu');
-    register_nav_menu( 'footer', 'Footer menu');
+    //register_nav_menu( 'header', 'Header menu');
+    //register_nav_menu( 'footer', 'Footer menu');
 
     // Add default posts and comments RSS feed links to head.
     add_theme_support( 'automatic-feed-links' );
@@ -72,8 +72,6 @@ function fizzie_after_setup_theme()
 
     // Add support for full and wide align blocks.
     //add_theme_support( 'align-wide' );
-    add_action( 'post_edit_form_tag', 'fizzie_enable_wp_navigation_editor');
-
 
 }
 
@@ -129,10 +127,6 @@ function fizzie_front_page_template( $template ) {
 }
 add_filter( 'frontpage_template', 'fizzie_front_page_template' );
 
-function fizzie_enable_wp_navigation_editor( $post ) {
-    remove_action( 'edit_form_after_title', '_disable_content_editor_for_navigation_post_type' );
-    remove_action( 'edit_form_after_title', 'gutenberg_disable_content_editor_for_navigation_post_type');
-}
 
 require_once __DIR__ . '/includes/block-overrides.php';
 
