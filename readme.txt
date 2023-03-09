@@ -3,8 +3,8 @@ Contributors: bobbingwide, vsgloik
 Donate link: https://www.oik-plugins.com/oik/oik-donate/
 Tags: blocks, FSE, Gutenberg
 Requires at least: 5.5.1
-Tested up to: 6.0
-Version: 1.1.0
+Tested up to: 6.2-beta5
+Version: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -130,6 +130,20 @@ For the Output Input Debugging custom template
  
 
 == Change Log ==
+= 1.2.0 = 
+* Fixed: Remove margin-block-start for .bw_blog #80
+* Changed: Remove logic moved to gcptedit. #75
+* Changed: No longer need to register_nav_menu() #84
+* Changed: Update Copyright years #84
+* Changed: Further restrict footer styling #84
+* Changed: Display post content full width for single oik-themes #83
+* Fixed: Fix Fatal error due to invalid attributes #82
+* Added: Add pattern for an About us page #78
+* Added: Add .json files for patterns to be used as page templates #78
+* Tested: With WordPress 6.2-beta5 and WordPress Multi Site
+* Tested: With Gutenberg 15.3.1
+
+
 = 1.1.0 =
 * Changed: set background for foster-child table rows
 * Fixed: Remove theme attribute from template-part blocks #79
@@ -345,7 +359,7 @@ Responsibility for responsive styling is left to Gutenberg / WordPress core func
 Fizzie contained a number of overrides to Gutenberg server rendered blocks which didn't behave the way I expected. 
 Many of these are no longer necessary and have been disabled.
 
-Improvement areas include:
+Improvement areas included:
 
 * core/query-loop - uses main query when used outside of core/query
 * core/query-pagination - uses the main query when used outside of core/query
@@ -427,7 +441,7 @@ Note: You can set the Site icon without having to edit a template or template pa
 
 
 == Copyright ==
-(C) Copyright Herb Miller, Bobbing Wide 2020, 2021, 2022
+(C) Copyright Herb Miller, Bobbing Wide 2020, 2021, 2022, 2023
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
