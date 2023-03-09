@@ -745,4 +745,8 @@ ul.wp-block-post-template li {
     font-size: 0.8em;
 }
 
+.bw_blog {
+    margin-block-start: 0px !important;
+}
+
 
