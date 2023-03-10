@@ -98,9 +98,9 @@ function fizzie_load_template_part( $attributes ) {
     	$locale = get_locale();
 
     	if ( 'en_US' !== $locale) {
-		    $template_part_file_path = get_stylesheet_directory() . "/languages/$locale/block-template-parts/" . $slug . '.html';
+		    $template_part_file_path = get_stylesheet_directory() . "/languages/$locale/parts/" . $slug . '.html';
 	    } else {
-		    $template_part_file_path = get_stylesheet_directory() . '/block-template-parts/' . $slug . '.html';
+		    $template_part_file_path = get_stylesheet_directory() . '/parts/' . $slug . '.html';
 	    }
 
         $content = fizzie_load_template_part_file_by_slug( $slug, $template_part_file_path );
