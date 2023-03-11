@@ -127,6 +127,23 @@ function fizzie_front_page_template( $template ) {
 }
 add_filter( 'frontpage_template', 'fizzie_front_page_template' );
 
+/**
+ * Filters the rendered shortcode block.
+ *
+ * @param $content
+ * @param $parsed_block
+ * @param $block
+ * @return mixed|string
+ */
+function fizzie_render_block_core_shortcode( $content, $parsed_block, $block ) {
+    $content = do_shortcode( $content );
+    return $content;
+}
+
+add_filter( 'render_block_core/shortcode', 'fizzie_render_block_core_shortcode', 10, 3, );
+add_filter( 'render_block_core/paragraph', 'fizzie_render_block_core_shortcode', 10, 3, );
+
+
 
 require_once __DIR__ . '/includes/block-overrides.php';
 

@@ -25,6 +25,7 @@ require_once __DIR__ . '/template-part.php';
 require_once __DIR__ . '/navigation-link.php';
 //require_once __DIR__ . '/post-hierarchical-terms.php';
 //require_once __DIR__ . '/block.php';
+//require_once __DIR__ . '/shortcode.php';
 
 /**
  * Hook into register_block_types_args before WP_Block_Supports
@@ -49,5 +50,6 @@ function fizzie_register_block_type_args( $args ) {
     $args = fizzie_maybe_override_block(  $args,'core/navigation-link', 'render_block_core_navigation_link' );
     //$args = fizzie_maybe_override_block(  $args,'core/post-hierarchical-terms', 'render_block_core_post_hierarchical_terms' );
     //$args = fizzie_maybe_override_block(  $args,'core/block', 'render_block_core_block' );
+	//$args = fizzie_maybe_override_block(  $args,'core/shortcode', 'render_block_core_shortcode' );
     return $args;
 }
