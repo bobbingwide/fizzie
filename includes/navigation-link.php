@@ -79,7 +79,12 @@ function fizzie_fiddle_nav_atts( $attributes ) {
  */
 function fizzie_fiddle_block_context( $attributes, $block ) {
     if ( isset( $attributes[ 'className'] ) ) {
-        $block->context['backgroundColor'] = implode( ' ', $attributes['className'] );
+		//bw_trace2( $attributes, "attributes");
+		if ( is_array( $attributes['className'])) {
+			$block->context['backgroundColor']=implode( ' ', $attributes['className'] );
+		} else {
+			$block->context['backgroundColor'] = $attributes['className'];
+		}
     }
     return $block->context;
 }
