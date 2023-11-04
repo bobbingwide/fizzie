@@ -38,7 +38,8 @@ function fizzie_fiddle_nav_atts( $attributes ) {
 		$request_uri      =$_SERVER["REQUEST_URI"];
 		$request_uri_path =parse_url( $request_uri, PHP_URL_PATH );
 		$url_path         =parse_url( $attributes['url'], PHP_URL_PATH );
-		$site_url         =trailingslashit( parse_url( site_url(), PHP_URL_PATH ) );
+		$site_url = parse_url( site_url(), PHP_URL_PATH );
+		$site_url = ( $site_url !== null ) ? trailingslashit( $site_url ) : $site_url;
 
 		// We need to avoid the home page: home_url() or site_url()
 		if ( $url_path === $site_url ) {

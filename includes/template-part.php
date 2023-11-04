@@ -117,6 +117,8 @@ function fizzie_load_template_part( $attributes ) {
         $html = '<div>';
         $html = 'Template Part Not Found: ' . $slug;
         foreach ( $attributes as $key => $value ) {
+
+			$value = is_scalar( $value ) ? $value : implode( ',', $value );
         	$html .= "<div><span>$key</span>: <span>$value</span>";
         }
         $html .= "<div><span>File path</span>: <span>$template_part_file_path</span></div>";
