@@ -3,8 +3,8 @@ Contributors: bobbingwide, vsgloik
 Donate link: https://www.oik-plugins.com/oik/oik-donate/
 Tags: blocks, FSE, Gutenberg
 Requires at least: 5.5.1
-Tested up to: 6.2-beta5
-Version: 1.2.0
+Tested up to: 6.4-RC3
+Version: 1.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -130,6 +130,18 @@ For the Output Input Debugging custom template
  
 
 == Change Log ==
+= 1.3.0 = 
+* Changed: Remove theme:fizzie attribute. #87
+* Changed: Support PHP 8.1 and PHP 8.2 #86
+* Changed: Update language files
+* Fixed: Avoid Fatal Uncaught TypeError in Appearance > Site Editor #85
+* Fixed: Ensure [bw_fields] shortcode is expanded within query loops for both shortcode and paragraph blocks #28
+* Fixed: Re-enable localization of template parts #46
+* Fixed:  Revert workaround for recursion. Gutenberg was fixed in Mar 2021 #49
+* Tested: With WordPress 6.4-RC3 and WordPress Multisite
+* Tested: With Gutenberg 16.9.0
+* Tested: With PHP 8.0, PHP 8.1 and PHP 8.2
+
 = 1.2.0 = 
 * Fixed: Remove margin-block-start for .bw_blog #80
 * Changed: Remove logic moved to gcptedit. #75
@@ -142,7 +154,6 @@ For the Output Input Debugging custom template
 * Added: Add .json files for patterns to be used as page templates #78
 * Tested: With WordPress 6.2-beta5 and WordPress Multi Site
 * Tested: With Gutenberg 15.3.1
-
 
 = 1.1.0 =
 * Changed: set background for foster-child table rows
