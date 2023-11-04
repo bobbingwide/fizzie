@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fizzie\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/fizzie\n"
-"POT-Creation-Date: 2022-01-10 11:56:20+00:00\n"
+"POT-Creation-Date: 2023-03-10 09:28:41+00:00\n"
 "MIME-Version: 1.0\n"
 "Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
 "Language: en_GB\n"
@@ -134,8 +134,8 @@ msgid "This is an example of the Footer variant of the template part with a sing
 msgstr "This is an example of the Footer variant of the template part with a single paragraph."
 
 #: footer.html core/paragraph p
-msgid "[bw_wpadmin]<br>(C) Copyright Bobbing Wide 2020-2022. All rights reserved"
-msgstr "[bw_wpadmin]<br>(C) Copyright Bobbing Wide 2020-2022. All rights reserved"
+msgid "[bw_wpadmin]<br>(C) Copyright Bobbing Wide 2020-2023. All rights reserved."
+msgstr "[bw_wpadmin]<br>(C) Copyright Bobbing Wide 2020-2023. All rights reserved."
 
 #: footer.html core/paragraph p
 msgid "Website designed and developed by&#xA0;<a href=\"https://herbmiller.me/\">Herb Miller</a>&#xA0;<a href=\"https://www.twitter.com/herb_miller\"></a>&#13;    <br><a href=\"https://www.wordpress.org/\">Proudly powered by WordPress</a>&#xA0;and&#xA0;<a href=\"https://oik-plugins.com/\">oik plugins</a>"
